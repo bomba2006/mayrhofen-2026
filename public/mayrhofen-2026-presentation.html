@@ -1,217 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mayrhofen 2026 — Our Hiking Trip</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,'Times New Roman',serif;background:#fdfaf5;color:#2d2d2d;line-height:1.7}
-.hero{background:linear-gradient(135deg,#3a5a3a,#5a7a4a);color:#fff;padding:4rem 1.5rem 3rem;text-align:center}
-.hero h1{font-size:2.5rem;font-weight:400;margin-bottom:.5rem;letter-spacing:-.02em}
-.hero .sub{font-size:1.1rem;opacity:.85;font-style:italic}
-.hero .dates{font-size:.9rem;opacity:.7;margin-top:.5rem}
-.container{max-width:800px;margin:0 auto;padding:0 1.5rem}
-section{padding:2.5rem 0}
-h2{font-size:1.6rem;font-weight:400;color:#3a5a3a;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid #d0d8c8}
-h3{font-size:1.15rem;font-weight:400;color:#4a6a4a;margin:1.5rem 0 .75rem}
-p{font-size:1rem;color:#444;margin-bottom:.75rem}
-.intro{font-size:1.1rem;line-height:1.8;color:#555;max-width:650px;margin:0 auto}
-/* Cards */
-.card{background:#fff;border:1px solid #e0e0d8;border-radius:6px;padding:1.5rem;margin-bottom:1rem}
-.card h3{font-size:1.15rem;margin:0 0 .4rem;color:#3a5a3a}
-.card .tag{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:3px;font-weight:600;margin-right:.4rem;text-transform:uppercase;letter-spacing:.03em}
-.tag.easy{background:#e8f0e0;color:#4a7a4a}.tag.moderate{background:#fdf0e0;color:#b87830}
-.tag.hard{background:#fde8e8;color:#b84040}.tag.drive{background:#e8e8f8;color:#5050a0}
-.card .desc{font-size:.9rem;color:#666;margin:.5rem 0;line-height:1.6}
-.card .stats{font-size:.8rem;color:#888;display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
-.card .stat{display:flex;align-items:center;gap:.2rem}
-.card .strudel{font-size:.8rem;color:#8a6030;margin-top:.5rem;font-style:italic}
-/* Timeline plan */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:1px;background:#d0d8c8}
-.timeline-day{position:relative;margin-bottom:1.5rem;padding-left:1rem}
-.timeline-day::before{content:'';position:absolute;left:-1.85rem;top:.5rem;width:10px;height:10px;border-radius:50%;background:#5a7a4a;border:2px solid #fdfaf5}
-.timeline-day.rest::before{background:#c0a060}
-.timeline-day .day-name{font-weight:600;color:#3a5a3a;font-size:.95rem}
-.timeline-day .day-activity{font-size:.85rem;color:#555;margin:.1rem 0}
-.timeline-day .day-detail{font-size:.75rem;color:#888}
-.timeline-day .day-food{font-size:.75rem;color:#8a6030;font-style:italic}
-/* Grid of highlights */
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
-.highlight{background:#fff;border:1px solid #e0e0d8;border-radius:6px;padding:1.25rem;text-align:center}
-.highlight .icon{font-size:2rem;margin-bottom:.5rem}
-.highlight h4{font-size:.9rem;color:#3a5a3a;margin-bottom:.3rem;font-weight:400}
-.highlight p{font-size:.8rem;color:#777}
-/* Link buttons */
-.btn-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin:1.5rem 0}
-.btn{display:inline-block;padding:.6rem 1.2rem;border-radius:6px;font-size:.85rem;text-decoration:none;font-weight:600;font-family:-apple-system,system-ui,sans-serif;transition:.15s}
-.btn.primary{background:#3a5a3a;color:#fff}.btn.primary:hover{background:#4a7a4a}
-.btn.outline{border:1px solid #3a5a3a;color:#3a5a3a}.btn.outline:hover{background:#f0f5ed}
-footer{text-align:center;padding:2rem;font-size:.8rem;color:#999;border-top:1px solid #e0e0d8;margin-top:2rem}
-@media(max-width:500px){.hero h1{font-size:1.8rem}.hero{padding:2.5rem 1rem 2rem}}
-</style>
-</head>
-<body>
-
+1|1|<!DOCTYPE html>
+2|2|<html lang="en">
+3|3|<head>
+4|4|<meta charset="UTF-8">
+5|5|<meta name="viewport" content="width=device-width,initial-scale=1">
+6|6|<title>Mayrhofen 2026 — Our Hiking Trip</title>
+7|7|<style>
+8|8|*{margin:0;padding:0;box-sizing:border-box}
+9|9|body{font-family:Georgia,'Times New Roman',serif;background:#fdfaf5;color:#2d2d2d;line-height:1.7}
+10|10|.hero{background:linear-gradient(135deg,#3a5a3a,#5a7a4a);color:#fff;padding:4rem 1.5rem 3rem;text-align:center}
+11|11|.hero h1{font-size:2.5rem;font-weight:400;margin-bottom:.5rem;letter-spacing:-.02em}
+12|12|.hero .sub{font-size:1.1rem;opacity:.85;font-style:italic}
+13|13|.hero .dates{font-size:.9rem;opacity:.7;margin-top:.5rem}
+14|14|.container{max-width:800px;margin:0 auto;padding:0 1.5rem}
+15|15|section{padding:2.5rem 0}
+16|16|h2{font-size:1.6rem;font-weight:400;color:#3a5a3a;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid #d0d8c8}
+17|17|h3{font-size:1.15rem;font-weight:400;color:#4a6a4a;margin:1.5rem 0 .75rem}
+18|18|p{font-size:1rem;color:#444;margin-bottom:.75rem}
+19|19|.intro{font-size:1.1rem;line-height:1.8;color:#555;max-width:650px;margin:0 auto}
+20|20|/* Cards */
+21|21|.card{background:#fff;border:1px solid #e0e0d8;border-radius:6px;padding:1.5rem;margin-bottom:1rem}
+22|22|.card h3{font-size:1.15rem;margin:0 0 .4rem;color:#3a5a3a}
+23|23|.card .tag{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:3px;font-weight:600;margin-right:.4rem;text-transform:uppercase;letter-spacing:.03em}
+24|24|.tag.easy{background:#e8f0e0;color:#4a7a4a}.tag.moderate{background:#fdf0e0;color:#b87830}
+25|25|.tag.hard{background:#fde8e8;color:#b84040}.tag.drive{background:#e8e8f8;color:#5050a0}
+26|26|.card .desc{font-size:.9rem;color:#666;margin:.5rem 0;line-height:1.6}
+27|27|.card .stats{font-size:.8rem;color:#888;display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+28|28|.card .stat{display:flex;align-items:center;gap:.2rem}
+29|29|.card .strudel{font-size:.8rem;color:#8a6030;margin-top:.5rem;font-style:italic}
+30|30|/* Timeline plan */
+31|31|.timeline{position:relative;padding-left:2rem}
+32|32|.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:1px;background:#d0d8c8}
+33|33|.timeline-day{position:relative;margin-bottom:1.5rem;padding-left:1rem}
+34|34|.timeline-day::before{content:'';position:absolute;left:-1.85rem;top:.5rem;width:10px;height:10px;border-radius:50%;background:#5a7a4a;border:2px solid #fdfaf5}
+35|35|.timeline-day.rest::before{background:#c0a060}
+36|36|.timeline-day .day-name{font-weight:600;color:#3a5a3a;font-size:.95rem}
+37|37|.timeline-day .day-activity{font-size:.85rem;color:#555;margin:.1rem 0}
+38|38|.timeline-day .day-detail{font-size:.75rem;color:#888}
+39|39|.timeline-day .day-food{font-size:.75rem;color:#8a6030;font-style:italic}
+40|40|/* Grid of highlights */
+41|41|.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+42|42|.highlight{background:#fff;border:1px solid #e0e0d8;border-radius:6px;padding:1.25rem;text-align:center}
+43|43|.highlight .icon{font-size:2rem;margin-bottom:.5rem}
+44|44|.highlight h4{font-size:.9rem;color:#3a5a3a;margin-bottom:.3rem;font-weight:400}
+45|45|.highlight p{font-size:.8rem;color:#777}
+46|46|/* Link buttons */
+47|47|.btn-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin:1.5rem 0}
+48|48|.btn{display:inline-block;padding:.6rem 1.2rem;border-radius:6px;font-size:.85rem;text-decoration:none;font-weight:600;font-family:-apple-system,system-ui,sans-serif;transition:.15s}
+49|49|.btn.primary{background:#3a5a3a;color:#fff}.btn.primary:hover{background:#4a7a4a}
+50|50|.btn.outline{border:1px solid #3a5a3a;color:#3a5a3a}.btn.outline:hover{background:#f0f5ed}
+51|51|footer{text-align:center;padding:2rem;font-size:.8rem;color:#999;border-top:1px solid #e0e0d8;margin-top:2rem}
+52|52|@media(max-width:500px){.hero h1{font-size:1.8rem}.hero{padding:2.5rem 1rem 2rem}}
+53|53|</style>
+54|54|</head>
+55|55|<body>
+56|56|
 <div class="hero">
   <h1>Mayrhofen · Austrian Alps</h1>
-  <div class="sub">A hiking trip through the Zillertal Valley</div>
+  <div class="sub">A hiking trip through the Zillertal Valley, Tyrol, Austria</div>
   <div class="dates">August 31 – September 8, 2026 · 3 adults</div>
+  <div style="margin-top:1rem;font-size:.85rem;opacity:.7">✈️ Fly to Innsbruck (1hr) · Munich or Salzburg (2.5hrs) · 🚗 Rent a car · 🏠 Self-catering apartment</div>
 </div>
-
-<div class="container">
-
-<section>
-  <p class="intro">We're spending nine days in Mayrhofen, a mountain town in the Austrian Alps. Each day we'll hike a different trail — through wildflower meadows, along high ridges, into waterfall gorges, and up to a glacier. We'll have coffee and strudel at a mountain hut every single day. This is what we're planning.</p>
-</section>
-
-<section>
-  <h2>At a Glance</h2>
-  <div class="highlights">
-    <div class="highlight"><div class="icon">🥾</div><h4>8 Hiking Days</h4><p>Gentle to steady walks, 7-18km</p></div>
-    <div class="highlight"><div class="icon">🏔️</div><h4>5 Mountain Huts</h4><p>Each with strudel, coffee & views</p></div>
-    <div class="highlight"><div class="icon">💧</div><h4>4 Waterfall Trails</h4><p>Gorges, cascades, Europe's highest falls</p></div>
-    <div class="highlight"><div class="icon">❄️</div><h4>1 Glacier</h4><p>Snow year-round at 3,250 meters</p></div>
-    <div class="highlight"><div class="icon">🚗</div><h4>2 Scenic Drives</h4><p>Alpine roads through the mountains</p></div>
-    <div class="highlight"><div class="icon">☕</div><h4>Strudel Every Day</h4><p>Coffee & cake at every hut stop</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>The Hikes</h2>
-  <p style="color:#888;font-size:.9rem;margin-bottom:1rem">From easiest to most challenging</p>
-
-  <div class="card">
-    <h3>Stilluptal Waterfall Valley</h3>
-    <span class="tag easy">Gentle</span><span class="tag easy">15km</span>
-    <div class="desc">A long, flat walk through a valley full of waterfalls. Wooden boardwalks wind past dozens of cascades. The easiest hike of the trip — perfect for a relaxing day. The falls are even more dramatic when it rains.</div>
-    <div class="strudel">☕🥮 Coffee & strudel at the Stilluppe mountain rest stop</div>
-  </div>
-
-  <div class="card">
-    <h3>Penken Panorama Trail</h3>
-    <span class="tag easy">Gentle</span><span class="tag easy">8.7km</span>
-    <div class="desc">We take the gondola up to 1,800 meters and walk a circular trail with 360° views of the entire Zillertal Alps. Short, scenic, and almost flat. The perfect first-day hike to ease into the mountains.</div>
-    <div class="strudel">☕🥮 Kaiserschmarrn (Austrian pancake dessert) at Grillhofalm hut</div>
-  </div>
-
-  <div class="card">
-    <h3>Filzenkogel</h3>
-    <span class="tag easy">Gentle</span><span class="tag easy">7km</span>
-    <div class="desc">A short summit hike starting from the Ahorn gondola. Quick climb to a beautiful viewpoint over the Zillertal main ridge. Back in time for a relaxed afternoon.</div>
-    <div class="strudel">☕🥮 Strudel at Ahornhütte</div>
-  </div>
-
-  <div class="card">
-    <h3>Ahorn High Walk</h3>
-    <span class="tag moderate">Moderate</span><span class="tag moderate">8km</span>
-    <div class="desc">Take the Ahornbahn gondola to nearly 2,000 meters, then walk through high alpine terrain to the Edelhütte at 2,238 meters. We'll have strudel with a view of the Ahornspitze peak — without having to climb all the way to the summit.</div>
-    <div class="strudel">☕🥮 Strudel at Edelhütte — 2,238 meters up, with summit views</div>
-  </div>
-
-  <div class="card">
-    <h3>Wolfsklamm Gorge</h3>
-    <span class="tag moderate">Moderate</span><span class="tag moderate">3km</span>
-    <div class="desc">350 wooden steps climb through a narrow gorge with waterfalls rushing beside you. Cross wooden bridges and climb staircases bolted into the rock walls. Short but spectacular — one of the most beautiful gorges in the Alps.</div>
-    <div class="strudel">☕🥮 Coffee & strudel at a café in the village of Stans</div>
-  </div>
-
-  <div class="card">
-    <h3>Berliner Hütte</h3>
-    <span class="tag moderate">Steady</span><span class="tag moderate">18.3km</span>
-    <div class="desc">A long day walking up a beautiful valley to a historic mountain hut built in 1879. The path climbs gradually through wildflower meadows — never steep, just long. The reward is coffee and cake at the hut, earned by the climb.</div>
-    <div class="strudel">☕🥮 Coffee & cake at the Berliner Hütte — a historic alpine hut from 1879</div>
-  </div>
-
-  <div class="card">
-    <h3>Olpererhütte</h3>
-    <span class="tag hard">Challenging</span><span class="tag hard">13.8km</span>
-    <div class="desc">The most famous hike in the Zillertal Valley. We drive to a turquoise mountain reservoir, then climb steadily to a hut perched at 2,389 meters. The highlight is a suspension bridge over a glacial stream with the turquoise lake far below. The view has been photographed thousands of times — and for good reason. This is our one big day.</div>
-    <div class="strudel">☕🥮 Strudel at the Olpererhütte — on the famous suspension bridge</div>
-  </div>
-
-  <div class="card">
-    <h3>Krimml Waterfalls</h3>
-    <span class="tag drive">Day Trip</span>
-    <div class="desc">A scenic drive over a mountain pass to see Europe's highest waterfall — 385 meters of thundering water in three tiers. We'll walk the boardwalk path up alongside the falls. The spray is said to be good for the lungs.</div>
-    <div class="strudel">☕🥮 Coffee & strudel at the Krimml café</div>
-  </div>
-
-  <div class="card">
-    <h3>Hintertux Glacier</h3>
-    <span class="tag drive">Day Trip</span>
-    <div class="desc">Three gondola rides take us up to 3,250 meters — above the clouds, onto a glacier where there's snow year-round. We can walk on the glacier, see the views, and warm up with strudel at the mountain restaurant. Works in any weather — our backup plan if it rains.</div>
-    <div class="strudel">☕🥮 Strudel at Tuxer Fernerhaus — with snow outside, even in summer</div>
-  </div>
-
-  <div class="card">
-    <h3>Zillertal High Road</h3>
-    <span class="tag drive">Scenic Drive</span>
-    <div class="desc">A 50-kilometer drive along one of Austria's most beautiful alpine roads, climbing to 2,020 meters. We'll stop at viewpoints and mountain huts along the way. No hiking required — pure scenery.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Our Plan — Day by Day</h2>
-
-  <div class="timeline">
-    <div class="timeline-day">
-      <div class="day-name">Sunday, August 31 — Arrival</div>
-      <div class="day-activity">Penken Panorama Trail — a gentle welcome to the mountains</div>
-      <div class="day-detail">Gondola up, circular walk with 360° views, 8.7km · easy</div>
-      <div class="day-food">🥮 Kaiserschmarrn at Grillhofalm · 🍽️ Dinner at Gasthof Perauer</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Monday, September 1</div>
-      <div class="day-activity">Filzenkogel — short summit, quick reward</div>
-      <div class="day-detail">7km · Ahorn gondola up · back by early afternoon</div>
-      <div class="day-food">🥮 Strudel at Ahornhütte · 🍽️ Dinner at Waldcafe</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Tuesday, September 2</div>
-      <div class="day-activity">Stilluptal Waterfall Valley — long, flat, beautiful</div>
-      <div class="day-detail">15km through a valley of waterfalls · boardwalks all the way</div>
-      <div class="day-food">🥮 Strudel at Stilluppe · 🍽️ Self-cater at apartment</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Wednesday, September 3</div>
-      <div class="day-activity">Wolfsklamm Gorge + Zillertal High Road</div>
-      <div class="day-detail">Morning: 350 steps through the gorge · Afternoon: scenic alpine drive</div>
-      <div class="day-food">🥮 Strudel in Stans · 🍽️ Dinner at Goldkind</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Thursday, September 4</div>
-      <div class="day-activity">Ahorn High Walk — alpine meadows, strudel with a view</div>
-      <div class="day-detail">Gondola to 1,978m · walk to Edelhütte at 2,238m</div>
-      <div class="day-food">🥮 Strudel at Edelhütte · 🍽️ Mo's Bar (live music)</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Friday, September 5</div>
-      <div class="day-activity">Berliner Hütte — the long valley walk</div>
-      <div class="day-detail">18km through wildflowers to a historic 1879 hut · steady, never steep</div>
-      <div class="day-food">🥮 Coffee & cake at Berliner Hütte · 🍽️ Perauer</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Saturday, September 6</div>
-      <div class="day-activity">Hintertux Glacier — snow in summer</div>
-      <div class="day-detail">3 gondolas to 3,250m · walk on the glacier · works in any weather</div>
-      <div class="day-food">🥮 Strudel at Tuxer Fernerhaus · 🍽️ Self-cater</div>
-    </div>
-    <div class="timeline-day">
-      <div class="day-name">Sunday, September 7</div>
-      <div class="day-activity">Krimml Waterfalls — Europe's highest</div>
-      <div class="day-detail">Scenic drive over Gerlos Pass · walk up the waterfall path</div>
-      <div class="day-food">🥮 Strudel at Krimml café · 🍽️ Waldcafe</div>
-    </div>
-    <div class="timeline-day rest">
-      <div class="day-name">Monday, September 8 — Departure</div>
-      <div class="day-activity">Morning coffee in town, then head home</div>
-      <div class="day-food">☕ One last strudel at Café Tirol</div>
-    </div>
-  </div>
-</section>
-
+62|62|
+63|63|<div class="container">
+64|64|
+65|65|<section>
+66|66|  <p class="intro">We're spending nine days in Mayrhofen, a mountain town in the Austrian Alps. Each day we'll hike a different trail — through wildflower meadows, along high ridges, into waterfall gorges, and up to a glacier. We'll have coffee and strudel at a mountain hut every single day. This is what we're planning.</p>
+67|67|</section>
+68|68|
+69|69|<section>
+70|70|  <h2>At a Glance</h2>
+71|71|  <div class="highlights">
+72|72|    <div class="highlight"><div class="icon">🥾</div><h4>8 Hiking Days</h4><p>Gentle to steady walks, 7-18km</p></div>
+73|73|    <div class="highlight"><div class="icon">🏔️</div><h4>5 Mountain Huts</h4><p>Each with strudel, coffee & views</p></div>
+74|74|    <div class="highlight"><div class="icon">💧</div><h4>4 Waterfall Trails</h4><p>Gorges, cascades, Europe's highest falls</p></div>
+75|75|    <div class="highlight"><div class="icon">❄️</div><h4>1 Glacier</h4><p>Snow year-round at 3,250 meters</p></div>
+76|76|    <div class="highlight"><div class="icon">🚗</div><h4>2 Scenic Drives</h4><p>Alpine roads through the mountains</p></div>
+77|77|    <div class="highlight"><div class="icon">☕</div><h4>Strudel Every Day</h4><p>Coffee & cake at every hut stop</p></div>
+78|78|  </div>
+79|79|</section>
+80|80|
+81|81|<section>
+82|82|  <h2>The Hikes</h2>
+83|83|  <p style="color:#888;font-size:.9rem;margin-bottom:1rem">From easiest to most challenging</p>
+84|84|
+85|85|  <div class="card">
+86|86|    <h3>Stilluptal Waterfall Valley</h3>
+87|87|    <span class="tag easy">Gentle</span><span class="tag easy">15km</span>
+88|88|    <div class="desc">A long, flat walk through a valley full of waterfalls. Wooden boardwalks wind past dozens of cascades. The easiest hike of the trip — perfect for a relaxing day. The falls are even more dramatic when it rains.</div>
+89|89|    <div class="strudel">☕🥮 Coffee & strudel at the Stilluppe mountain rest stop</div>
+90|90|  </div>
+91|91|
+92|92|  <div class="card">
+93|93|    <h3>Penken Panorama Trail</h3>
+94|94|    <span class="tag easy">Gentle</span><span class="tag easy">8.7km</span>
+95|95|    <div class="desc">We take the gondola up to 1,800 meters and walk a circular trail with 360° views of the entire Zillertal Alps. Short, scenic, and almost flat. The perfect first-day hike to ease into the mountains.</div>
+96|96|    <div class="strudel">☕🥮 Kaiserschmarrn (Austrian pancake dessert) at Grillhofalm hut</div>
+97|97|  </div>
+98|98|
+99|99|  <div class="card">
+100|100|    <h3>Filzenkogel</h3>
+101|101|    <span class="tag easy">Gentle</span><span class="tag easy">7km</span>
+102|102|    <div class="desc">A short summit hike starting from the Ahorn gondola. Quick climb to a beautiful viewpoint over the Zillertal main ridge. Back in time for a relaxed afternoon.</div>
+103|103|    <div class="strudel">☕🥮 Strudel at Ahornhütte</div>
+104|104|  </div>
+105|105|
+106|106|  <div class="card">
+107|107|    <h3>Ahorn High Walk</h3>
+108|108|    <span class="tag moderate">Moderate</span><span class="tag moderate">8km</span>
+109|109|    <div class="desc">Take the Ahornbahn gondola to nearly 2,000 meters, then walk through high alpine terrain to the Edelhütte at 2,238 meters. We'll have strudel with a view of the Ahornspitze peak — without having to climb all the way to the summit.</div>
+110|110|    <div class="strudel">☕🥮 Strudel at Edelhütte — 2,238 meters up, with summit views</div>
+111|111|  </div>
+112|112|
+113|113|  <div class="card">
+114|114|    <h3>Wolfsklamm Gorge</h3>
+115|115|    <span class="tag moderate">Moderate</span><span class="tag moderate">3km</span>
+116|116|    <div class="desc">350 wooden steps climb through a narrow gorge with waterfalls rushing beside you. Cross wooden bridges and climb staircases bolted into the rock walls. Short but spectacular — one of the most beautiful gorges in the Alps.</div>
+117|117|    <div class="strudel">☕🥮 Coffee & strudel at a café in the village of Stans</div>
+118|118|  </div>
+119|119|
+120|120|  <div class="card">
+121|121|    <h3>Berliner Hütte</h3>
+122|122|    <span class="tag moderate">Steady</span><span class="tag moderate">18.3km</span>
+123|123|    <div class="desc">A long day walking up a beautiful valley to a historic mountain hut built in 1879. The path climbs gradually through wildflower meadows — never steep, just long. The reward is coffee and cake at the hut, earned by the climb.</div>
+124|124|    <div class="strudel">☕🥮 Coffee & cake at the Berliner Hütte — a historic alpine hut from 1879</div>
+125|125|  </div>
+126|126|
+127|127|  <div class="card">
+128|128|    <h3>Olpererhütte</h3>
+129|129|    <span class="tag hard">Challenging</span><span class="tag hard">13.8km</span>
+130|130|    <div class="desc">The most famous hike in the Zillertal Valley. We drive to a turquoise mountain reservoir, then climb steadily to a hut perched at 2,389 meters. The highlight is a suspension bridge over a glacial stream with the turquoise lake far below. The view has been photographed thousands of times — and for good reason. This is our one big day.</div>
+131|131|    <div class="strudel">☕🥮 Strudel at the Olpererhütte — on the famous suspension bridge</div>
+132|132|  </div>
+133|133|
+134|134|  <div class="card">
+135|135|    <h3>Krimml Waterfalls</h3>
+136|136|    <span class="tag drive">Day Trip</span>
+137|137|    <div class="desc">A scenic drive over a mountain pass to see Europe's highest waterfall — 385 meters of thundering water in three tiers. We'll walk the boardwalk path up alongside the falls. The spray is said to be good for the lungs.</div>
+138|138|    <div class="strudel">☕🥮 Coffee & strudel at the Krimml café</div>
+139|139|  </div>
+140|140|
+141|141|  <div class="card">
+142|142|    <h3>Hintertux Glacier</h3>
+143|143|    <span class="tag drive">Day Trip</span>
+144|144|    <div class="desc">Three gondola rides take us up to 3,250 meters — above the clouds, onto a glacier where there's snow year-round. We can walk on the glacier, see the views, and warm up with strudel at the mountain restaurant. Works in any weather — our backup plan if it rains.</div>
+145|145|    <div class="strudel">☕🥮 Strudel at Tuxer Fernerhaus — with snow outside, even in summer</div>
+146|146|  </div>
+147|147|
+148|148|  <div class="card">
+149|149|    <h3>Zillertal High Road</h3>
+150|150|    <span class="tag drive">Scenic Drive</span>
+151|151|    <div class="desc">A 50-kilometer drive along one of Austria's most beautiful alpine roads, climbing to 2,020 meters. We'll stop at viewpoints and mountain huts along the way. No hiking required — pure scenery.</div>
+152|152|  </div>
+153|153|</section>
+154|154|
+155|155|<section>
+156|156|  <h2>Our Plan — Day by Day</h2>
+157|157|
+158|158|  <div class="timeline">
+159|159|    <div class="timeline-day">
+160|160|      <div class="day-name">Sunday, August 31 — Arrival</div>
+161|161|      <div class="day-activity">Penken Panorama Trail — a gentle welcome to the mountains</div>
+162|162|      <div class="day-detail">Gondola up, circular walk with 360° views, 8.7km · easy</div>
+163|163|      <div class="day-food">🥮 Kaiserschmarrn at Grillhofalm · 🍽️ Dinner at Gasthof Perauer</div>
+164|164|    </div>
+165|165|    <div class="timeline-day">
+166|166|      <div class="day-name">Monday, September 1</div>
+167|167|      <div class="day-activity">Filzenkogel — short summit, quick reward</div>
+168|168|      <div class="day-detail">7km · Ahorn gondola up · back by early afternoon</div>
+169|169|      <div class="day-food">🥮 Strudel at Ahornhütte · 🍽️ Dinner at Waldcafe</div>
+170|170|    </div>
+171|171|    <div class="timeline-day">
+172|172|      <div class="day-name">Tuesday, September 2</div>
+173|173|      <div class="day-activity">Stilluptal Waterfall Valley — long, flat, beautiful</div>
+174|174|      <div class="day-detail">15km through a valley of waterfalls · boardwalks all the way</div>
+175|175|      <div class="day-food">🥮 Strudel at Stilluppe · 🍽️ Self-cater at apartment</div>
+176|176|    </div>
+177|177|    <div class="timeline-day">
+178|178|      <div class="day-name">Wednesday, September 3</div>
+179|179|      <div class="day-activity">Wolfsklamm Gorge + Zillertal High Road</div>
+180|180|      <div class="day-detail">Morning: 350 steps through the gorge · Afternoon: scenic alpine drive</div>
+181|181|      <div class="day-food">🥮 Strudel in Stans · 🍽️ Dinner at Goldkind</div>
+182|182|    </div>
+183|183|    <div class="timeline-day">
+184|184|      <div class="day-name">Thursday, September 4</div>
+185|185|      <div class="day-activity">Ahorn High Walk — alpine meadows, strudel with a view</div>
+186|186|      <div class="day-detail">Gondola to 1,978m · walk to Edelhütte at 2,238m</div>
+187|187|      <div class="day-food">🥮 Strudel at Edelhütte · 🍽️ Mo's Bar (live music)</div>
+188|188|    </div>
+189|189|    <div class="timeline-day">
+190|190|      <div class="day-name">Friday, September 5</div>
+191|191|      <div class="day-activity">Berliner Hütte — the long valley walk</div>
+192|192|      <div class="day-detail">18km through wildflowers to a historic 1879 hut · steady, never steep</div>
+193|193|      <div class="day-food">🥮 Coffee & cake at Berliner Hütte · 🍽️ Perauer</div>
+194|194|    </div>
+195|195|    <div class="timeline-day">
+196|196|      <div class="day-name">Saturday, September 6</div>
+197|197|      <div class="day-activity">Hintertux Glacier — snow in summer</div>
+198|198|      <div class="day-detail">3 gondolas to 3,250m · walk on the glacier · works in any weather</div>
+199|199|      <div class="day-food">🥮 Strudel at Tuxer Fernerhaus · 🍽️ Self-cater</div>
+200|200|    </div>
+201|201|    <div class="timeline-day">
+202|202|      <div class="day-name">Sunday, September 7</div>
+203|203|      <div class="day-activity">Krimml Waterfalls — Europe's highest</div>
+204|204|      <div class="day-detail">Scenic drive over Gerlos Pass · walk up the waterfall path</div>
+205|205|      <div class="day-food">🥮 Strudel at Krimml café · 🍽️ Waldcafe</div>
+206|206|    </div>
+207|207|    <div class="timeline-day rest">
+208|208|      <div class="day-name">Monday, September 8 — Departure</div>
+209|209|      <div class="day-activity">Morning coffee in town, then head home</div>
+210|210|      <div class="day-food">☕ One last strudel at Café Tirol</div>
+211|211|    </div>
+212|212|  </div>
+213|213|</section>
+214|214|
 <section>
   <h2>Weather & What to Pack</h2>
   <div class="highlights">
@@ -221,31 +222,64 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#999;border-top:1px 
     <div class="highlight"><div class="icon">🌧️</div><h4>Rain possible</h4><p>We have backup plans for rainy days</p></div>
   </div>
   <p style="color:#666;font-size:.9rem;line-height:1.7">September in the Alps is beautiful but changeable. Mornings are usually clear — we'll start our hikes early. Afternoon rain is possible, so we always pack a rain shell. The Hintertux Glacier is our weather-proof backup: it works in any conditions.</p>
-</section>
-
-<section>
-  <h2>Where We're Staying</h2>
-  <div class="card">
-    <h3>Appartementhaus Adlerblick</h3>
-    <div class="desc">Three bedrooms, each with its own bathroom. Full kitchen (we'll cook most of our own meals). Central Mayrhofen — walking distance to supermarkets, cafes, and both gondola stations. Mountain views from the balcony.</div>
-    <div class="stats"><span class="stat">⭐ 9.4/10 rating</span><span class="stat">🛏️ 3 bedrooms</span><span class="stat">🍳 Full kitchen</span><span class="stat">📍 Town center</span></div>
+  <div style="margin-top:1rem">
+    <h3>What to Pack</h3>
+    <div class="highlights">
+      <div class="highlight"><div class="icon">🥾</div><h4>Hiking boots</h4><p>Sturdy, waterproof, broken in</p></div>
+      <div class="highlight"><div class="icon">🧥</div><h4>Rain shell & layers</h4><p>T-shirt + fleece + windbreaker</p></div>
+      <div class="highlight"><div class="icon">🧤</div><h4>Warm layer for glacier</h4><p>0°C at 3,250m — gloves help</p></div>
+      <div class="highlight"><div class="icon">🎒</div><h4>Daypack</h4><p>Water, snacks, sunscreen, camera</p></div>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Want More Detail?</h2>
-  <p style="color:#666;font-size:.9rem">We have detailed research reports with exact distances, elevations, reviews, and alternative plans.</p>
-  <div class="btn-row">
-    <a class="btn primary" href="mayrhofen-zillertal-2026-report.html">Full Research Report</a>
-    <a class="btn outline" href="mayrhofen-zillertal-2026-map.html">Interactive Trail Map</a>
+  <h2>Is It Safe? What If It Rains?</h2>
+  <p style="font-size:.95rem;color:#555;line-height:1.7">All our hikes are on well-marked, maintained trails. We use gondolas to skip the steepest sections — so we start each hike already high up, with less climbing. The hikes range from <strong>gentle valley walks</strong> to <strong>steady climbs</strong>. Only one day is more challenging (Olpererhütte), and even that is spread over 14 kilometers — a gradual climb, not a steep wall.</p>
+  <p style="font-size:.95rem;color:#555;line-height:1.7">We have a <strong>rain backup for every single day</strong>. The Hintertux Glacier works in any weather. Several waterfall trails are actually <em>better</em> in the rain. And we can swap days around — if Thursday is stormy, we do Thursday's hike on Saturday instead.</p>
+  <div class="highlights">
+    <div class="highlight"><div class="icon">✅</div><h4>Marked trails</h4><p>All official, maintained paths</p></div>
+    <div class="highlight"><div class="icon">🚡</div><h4>Gondola starts</h4><p>Skip the steep valley climbs</p></div>
+    <div class="highlight"><div class="icon">🌧️</div><h4>Rain backup daily</h4><p>Every day has a plan B</p></div>
+    <div class="highlight"><div class="icon">📱</div><h4>Offline maps</h4><p>Navigation works without signal</p></div>
   </div>
 </section>
 
-</div>
-
-<footer>
-  Mayrhofen 2026 · A hiking trip for 3 adults · All ☕🥮 daily
-</footer>
-
-</body>
-</html>
+<section>
+  <h2>Getting There & Budget</h2>
+  <div class="highlights">
+    <div class="highlight"><div class="icon">✈️</div><h4>Fly to Innsbruck, Munich, or Salzburg</h4><p>All within 1–2.5 hours drive to Mayrhofen</p></div>
+    <div class="highlight"><div class="icon">🚗</div><h4>Rent a car at the airport</h4><p>Needed for mountain roads & day trips</p></div>
+    <div class="highlight"><div class="icon">💰</div><h4>Budget: ~€1,200–€1,550 per person</h4><p>Covers accommodation, car, lifts, food for 9 days</p></div>
+    <div class="highlight"><div class="icon">🏠</div><h4>Self-catering apartment</h4><p>Full kitchen · supermarket 5 min walk</p></div>
+  </div>
+  <p style="font-size:.8rem;color:#888;margin-top:.5rem">Breakdown per person: accommodation €520–680 · car €300–400 · lift tickets €80–120 · tolls €40 · food €200–300 · entries €15</p>
+</section>
+225|225|
+226|226|<section>
+227|227|  <h2>Where We're Staying</h2>
+228|228|  <div class="card">
+229|229|    <h3>Appartementhaus Adlerblick</h3>
+230|230|    <div class="desc">Three bedrooms, each with its own bathroom. Full kitchen (we'll cook most of our own meals). Central Mayrhofen — walking distance to supermarkets, cafes, and both gondola stations. Mountain views from the balcony.</div>
+231|231|    <div class="stats"><span class="stat">⭐ 9.4/10 rating</span><span class="stat">🛏️ 3 bedrooms</span><span class="stat">🍳 Full kitchen</span><span class="stat">📍 Town center</span></div>
+232|232|  </div>
+233|233|</section>
+234|234|
+235|235|<section>
+236|236|  <h2>Want More Detail?</h2>
+237|237|  <p style="color:#666;font-size:.9rem">We have detailed research reports with exact distances, elevations, reviews, and alternative plans.</p>
+238|238|  <div class="btn-row">
+239|239|    <a class="btn primary" href="mayrhofen-zillertal-2026-report.html">Full Research Report</a>
+240|240|    <a class="btn outline" href="mayrhofen-zillertal-2026-map.html">Interactive Trail Map</a>
+241|241|  </div>
+242|242|</section>
+243|243|
+244|244|</div>
+245|245|
+246|246|<footer>
+247|247|  Mayrhofen 2026 · A hiking trip for 3 adults · All ☕🥮 daily
+248|248|</footer>
+249|249|
+250|250|</body>
+251|251|</html>
+252|252|
