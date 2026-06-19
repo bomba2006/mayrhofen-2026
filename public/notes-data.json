@@ -244,5 +244,72 @@
       "km": 18,
       "mpk": 33
     }
-  ]
+  ],
+  "professional_plans": {
+    "methodology": "Anchor activity + weather backup + strudel stop + dinner + energy level per day",
+    "rainy_day_bucket": [
+      {
+        "activity": "Hintertux Glacier",
+        "drive": "25min",
+        "cost": "gondola",
+        "indoor": "Mostly",
+        "vibe": "Snow, ice, gondola ride"
+      },
+      {
+        "activity": "BrauKunstHaus brewery",
+        "drive": "15min",
+        "cost": "\u20ac18 tour",
+        "indoor": "Yes",
+        "vibe": "520yr brewery, beer tasting"
+      },
+      {
+        "activity": "Arena Coaster",
+        "drive": "15min train",
+        "cost": "~\u20ac10-15",
+        "indoor": "Light rain OK",
+        "vibe": "Alpine toboggan"
+      },
+      {
+        "activity": "Krimml Waterfalls",
+        "drive": "1-1.5hr",
+        "cost": "\u20ac9",
+        "indoor": "Better in rain!",
+        "vibe": "Falls at max power"
+      },
+      {
+        "activity": "Stilluptal",
+        "drive": "5min",
+        "cost": "Free",
+        "indoor": "Light rain OK",
+        "vibe": "Waterfalls more dramatic"
+      },
+      {
+        "activity": "Town cafes + Perauer",
+        "drive": "Walk",
+        "cost": "~\u20ac15-25",
+        "indoor": "Yes",
+        "vibe": "Coffee, strudel, kaiserschmarrn"
+      }
+    ],
+    "pre_trip_checklist": [
+      "Book Appartementhaus Adlerblick (or Airbnb backup)",
+      "Book flights to Innsbruck/Munich/Salzburg",
+      "Rent car (needed for Schlegeis, Krimml, Wolfsklamm, High Road)",
+      "Download offline maps (OpenStreetMap/AllTrails)",
+      "Pack: rain shell, layers, hiking boots",
+      "Check Ahornbahn/Penkenbahn status week before",
+      "Arrive Olpererh\u00fctte parking before 8am",
+      "Stock up at MPREIS/BILLA Saturday (Sunday limited)"
+    ],
+    "budget_per_person": {
+      "accommodation": "\u20ac520-680",
+      "car_rental": "\u20ac300-400",
+      "lift_tickets": "\u20ac80-120",
+      "tolls": "\u20ac40",
+      "food": "\u20ac200-300",
+      "krimml": "\u20ac9",
+      "wolfsklamm": "\u20ac6",
+      "total": "\u20ac1,155-1,555"
+    }
+  }
 }
