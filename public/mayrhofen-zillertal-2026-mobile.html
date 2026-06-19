@@ -1,295 +1,294 @@
-1|1|<!DOCTYPE html>
-2|2|<html lang="en">
-3|3|<head>
-4|4|<meta charset="UTF-8">
-5|5|<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-6|6|<title>Mayrhofen 2026</title>
-7|7|<style>
-8|8|*{margin:0;padding:0;box-sizing:border-box}
-9|9|body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#fafafa;color:#1a1a1a;padding-bottom:80px}
-10|10|.header{background:linear-gradient(135deg,#e0793a,#c26a2e);color:#fff;padding:1.5rem 1rem 1.25rem;position:sticky;top:0;z-index:10}
-11|11|.header h1{font-size:1.3rem;font-weight:700}
-12|12|.header p{font-size:.75rem;opacity:.85;margin-top:.15rem}
-13|13|.header-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
-14|14|.header-row .chip{background:rgba(255,255,255,.2);padding:.2rem .55rem;border-radius:99px;font-size:.65rem;font-weight:500}
-15|15|/* Tabs */
-16|16|.tabs{display:flex;background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:116px;z-index:9;overflow-x:auto}
-17|17|.tab{padding:.6rem .9rem;font-size:.72rem;font-weight:600;color:#888;border:none;background:none;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
-18|18|.tab.active{color:#e0793a;border-bottom-color:#e0793a}
-19|19|/* Cards */
-20|20|.content{padding:.75rem}
-21|21|.card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:1rem;margin-bottom:.6rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-22|22|.card-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
-23|23|.card h3{font-size:.82rem;font-weight:700;color:#1a1a1a;line-height:1.3}
-24|24|.card .meta{font-size:.68rem;color:#888;margin-top:.15rem}
-25|25|.card .badge{font-size:.6rem;padding:2px 6px;border-radius:4px;font-weight:700;flex-shrink:0}
-26|26|.badge.t1{background:#fff5ed;color:#e0793a}.badge.t2{background:#e8f0fa;color:#4a90d9}
-27|27|.badge.st{background:#fef6ed;color:#d4851f}.badge.dv{background:#f0ebff;color:#8b5cf6}
-28|28|.card .stats{display:flex;gap:.75rem;margin-top:.4rem;flex-wrap:wrap}
-29|29|.card .stat{font-size:.65rem;color:#666}
-30|30|.card .stat strong{color:#1a1a1a;font-weight:600}
-31|31|.card .hut{font-size:.62rem;color:#2e8b57;margin-top:.3rem}
-32|32|/* Quick dash */
-33|33|.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem}
-34|34|.dash{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:.75rem;text-align:center}
-35|35|.dash .val{font-size:1.2rem;font-weight:700;color:#1a1a1a}
-36|36|.dash .lbl{font-size:.6rem;color:#999;text-transform:uppercase;letter-spacing:.03em;margin-top:.1rem}
-37|37|.dash .val.good{color:#2e8b57}.dash .val.warn{color:#d4851f}.dash .val.bad{color:#d14233}
-38|38|/* Plan cards */
-39|39|.plan-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:.75rem;margin-bottom:.5rem}
-40|40|.plan-card .plan-name{font-size:.78rem;font-weight:700;color:#1a1a1a;margin-bottom:.3rem}
-41|41|.plan-card .plan-days{display:flex;flex-direction:column;gap:.15rem}
-42|42|.plan-day{display:flex;justify-content:space-between;align-items:center;font-size:.65rem;padding:.25rem .4rem;border-radius:5px}
-43|43|.plan-day:nth-child(odd){background:#f8f8f8}
-44|44|.plan-day .dname{color:#333;font-weight:500;flex:1}
-45|45|.plan-day .dstat{color:#888;font-size:.6rem;text-align:right;flex-shrink:0;margin-left:.5rem}
-46|46|.plan-day.highlight{background:#fff5ed}
-47|47|/* Links */
-48|48|.link-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
-49|49|.ext-link{display:inline-flex;align-items:center;gap:.3rem;padding:.5rem .75rem;border-radius:8px;font-size:.68rem;font-weight:600;text-decoration:none;color:#fff}
-50|50|.ext-link.warm{background:#e0793a}
-51|51|.ext-link.dark{background:#1a1a2e;color:#e0e0e0}
-52|52|.ext-link.map{background:#4a90d9}
-53|53|.ext-link.notebook{background:#2e8b57}
-54|54|/* Section title */
-55|55|.section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#999;font-weight:700;margin:1rem 0 .4rem}
-56|56|/* Bottom nav */
-57|57|.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e8e8e8;display:flex;z-index:20}
-58|58|.bottom-nav a{flex:1;text-align:center;padding:.55rem .25rem;font-size:.6rem;color:#888;text-decoration:none;font-weight:500}
-59|59|.bottom-nav a.active{color:#e0793a}
-60|60|</style>
-61|61|</head>
-62|62|<body>
-63|63|
-64|64|<div class="header">
-65|65|  <h1>Mayrhofen 2026</h1>
-66|66|  <p>3 adults · Aug 31 – Sep 8 · Self-catering · ☕🥮 daily</p>
-67|67|  <div class="header-row">
-68|68|    <span class="chip">All lifts open</span><span class="chip">All huts open</span><span class="chip">No paragliding</span><span class="chip">Activcard: skip</span>
-69|69|  </div>
-70|70|</div>
-71|71|
-72|72|<div class="tabs">
-73|73|  <button class="tab active" onclick="switchTab('dash',this)">Home</button>
-74|74|  <button class="tab" onclick="switchTab('hikes',this)">Hikes</button>
-75|75|  <button class="tab" onclick="switchTab('plans',this)">Plans</button>
-76|76|  <button class="tab" onclick="switchTab('info',this)">Info</button>
-77|77|</div>
-78|78|
-79|79|<div class="content" id="content"></div>
-80|80|
-81|81|<div class="bottom-nav">
-82|82|  <a href="#" onclick="switchTab('dash',document.querySelector('.tab'))" class="active">🏠 Home</a>
-83|83|  <a href="#" onclick="switchTab('hikes',document.querySelectorAll('.tab')[1])">🥾 Hikes</a>
-84|84|  <a href="#" onclick="switchTab('plans',document.querySelectorAll('.tab')[2])">📋 Plans</a>
-85|85|  <a href="#" onclick="switchTab('info',document.querySelectorAll('.tab')[3])">ℹ️ Info</a>
-86|86|</div>
-87|87|
-88|88|<script>
-89|89|const hikes = [
-90|90|  {name:'Penken Panorama',tier:'t1',km:'8.7',gain:'300m',mpk:'35',time:'2.5-3h',hut:'Grillhofalm',hutAlt:'1,800m',desc:'360° circular. Lift-accessed. Gentle.'},
-91|91|  {name:'Stilluptal Waterfall',tier:'t1',km:'15.3',gain:'325m',mpk:'21',time:'5h',hut:'Stilluppe',hutAlt:'1,400m',desc:'Flattest hike. Valley of waterfalls. Boardwalks.'},
-92|92|  {name:'Ahorn High Walk',tier:'t1',km:'8',gain:'400m',mpk:'50',time:'3-4h',hut:'Edelhütte',hutAlt:'2,238m',desc:'Ahornbahn to Edelhütte. Strudel with summit views.'},
-93|93|  {name:'Berliner Hütte',tier:'t2',km:'18.3',gain:'854m',mpk:'47',time:'6.5-7h',hut:'Berliner Hütte',hutAlt:'2,042m',desc:'Gradual valley approach. Historic hut. Wildflowers.'},
-94|94|  {name:'Filzenkogel',tier:'t2',km:'7',gain:'350m',mpk:'50',time:'2-3h',hut:'Ahornhütte',hutAlt:'2,000m',desc:'Short summit. Spacer day.'},
-95|95|  {name:'Wolfsklamm Gorge',tier:'t2',km:'~3',gain:'200m',mpk:'stairs',time:'1.5-2h',hut:'Stans café',hutAlt:'',desc:'350 wooden steps. Waterfalls. €6.'},
-96|96|  {name:'Penken Ridge Ext',tier:'t2',km:'12',gain:'450m',mpk:'38',time:'3.5-4.5h',hut:'Grillhofalm',hutAlt:'1,800m',desc:'Extended ridge. Very gradual.'},
-97|97|  {name:'Olpererhütte Full',tier:'st',km:'13.8',gain:'876m',mpk:'63',time:'5.5h',hut:'Olpererhütte',hutAlt:'2,389m',desc:'#1 Zillertal hike. Bridge. Turquoise water.'},
-98|98|  {name:'Ahornspitze',tier:'st',km:'12.4',gain:'1000m',mpk:'81',time:'6-6.5h',hut:'Edelhütte',hutAlt:'2,238m',desc:'2,973m summit. Steep. Clear weather only.'},
-99|99|];
-100|100|
-101|101|const drives = [
-102|102|  {name:'Krimml Waterfalls',km:'4km walk',gain:'~350m',desc:'Europe\'s highest (385m). Boardwalk. Scenic drive via Gerlos.'},
-103|103|  {name:'Hintertux Glacier',km:'gondola',gain:'—',desc:'3,250m. Year-round snow. 3 gondolas up. Weather-proof.'},
-104|104|  {name:'Zillertal High Road',km:'50km drive',gain:'—',desc:'€10 toll. 2,020m. Austria\'s most beautiful alpine road.'},
-105|105|];
-106|106|
-107|107|const plans = [
-108|108|  {name:'Plan A — Balanced',highlight:[],days:[
-109|109|    ['Sun Aug 31','Penken Panorama','8.7km · 35m/km'],
-110|110|    ['Mon Sep 1','Filzenkogel','7km · 50m/km'],
-111|111|    ['Tue Sep 2','Stilluptal Full','15.3km · 21m/km'],
-112|112|    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
-113|113|    ['Thu Sep 4','Ahorn High Walk','8km · 50m/km'],
-114|114|    ['Fri Sep 5','Berliner Hütte','18.3km · 47m/km'],
-115|115|    ['Sat Sep 6','Hintertux Glacier','gondola'],
-116|116|    ['Sun Sep 7','Krimml Waterfalls','4km · scenic drive'],
-117|117|    ['Mon Sep 8','Departure','☕ Town café'],
-118|118|  ]},
-119|119|  {name:'Plan B — With Olpererhütte',highlight:[4],days:[
-120|120|    ['Sun Aug 31','Penken Panorama','8.7km · 35m/km'],
-121|121|    ['Mon Sep 1','Filzenkogel','7km · 50m/km'],
-122|122|    ['Tue Sep 2','Stilluptal (short)','7km · 61m/km'],
-123|123|    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
-124|124|    ['Thu Sep 4','Olpererhütte Full','13.8km · 63m/km'],
-125|125|    ['Fri Sep 5','Ahorn High Walk','8km · 50m/km'],
-126|126|    ['Sat Sep 6','Hintertux Glacier','gondola'],
-127|127|    ['Sun Sep 7','Krimml Waterfalls','4km'],
-128|128|    ['Mon Sep 8','Departure','☕ Town café'],
-129|129|  ]},
-130|130|  {name:'Plan C — Gorge Heavy',highlight:[],days:[
-131|131|    ['Sun Aug 31','Zemmbach + town','5km · flat'],
-132|132|    ['Mon Sep 1','Wolfsklamm Gorge','3km · stairs'],
-133|133|    ['Tue Sep 2','Penken Panorama','8.7km · 35m/km'],
-134|134|    ['Wed Sep 3','Stilluptal Full','15.3km · 21m/km'],
-135|135|    ['Thu Sep 4','Ahorn High Walk','8km · 50m/km'],
-136|136|    ['Fri Sep 5','Krimml Waterfalls','4km'],
-137|137|    ['Sat Sep 6','Berliner Hütte','18.3km · 47m/km'],
-138|138|    ['Sun Sep 7','Hintertux Glacier','gondola'],
-139|139|    ['Mon Sep 8','Departure','☕ Town café'],
-140|140|  ]},
-141|141|  {name:'Plan D — Relaxed',highlight:[],days:[
-142|142|    ['Sun Aug 31','Arrival + town','Rest'],
-143|143|    ['Mon Sep 1','Penken Panorama','8.7km · 35m/km'],
-144|144|    ['Tue Sep 2','Filzenkogel','7km · 50m/km'],
-145|145|    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
-146|146|    ['Thu Sep 4','Stilluptal Full','15.3km · 21m/km'],
-147|147|    ['Fri Sep 5','Ahorn High Walk','8km · 50m/km'],
-148|148|    ['Sat Sep 6','Hintertux Glacier','gondola'],
-149|149|    ['Sun Sep 7','Krimml Waterfalls','4km'],
-150|150|    ['Mon Sep 8','Departure','☕ Town café'],
-151|151|  ]},
-152|152|  {name:'Plan E — Weather-Flexible',highlight:[4],days:[
-153|153|    ['Sun Aug 31','Penken Panorama','35m/km · any non-storm'],
-154|154|    ['Mon Sep 1','Berliner Hütte','47m/km · any non-storm'],
-155|155|    ['Tue Sep 2','Wolfsklamm','dry preferred'],
-156|156|    ['Wed Sep 3','Ahorn High Walk','50m/km'],
-157|157|    ['Thu Sep 4','Olpererhütte Full','63m/km · partly cloudy OK'],
-158|158|    ['Fri Sep 5','Zillertal High Road','clear preferred'],
-159|159|    ['Sat Sep 6','Stilluptal Full','21m/km · light rain OK'],
-160|160|    ['Sun Sep 7','Krimml','any non-storm'],
-161|161|    ['Mon Sep 8','Hintertux','ANY WEATHER'],
-162|162|  ]},
-163|163|];
-164|164|
-165|165|function renderDash(){
-166|166|  return `
-167|167|    <div class="dash-grid">
-168|168|      <div class="dash"><div class="val good">All Open</div><div class="lbl">Cable Cars</div></div>
-169|169|      <div class="dash"><div class="val good">All Open</div><div class="lbl">Mountain Huts</div></div>
-170|170|      <div class="dash"><div class="val warn">Dropping</div><div class="lbl">Crowds (Sep 1+)</div></div>
-171|171|      <div class="dash"><div class="val bad">Skip</div><div class="lbl">Activcard (€412 vs €252)</div></div>
-172|172|      <div class="dash"><div class="val">12</div><div class="lbl">Hikes Profiled</div></div>
-173|173|      <div class="dash"><div class="val">5</div><div class="lbl">Day Plans</div></div>
-174|174|      <div class="dash"><div class="val">☕🥮</div><div class="lbl">Coffee+Strudel Daily</div></div>
-175|175|      <div class="dash"><div class="val">3</div><div class="lbl">Adults · Self-Catering</div></div>
-176|176|    </div>
-177|177|    <div class="section-title">Quick Links</div>
-178|178|    <div class="link-row">
-179|179|      <a class="ext-link warm" href="mayrhofen-zillertal-2026-report.html">📊 Full Report</a>
-180|180|      <a class="ext-link dark" href="mayrhofen-zillertal-2026-linear.html">🌙 Dark Report</a>
-181|181|      <a class="ext-link map" href="mayrhofen-zillertal-2026-map.html">🗺️ Trail Map</a>
-182|182|      <a class="ext-link notebook" href="http://100.114.95.25:5055">📓 Notebook</a>
-183|183|    </div>
-184|184|    <div class="section-title">Weather</div>
-185|185|    <div class="card"><div class="stats">
-186|186|      <div class="stat">Town <strong>18-22°</strong></div>
-187|187|      <div class="stat">Penken/Ahorn <strong>10-16°</strong></div>
-188|188|      <div class="stat">Olperer <strong>5-13°</strong></div>
-189|189|      <div class="stat">Glacier <strong>0-8°</strong></div>
-190|190|    </div></div>
-191|191|    <div class="section-title">Accommodation</div>
-192|192|    <div class="card"><h3>Appartementhaus Adlerblick</h3><div class="meta">9.4/10 · 3 rooms · Full kitchen · Central · ~€130-170/night</div></div>
-193|193|    <div class="section-title">Supermarkets</div>
-194|194|    <div class="card"><div class="stats">
-195|195|      <div class="stat">MPREIS <strong>Sun open</strong></div>
-196|196|      <div class="stat">BILLA <strong>Sun 1-6pm</strong></div>
-197|197|      <div class="stat">SPAR <strong>Sun closed</strong></div>
-198|198|    </div></div>
-199|199|  `;
-200|200|}
-201|201|
-202|202|function renderHikes(){
-203|203|  let h = '<div class="section-title">🥾 Tier 1</div>';
-204|204|  hikes.filter(r=>r.tier==='t1').forEach(r=>{
-205|205|    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge t1">T1</span></div>
-206|206|    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
-207|207|    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
-208|208|  });
-209|209|  h += '<div class="section-title">🥾 Tier 2</div>';
-210|210|  hikes.filter(r=>r.tier==='t2').forEach(r=>{
-211|211|    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge t2">T2</span></div>
-212|212|    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
-213|213|    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
-214|214|  });
-215|215|  h += '<div class="section-title">🥾 Stretch</div>';
-216|216|  hikes.filter(r=>r.tier==='st').forEach(r=>{
-217|217|    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge st">STR</span></div>
-218|218|    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
-219|219|    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
-220|220|  });
-221|221|  h += '<div class="section-title">🚗 Destinations & Drives</div>';
-222|222|  drives.forEach(d=>{
-223|223|    h+=`<div class="card"><div class="card-row"><h3>${d.name}</h3><span class="badge dv">DRV</span></div>
-224|224|    <div class="stats"><div class="stat">📏 <strong>${d.km}</strong></div><div class="stat">📈 <strong>${d.gain}</strong></div></div>
-225|225|    <div class="meta">${d.desc}</div></div>`;
-226|226|  });
-227|227|  return h;
-228|228|}
-229|229|
-230|230|function renderPlans(){
-231|231|  let h = '';
-232|232|  plans.forEach((p,i)=>{
-233|233|    h += `<div class="plan-card"><div class="plan-name">${p.name}</div><div class="plan-days">`;
-234|234|    p.days.forEach((d,di)=>{
-235|235|      const hl = p.highlight && p.highlight.includes(di);
-236|236|      h += `<div class="plan-day${hl?' highlight':''}"><span class="dname"><strong>${d[0]}</strong> · ${d[1]}</span><span class="dstat">${d[2]}</span></div>`;
-237|237|    });
-238|238|    h += '</div></div>';
-239|239|  });
-240|240|  return h;
-241|241|}
-242|242|
-243|243|function renderInfo(){
-244|244|  return `
-245|245|    <div class="section-title">Cable Cars (2026 dates)</div>
-246|246|    <div class="card"><div class="stats">
-247|247|      <div class="stat">Penkenbahn <strong>23 May – 4 Oct</strong></div>
-248|248|      <div class="stat">Ahornbahn <strong>13 Jun – 27 Sep</strong></div>
-249|249|      <div class="stat">Kombibahn <strong>13 Jun – 31 Oct</strong></div>
-250|250|    </div></div>
-251|251|    <div class="section-title">Restaurants</div>
-252|252|    <div class="card"><div class="stats">
-253|253|      <div class="stat">🥇 <strong>Gasthof Perauer</strong> 4.6★</div>
-254|254|      <div class="stat">🥈 <strong>Waldcafe</strong> casual</div>
-255|255|      <div class="stat">🥉 <strong>Goldkind</strong> special</div>
-256|256|      <div class="stat">🍖 <strong>Gasser Metzgerei</strong> trail supplies</div>
-257|257|    </div></div>
-258|258|    <div class="section-title">Strudel Stops</div>
-259|259|    <div class="card"><div class="stats">
-260|260|      <div class="stat">Penken <strong>Grillhofalm</strong></div>
-261|261|      <div class="stat">Ahorn <strong>Edelhütte</strong></div>
-262|262|      <div class="stat">Olperer <strong>Olpererhütte</strong></div>
-263|263|      <div class="stat">Zemmgrund <strong>Berliner Hütte</strong></div>
-264|264|      <div class="stat">Glacier <strong>Tuxer Fernerhaus</strong></div>
-265|265|      <div class="stat">Town <strong>Café Tirol / Perauer</strong></div>
-266|266|    </div></div>
-267|267|    <div class="section-title">Event</div>
-268|268|    <div class="card"><h3>Mountopolis Vertical</h3><div class="meta">Sep 5 · 8.5km trail race on Penken · possible congestion</div></div>
-269|269|    <div class="section-title">Gain/km Reference</div>
-270|270|    <div class="card"><div class="stats">
-271|271|      <div class="stat">Salzburg Days 2-9 <strong>33-50m/km ✅</strong></div>
-272|272|      <div class="stat">Berliner Hütte <strong>47m/km ✅</strong></div>
-273|273|      <div class="stat">Olpererhütte Full <strong>63m/km · stretch</strong></div>
-274|274|    </div></div>
-275|275|  `;
-276|276|}
-277|277|
-278|278|function switchTab(tab,btn){
-279|279|  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-280|280|  document.querySelectorAll('.bottom-nav a').forEach((a,i)=>{
-281|281|    a.classList.toggle('active', (tab==='dash'&&i===0)||(tab==='hikes'&&i===1)||(tab==='plans'&&i===2)||(tab==='info'&&i===3));
-282|282|  });
-283|283|  btn.classList.add('active');
-284|284|  const content = document.getElementById('content');
-285|285|  if(tab==='dash') content.innerHTML = renderDash();
-286|286|  else if(tab==='hikes') content.innerHTML = renderHikes();
-287|287|  else if(tab==='plans') content.innerHTML = renderPlans();
-288|288|  else content.innerHTML = renderInfo();
-289|289|}
-290|290|
-291|291|switchTab('dash', document.querySelector('.tab'));
-292|292|</script>
-293|293|</body>
-294|294|</html>
-295|295|
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Mayrhofen 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#fafafa;color:#1a1a1a;padding-bottom:80px}
+.header{background:linear-gradient(135deg,#e0793a,#c26a2e);color:#fff;padding:1.5rem 1rem 1.25rem;position:sticky;top:0;z-index:10}
+.header h1{font-size:1.3rem;font-weight:700}
+.header p{font-size:.75rem;opacity:.85;margin-top:.15rem}
+.header-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.header-row .chip{background:rgba(255,255,255,.2);padding:.2rem .55rem;border-radius:99px;font-size:.65rem;font-weight:500}
+/* Tabs */
+.tabs{display:flex;background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:116px;z-index:9;overflow-x:auto}
+.tab{padding:.6rem .9rem;font-size:.72rem;font-weight:600;color:#888;border:none;background:none;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+.tab.active{color:#e0793a;border-bottom-color:#e0793a}
+/* Cards */
+.content{padding:.75rem}
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:1rem;margin-bottom:.6rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.card h3{font-size:.82rem;font-weight:700;color:#1a1a1a;line-height:1.3}
+.card .meta{font-size:.68rem;color:#888;margin-top:.15rem}
+.card .badge{font-size:.6rem;padding:2px 6px;border-radius:4px;font-weight:700;flex-shrink:0}
+.badge.t1{background:#fff5ed;color:#e0793a}.badge.t2{background:#e8f0fa;color:#4a90d9}
+.badge.st{background:#fef6ed;color:#d4851f}.badge.dv{background:#f0ebff;color:#8b5cf6}
+.card .stats{display:flex;gap:.75rem;margin-top:.4rem;flex-wrap:wrap}
+.card .stat{font-size:.65rem;color:#666}
+.card .stat strong{color:#1a1a1a;font-weight:600}
+.card .hut{font-size:.62rem;color:#2e8b57;margin-top:.3rem}
+/* Quick dash */
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem}
+.dash{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:.75rem;text-align:center}
+.dash .val{font-size:1.2rem;font-weight:700;color:#1a1a1a}
+.dash .lbl{font-size:.6rem;color:#999;text-transform:uppercase;letter-spacing:.03em;margin-top:.1rem}
+.dash .val.good{color:#2e8b57}.dash .val.warn{color:#d4851f}.dash .val.bad{color:#d14233}
+/* Plan cards */
+.plan-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:.75rem;margin-bottom:.5rem}
+.plan-card .plan-name{font-size:.78rem;font-weight:700;color:#1a1a1a;margin-bottom:.3rem}
+.plan-card .plan-days{display:flex;flex-direction:column;gap:.15rem}
+.plan-day{display:flex;justify-content:space-between;align-items:center;font-size:.65rem;padding:.25rem .4rem;border-radius:5px}
+.plan-day:nth-child(odd){background:#f8f8f8}
+.plan-day .dname{color:#333;font-weight:500;flex:1}
+.plan-day .dstat{color:#888;font-size:.6rem;text-align:right;flex-shrink:0;margin-left:.5rem}
+.plan-day.highlight{background:#fff5ed}
+/* Links */
+.link-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.ext-link{display:inline-flex;align-items:center;gap:.3rem;padding:.5rem .75rem;border-radius:8px;font-size:.68rem;font-weight:600;text-decoration:none;color:#fff}
+.ext-link.warm{background:#e0793a}
+.ext-link.dark{background:#1a1a2e;color:#e0e0e0}
+.ext-link.map{background:#4a90d9}
+.ext-link.notebook{background:#2e8b57}
+/* Section title */
+.section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#999;font-weight:700;margin:1rem 0 .4rem}
+/* Bottom nav */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e8e8e8;display:flex;z-index:20}
+.bottom-nav a{flex:1;text-align:center;padding:.55rem .25rem;font-size:.6rem;color:#888;text-decoration:none;font-weight:500}
+.bottom-nav a.active{color:#e0793a}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Mayrhofen 2026</h1>
+  <p>3 adults · Aug 31 – Sep 8 · Self-catering · ☕🥮 daily</p>
+  <div class="header-row">
+    <span class="chip">All lifts open</span><span class="chip">All huts open</span><span class="chip">No paragliding</span><span class="chip">Activcard: skip</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('dash',this)">Home</button>
+  <button class="tab" onclick="switchTab('hikes',this)">Hikes</button>
+  <button class="tab" onclick="switchTab('plans',this)">Plans</button>
+  <button class="tab" onclick="switchTab('info',this)">Info</button>
+</div>
+
+<div class="content" id="content"></div>
+
+<div class="bottom-nav">
+  <a href="#" onclick="switchTab('dash',document.querySelector('.tab'))" class="active">🏠 Home</a>
+  <a href="#" onclick="switchTab('hikes',document.querySelectorAll('.tab')[1])">🥾 Hikes</a>
+  <a href="#" onclick="switchTab('plans',document.querySelectorAll('.tab')[2])">📋 Plans</a>
+  <a href="#" onclick="switchTab('info',document.querySelectorAll('.tab')[3])">ℹ️ Info</a>
+</div>
+
+<script>
+const hikes = [
+  {name:'Penken Panorama',tier:'t1',km:'8.7',gain:'300m',mpk:'35',time:'2.5-3h',hut:'Grillhofalm',hutAlt:'1,800m',desc:'360° circular. Lift-accessed. Gentle.'},
+  {name:'Stilluptal Waterfall',tier:'t1',km:'15.3',gain:'325m',mpk:'21',time:'5h',hut:'Stilluppe',hutAlt:'1,400m',desc:'Flattest hike. Valley of waterfalls. Boardwalks.'},
+  {name:'Ahorn High Walk',tier:'t1',km:'8',gain:'400m',mpk:'50',time:'3-4h',hut:'Edelhütte',hutAlt:'2,238m',desc:'Ahornbahn to Edelhütte. Strudel with summit views.'},
+  {name:'Berliner Hütte',tier:'t2',km:'18.3',gain:'854m',mpk:'47',time:'6.5-7h',hut:'Berliner Hütte',hutAlt:'2,042m',desc:'Gradual valley approach. Historic hut. Wildflowers.'},
+  {name:'Filzenkogel',tier:'t2',km:'7',gain:'350m',mpk:'50',time:'2-3h',hut:'Ahornhütte',hutAlt:'2,000m',desc:'Short summit. Spacer day.'},
+  {name:'Wolfsklamm Gorge',tier:'t2',km:'~3',gain:'200m',mpk:'stairs',time:'1.5-2h',hut:'Stans café',hutAlt:'',desc:'350 wooden steps. Waterfalls. €6.'},
+  {name:'Penken Ridge Ext',tier:'t2',km:'12',gain:'450m',mpk:'38',time:'3.5-4.5h',hut:'Grillhofalm',hutAlt:'1,800m',desc:'Extended ridge. Very gradual.'},
+  {name:'Olpererhütte Full',tier:'st',km:'13.8',gain:'876m',mpk:'63',time:'5.5h',hut:'Olpererhütte',hutAlt:'2,389m',desc:'#1 Zillertal hike. Bridge. Turquoise water.'},
+  {name:'Ahornspitze',tier:'st',km:'12.4',gain:'1000m',mpk:'81',time:'6-6.5h',hut:'Edelhütte',hutAlt:'2,238m',desc:'2,973m summit. Steep. Clear weather only.'},
+];
+
+const drives = [
+  {name:'Krimml Waterfalls',km:'4km walk',gain:'~350m',desc:'Europe\'s highest (385m). Boardwalk. Scenic drive via Gerlos.'},
+  {name:'Hintertux Glacier',km:'gondola',gain:'—',desc:'3,250m. Year-round snow. 3 gondolas up. Weather-proof.'},
+  {name:'Zillertal High Road',km:'50km drive',gain:'—',desc:'€10 toll. 2,020m. Austria\'s most beautiful alpine road.'},
+];
+
+const plans = [
+  {name:'Plan A — Balanced',highlight:[],days:[
+    ['Sun Aug 31','Penken Panorama','8.7km · 35m/km'],
+    ['Mon Sep 1','Filzenkogel','7km · 50m/km'],
+    ['Tue Sep 2','Stilluptal Full','15.3km · 21m/km'],
+    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
+    ['Thu Sep 4','Ahorn High Walk','8km · 50m/km'],
+    ['Fri Sep 5','Berliner Hütte','18.3km · 47m/km'],
+    ['Sat Sep 6','Hintertux Glacier','gondola'],
+    ['Sun Sep 7','Krimml Waterfalls','4km · scenic drive'],
+    ['Mon Sep 8','Departure','☕ Town café'],
+  ]},
+  {name:'Plan B — With Olpererhütte',highlight:[4],days:[
+    ['Sun Aug 31','Penken Panorama','8.7km · 35m/km'],
+    ['Mon Sep 1','Filzenkogel','7km · 50m/km'],
+    ['Tue Sep 2','Stilluptal (short)','7km · 61m/km'],
+    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
+    ['Thu Sep 4','Olpererhütte Full','13.8km · 63m/km'],
+    ['Fri Sep 5','Ahorn High Walk','8km · 50m/km'],
+    ['Sat Sep 6','Hintertux Glacier','gondola'],
+    ['Sun Sep 7','Krimml Waterfalls','4km'],
+    ['Mon Sep 8','Departure','☕ Town café'],
+  ]},
+  {name:'Plan C — Gorge Heavy',highlight:[],days:[
+    ['Sun Aug 31','Zemmbach + town','5km · flat'],
+    ['Mon Sep 1','Wolfsklamm Gorge','3km · stairs'],
+    ['Tue Sep 2','Penken Panorama','8.7km · 35m/km'],
+    ['Wed Sep 3','Stilluptal Full','15.3km · 21m/km'],
+    ['Thu Sep 4','Ahorn High Walk','8km · 50m/km'],
+    ['Fri Sep 5','Krimml Waterfalls','4km'],
+    ['Sat Sep 6','Berliner Hütte','18.3km · 47m/km'],
+    ['Sun Sep 7','Hintertux Glacier','gondola'],
+    ['Mon Sep 8','Departure','☕ Town café'],
+  ]},
+  {name:'Plan D — Relaxed',highlight:[],days:[
+    ['Sun Aug 31','Arrival + town','Rest'],
+    ['Mon Sep 1','Penken Panorama','8.7km · 35m/km'],
+    ['Tue Sep 2','Filzenkogel','7km · 50m/km'],
+    ['Wed Sep 3','Wolfsklamm + High Road','3km + drive'],
+    ['Thu Sep 4','Stilluptal Full','15.3km · 21m/km'],
+    ['Fri Sep 5','Ahorn High Walk','8km · 50m/km'],
+    ['Sat Sep 6','Hintertux Glacier','gondola'],
+    ['Sun Sep 7','Krimml Waterfalls','4km'],
+    ['Mon Sep 8','Departure','☕ Town café'],
+  ]},
+  {name:'Plan E — Weather-Flexible',highlight:[4],days:[
+    ['Sun Aug 31','Penken Panorama','35m/km · any non-storm'],
+    ['Mon Sep 1','Berliner Hütte','47m/km · any non-storm'],
+    ['Tue Sep 2','Wolfsklamm','dry preferred'],
+    ['Wed Sep 3','Ahorn High Walk','50m/km'],
+    ['Thu Sep 4','Olpererhütte Full','63m/km · partly cloudy OK'],
+    ['Fri Sep 5','Zillertal High Road','clear preferred'],
+    ['Sat Sep 6','Stilluptal Full','21m/km · light rain OK'],
+    ['Sun Sep 7','Krimml','any non-storm'],
+    ['Mon Sep 8','Hintertux','ANY WEATHER'],
+  ]},
+];
+
+function renderDash(){
+  return `
+    <div class="dash-grid">
+      <div class="dash"><div class="val good">All Open</div><div class="lbl">Cable Cars</div></div>
+      <div class="dash"><div class="val good">All Open</div><div class="lbl">Mountain Huts</div></div>
+      <div class="dash"><div class="val warn">Dropping</div><div class="lbl">Crowds (Sep 1+)</div></div>
+      <div class="dash"><div class="val bad">Skip</div><div class="lbl">Activcard (€412 vs €252)</div></div>
+      <div class="dash"><div class="val">12</div><div class="lbl">Hikes Profiled</div></div>
+      <div class="dash"><div class="val">5</div><div class="lbl">Day Plans</div></div>
+      <div class="dash"><div class="val">☕🥮</div><div class="lbl">Coffee+Strudel Daily</div></div>
+      <div class="dash"><div class="val">3</div><div class="lbl">Adults · Self-Catering</div></div>
+    </div>
+    <div class="section-title">Quick Links</div>
+    <div class="link-row">
+      <a class="ext-link warm" href="mayrhofen-zillertal-2026-report.html">📊 Full Report</a>
+      <a class="ext-link dark" href="mayrhofen-zillertal-2026-linear.html">🌙 Dark Report</a>
+      <a class="ext-link map" href="mayrhofen-zillertal-2026-map.html">🗺️ Trail Map</a>
+      <a class="ext-link notebook" href="http://100.114.95.25:5055">📓 Notebook</a>
+    </div>
+    <div class="section-title">Weather</div>
+    <div class="card"><div class="stats">
+      <div class="stat">Town <strong>18-22°</strong></div>
+      <div class="stat">Penken/Ahorn <strong>10-16°</strong></div>
+      <div class="stat">Olperer <strong>5-13°</strong></div>
+      <div class="stat">Glacier <strong>0-8°</strong></div>
+    </div></div>
+    <div class="section-title">Accommodation</div>
+    <div class="card"><h3>Appartementhaus Adlerblick</h3><div class="meta">9.4/10 · 3 rooms · Full kitchen · Central · ~€130-170/night</div></div>
+    <div class="section-title">Supermarkets</div>
+    <div class="card"><div class="stats">
+      <div class="stat">MPREIS <strong>Sun open</strong></div>
+      <div class="stat">BILLA <strong>Sun 1-6pm</strong></div>
+      <div class="stat">SPAR <strong>Sun closed</strong></div>
+    </div></div>
+  `;
+}
+
+function renderHikes(){
+  let h = '<div class="section-title">🥾 Tier 1</div>';
+  hikes.filter(r=>r.tier==='t1').forEach(r=>{
+    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge t1">T1</span></div>
+    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
+    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
+  });
+  h += '<div class="section-title">🥾 Tier 2</div>';
+  hikes.filter(r=>r.tier==='t2').forEach(r=>{
+    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge t2">T2</span></div>
+    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
+    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
+  });
+  h += '<div class="section-title">🥾 Stretch</div>';
+  hikes.filter(r=>r.tier==='st').forEach(r=>{
+    h+=`<div class="card"><div class="card-row"><h3>${r.name}</h3><span class="badge st">STR</span></div>
+    <div class="stats"><div class="stat">📏 <strong>${r.km}km</strong></div><div class="stat">📈 <strong>${r.gain}</strong></div><div class="stat">⚡ <strong>${r.mpk}m/km</strong></div><div class="stat">⏱ <strong>${r.time}</strong></div></div>
+    <div class="meta">${r.desc}</div><div class="hut">☕🥮 ${r.hut}${r.hutAlt?' · '+r.hutAlt:''}</div></div>`;
+  });
+  h += '<div class="section-title">🚗 Destinations & Drives</div>';
+  drives.forEach(d=>{
+    h+=`<div class="card"><div class="card-row"><h3>${d.name}</h3><span class="badge dv">DRV</span></div>
+    <div class="stats"><div class="stat">📏 <strong>${d.km}</strong></div><div class="stat">📈 <strong>${d.gain}</strong></div></div>
+    <div class="meta">${d.desc}</div></div>`;
+  });
+  return h;
+}
+
+function renderPlans(){
+  let h = '';
+  plans.forEach((p,i)=>{
+    h += `<div class="plan-card"><div class="plan-name">${p.name}</div><div class="plan-days">`;
+    p.days.forEach((d,di)=>{
+      const hl = p.highlight && p.highlight.includes(di);
+      h += `<div class="plan-day${hl?' highlight':''}"><span class="dname"><strong>${d[0]}</strong> · ${d[1]}</span><span class="dstat">${d[2]}</span></div>`;
+    });
+    h += '</div></div>';
+  });
+  return h;
+}
+
+function renderInfo(){
+  return `
+    <div class="section-title">Cable Cars (2026 dates)</div>
+    <div class="card"><div class="stats">
+      <div class="stat">Penkenbahn <strong>23 May – 4 Oct</strong></div>
+      <div class="stat">Ahornbahn <strong>13 Jun – 27 Sep</strong></div>
+      <div class="stat">Kombibahn <strong>13 Jun – 31 Oct</strong></div>
+    </div></div>
+    <div class="section-title">Restaurants</div>
+    <div class="card"><div class="stats">
+      <div class="stat">🥇 <strong>Gasthof Perauer</strong> 4.6★</div>
+      <div class="stat">🥈 <strong>Waldcafe</strong> casual</div>
+      <div class="stat">🥉 <strong>Goldkind</strong> special</div>
+      <div class="stat">🍖 <strong>Gasser Metzgerei</strong> trail supplies</div>
+    </div></div>
+    <div class="section-title">Strudel Stops</div>
+    <div class="card"><div class="stats">
+      <div class="stat">Penken <strong>Grillhofalm</strong></div>
+      <div class="stat">Ahorn <strong>Edelhütte</strong></div>
+      <div class="stat">Olperer <strong>Olpererhütte</strong></div>
+      <div class="stat">Zemmgrund <strong>Berliner Hütte</strong></div>
+      <div class="stat">Glacier <strong>Tuxer Fernerhaus</strong></div>
+      <div class="stat">Town <strong>Café Tirol / Perauer</strong></div>
+    </div></div>
+    <div class="section-title">Event</div>
+    <div class="card"><h3>Mountopolis Vertical</h3><div class="meta">Sep 5 · 8.5km trail race on Penken · possible congestion</div></div>
+    <div class="section-title">Gain/km Reference</div>
+    <div class="card"><div class="stats">
+      <div class="stat">Salzburg Days 2-9 <strong>33-50m/km ✅</strong></div>
+      <div class="stat">Berliner Hütte <strong>47m/km ✅</strong></div>
+      <div class="stat">Olpererhütte Full <strong>63m/km · stretch</strong></div>
+    </div></div>
+  `;
+}
+
+function switchTab(tab,btn){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.bottom-nav a').forEach((a,i)=>{
+    a.classList.toggle('active', (tab==='dash'&&i===0)||(tab==='hikes'&&i===1)||(tab==='plans'&&i===2)||(tab==='info'&&i===3));
+  });
+  btn.classList.add('active');
+  const content = document.getElementById('content');
+  if(tab==='dash') content.innerHTML = renderDash();
+  else if(tab==='hikes') content.innerHTML = renderHikes();
+  else if(tab==='plans') content.innerHTML = renderPlans();
+  else content.innerHTML = renderInfo();
+}
+
+switchTab('dash', document.querySelector('.tab'));
+</script>
+</body>
+</html>
