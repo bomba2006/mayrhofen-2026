@@ -2,388 +2,706 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mayrhofen 2026 · Hiking Trip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayrhofen 2026 — Complete Travel Guide</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--green:#4a7a4a;--orange:#e0793a;--cream:#fdfaf5;--gray:#666;--light:#e8e0d8}
-body{font-family:Georgia,serif;background:var(--cream);color:#2d2d2d;line-height:1.7}
-nav{position:sticky;top:0;z-index:100;background:rgba(253,250,245,.95);border-bottom:1px solid var(--light);padding:.5rem 1rem;display:flex;gap:.5rem;overflow-x:auto;white-space:nowrap}
-nav a{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:600;color:#888;text-decoration:none;padding:.3rem .5rem;border-radius:4px}
-nav a:hover,nav a.active{color:var(--green);background:#eff5ea}
-.hero{background:linear-gradient(135deg,#3a5a3a,#5a7a4a);color:#fff;padding:3rem 1.5rem 2.5rem;text-align:center}
-.hero h1{font-size:2.2rem;font-weight:400;letter-spacing:-.01em}
-.hero .sub{font-size:1rem;opacity:.85;font-style:italic;margin-top:.3rem}
-.hero .meta{font-size:.8rem;opacity:.65;margin-top:.5rem}
-.hero-links{display:flex;gap:.5rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
-.hero-links a{padding:.4rem .8rem;border-radius:6px;font-size:.7rem;font-weight:600;text-decoration:none;font-family:system-ui,sans-serif}
-.hl-report{background:rgba(255,255,255,.2);color:#fff}
-.hl-map{background:rgba(255,255,255,.2);color:#fff}
-.hl-evidence{background:rgba(255,255,255,.15);color:#fff}
-.container{max-width:860px;margin:0 auto;padding:0 1.2rem}
-section{padding:2rem 0}
-h2{font-size:1.4rem;font-weight:400;color:var(--green);margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--light)}
-h3{font-size:1rem;font-weight:400;color:#4a6a4a;margin:1.2rem 0 .5rem}
-p{font-size:.92rem;color:#555;margin-bottom:.6rem;line-height:1.7}
-/* Cards with expand */
-.card{background:#fff;border:1px solid var(--light);border-radius:8px;padding:1rem;margin-bottom:.6rem;cursor:pointer;transition:box-shadow .2s}
-.card:hover{box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
-.card-title{font-size:.9rem;font-weight:700;color:#2d2d2d}
-.card-tags{display:flex;gap:.3rem;flex-shrink:0;flex-wrap:wrap}
-.tag{font-size:.6rem;padding:2px 7px;border-radius:3px;font-weight:700;text-transform:uppercase;font-family:system-ui,sans-serif}
-.tag.green{background:#e8f0e0;color:#4a7a4a}.tag.amber{background:#fdf0e0;color:#b87830}
-.tag.red{background:#fde8e8;color:#b84040}.tag.purple{background:#e8e8f8;color:#5050a0}
-.card-summary{font-size:.8rem;color:#888;margin-top:.3rem;line-height:1.5}
-.card-expand{display:none;margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--light)}
-.card.expanded .card-expand{display:block}
-.card-toggle{font-size:.65rem;color:var(--green);font-family:system-ui,sans-serif;font-weight:600;margin-top:.4rem}
-.card.expanded .card-toggle::after{content:' ▲ Hide'}
-.card-toggle::after{content:' ▼ More'}
-.card-stats{display:flex;gap:.8rem;flex-wrap:wrap;margin:.4rem 0}
-.card-stats .st{font-size:.7rem;color:#666}.card-stats .st b{color:#2d2d2d}
-.card-detail{font-size:.78rem;color:#555;line-height:1.6;margin:.3rem 0}
-.card-hut{font-size:.72rem;color:#8a6030;font-style:italic}
-.evidence-table{width:100%;font-size:.72rem;border-collapse:collapse;margin:.5rem 0;font-family:system-ui,sans-serif}
-.evidence-table th{background:#eff5ea;padding:.3rem;text-align:left}
-.evidence-table td{padding:.25rem .3rem;border-bottom:1px solid #f0f0f0}
-.evidence-table tr:nth-child(even){background:#fafafa}
-.source{font-size:.7rem;color:#999}
-/* Timeline */
-.timeline{position:relative;padding-left:1.5rem}
-.timeline::before{content:'';position:absolute;left:.4rem;top:0;bottom:0;width:1px;background:var(--light)}
-.tm-day{position:relative;margin-bottom:1rem;padding-left:1rem}
-.tm-day::before{content:'';position:absolute;left:-1.6rem;top:.3rem;width:8px;height:8px;border-radius:50%;background:var(--green);border:2px solid var(--cream)}
-.tm-day .dname{font-weight:600;font-size:.85rem;color:#3a5a3a}
-.tm-day .dact{font-size:.78rem;color:#555}
-.tm-day .ddet{font-size:.7rem;color:#888}
-.tm-day .dfood{font-size:.65rem;color:#8a6030;font-style:italic}
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}
-.highlight{background:#fff;border:1px solid var(--light);border-radius:6px;padding:1rem;text-align:center}
-.highlight .icon{font-size:1.8rem;margin-bottom:.3rem}
-.highlight h4{font-size:.8rem;color:var(--green);font-weight:400}
-.highlight p{font-size:.7rem;color:#888}
-footer{text-align:center;padding:2rem;font-size:.7rem;color:#999;border-top:1px solid var(--light)}
-@media(max-width:500px){.hero h1{font-size:1.6rem}.hero{padding:2rem 1rem}}
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --border: #dee2e6;
+  --accent: #2b7a4b;
+  --accent-light: #e8f5e9;
+  --warn-bg: #fff8e1;
+  --warn-border: #ffc107;
+  --danger-bg: #ffebee;
+  --danger-border: #ef5350;
+  --star: #f59e0b;
+  --sidebar-bg: #1a1a2e;
+  --sidebar-text: #e0e0e0;
+  --sidebar-hover: #2d2d44;
+  --sidebar-active: #2b7a4b;
+  --code-bg: #f1f3f4;
+  --max-width: 900px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; display: flex; min-height: 100vh; }
+.sidebar { width: 280px; background: var(--sidebar-bg); color: var(--sidebar-text); position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; padding: 1.5rem; z-index: 100; font-size: 0.88rem; }
+.sidebar h1 { font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; line-height: 1.3; }
+.sidebar .dates { color: #8ab4a0; font-size: 0.8rem; margin-bottom: 1.5rem; }
+.sidebar nav a { display: block; color: var(--sidebar-text); text-decoration: none; padding: 0.35rem 0.5rem; border-radius: 4px; margin-bottom: 1px; transition: background 0.15s; }
+.sidebar nav a:hover { background: var(--sidebar-hover); color: #fff; }
+.sidebar nav a.active { background: var(--sidebar-active); color: #fff; font-weight: 600; }
+.sidebar .section-group { margin-bottom: 0.75rem; }
+.sidebar .section-group-title { color: #8ab4a0; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 0.5rem 0.25rem; font-weight: 700; }
+main { margin-left: 280px; padding: 2rem 2.5rem; max-width: var(--max-width); width: 100%; }
+.section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+.section h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent-light); }
+.section h3 { font-size: 1.2rem; margin: 1.2rem 0 0.6rem; color: #333; }
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.card h4 { margin-bottom: 0.75rem; font-size: 1.05rem; }
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; }
+th, td { padding: 0.55rem 0.7rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: #f5f5f5; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); }
+tr:hover { background: #fafafa; }
+.badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.badge-green { background: #e8f5e9; color: #2e7d32; }
+.badge-yellow { background: #fff8e1; color: #f57f17; }
+.badge-red { background: #ffebee; color: #c62828; }
+.badge-blue { background: #e3f2fd; color: #1565c0; }
+.warn-box { background: var(--warn-bg); border-left: 4px solid var(--warn-border); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+.danger-box { background: var(--danger-bg); border-left: 4px solid var(--danger-border); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+.stars { color: var(--star); }
+ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.25rem; }
+code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.85em; }
+.hamburger { display: none; position: fixed; top: 1rem; left: 1rem; z-index: 200; background: var(--sidebar-bg); color: #fff; border: none; padding: 0.5rem 0.7rem; border-radius: 6px; font-size: 1.3rem; cursor: pointer; }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+.emoji { font-size: 1.1em; }
+.plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1rem; margin: 1rem 0; }
+@media (max-width: 860px) {
+  .sidebar { transform: translateX(-100%); transition: transform 0.25s; width: 260px; }
+  .sidebar.open { transform: translateX(0); }
+  .overlay.open { display: block; }
+  .hamburger { display: block; }
+  main { margin-left: 0; padding: 1.5rem; }
+  .plan-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-<nav>
-<a href="#summary" class="active">Summary</a>
-<a href="#hikes">Hikes</a>
-<a href="#plan">Day Plan</a>
-<a href="#evidence">Evidence</a>
-<a href="#practical">Practical</a>
-</nav>
+<aside class="sidebar" id="sidebar">
+  <h1>🏔️ Mayrhofen 2026</h1>
+  <div class="dates">Aug 31 – Sep 8 · Zillertal, Tyrol</div>
+  <nav>
+    <div class="section-group-title">Core</div>
+    <a href="#overview">Overview</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#events">⚠️ Events (Ultraks!)</a>
+    <div class="section-group-title">Activities</div>
+    <a href="#activities">Activities</a>
+    <a href="#hike-inventory">Hike Rankings</a>
+    <a href="#hiking-prefs">Hiking Preferences</a>
+    <a href="#day-trips">Day Trips</a>
+    <div class="section-group-title">Planning</div>
+    <a href="#weather">Weather & Packing</a>
+    <a href="#per-hike-weather">Per-Hike Weather</a>
+    <a href="#area-status">Area Status</a>
+    <a href="#accommodation">Accommodation</a>
+    <a href="#activcard">Activcard Analysis</a>
+    <div class="section-group-title">Food</div>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#vegan">Vegan Guide</a>
+    <div class="section-group-title">Research</div>
+    <a href="#community-intel">Community Intel</a>
+    <a href="#nonhiking">Non-Hiking</a>
+    <div class="section-group-title">Plans</div>
+    <a href="#final-plans">FINAL (Steepness)</a>
+    <a href="#revised-plans">REVISED (≤600m)</a>
+    <a href="#five-plans">5 Day-by-Day</a>
+    <a href="#pro-plans">PROFESSIONAL</a>
+  </nav>
+</aside>
 
-<div class="hero">
-<h1>Mayrhofen · Austrian Alps</h1>
-<div class="sub">Nine days hiking the Zillertal Valley, Tyrol — fully vegan</div>
-<div class="meta">August 31 – September 8, 2026 · 3 adults · Self-catering · ☕ daily at huts · Vegan trail lunches</div>
-<div class="hero-links">
-<a class="hl-report" href="mayrhofen-zillertal-2026-report.html">📊 Data Report</a>
-<a class="hl-map" href="mayrhofen-zillertal-2026-map.html">🗺️ Trail Map</a>
-<a class="hl-evidence" href="#evidence">📋 Evidence & Sources</a>
-</div>
-</div>
+<main>
 
-<div class="container">
-
-<section id="summary">
-<h2>Summary</h2>
-<p>We're spending nine days in Mayrhofen — a mountain town at 633m in the Austrian Alps. Each day we hike a new trail: through wildflower meadows, waterfall gorges, along a high suspension bridge over turquoise water, and onto a glacier at 3,250m with snow under our feet in summer. Coffee and strudel at a mountain hut every single day.</p>
-<div class="highlights">
-<div class="highlight"><div class="icon">🥾</div><h4>8 Hiking Days</h4><p>Gentle to steady, 7-18km</p></div>
-<div class="highlight"><div class="icon">🏔️</div><h4>5 Mountain Huts</h4><p>Each with strudel & coffee</p></div>
-<div class="highlight"><div class="icon">💧</div><h4>4 Waterfall Trails</h4><p>Gorges + Europe's highest falls</p></div>
-<div class="highlight"><div class="icon">❄️</div><h4>1 Glacier</h4><p>Snow year-round at 3,250m</p></div>
-<div class="highlight"><div class="icon">🚗</div><h4>2 Scenic Drives</h4><p>Alpine roads over passes</p></div>
-<div class="highlight"><div class="icon">☕</div><h4>Coffee at Every Hut</h4><p>Black coffee · fries/rösti · packed vegan lunches</p></div>
+<!-- ====== OVERVIEW ====== -->
+<section class="section" id="overview">
+<h2>📍 Overview</h2>
+<div class="card">
+<p>Mayrhofen (6290), Zillertal Valley, Tyrol, Austria. Elevation ~630m. Surrounded by Zillertal Alps Nature Park with ~80 glaciers, 3 reservoirs. <strong>532 km</strong> hiking trails, 1400+ km in Zillertal. 10 summer lifts. Hintertux Glacier year-round skiing to 3250m. Zillertalbahn Jenbach-Mayrhofen every 30 min. Innsbruck 1h 15m by train.</p>
+<p style="margin-top:0.75rem"><strong>Group:</strong> 3 adults · <strong>Style:</strong> Basecamp model, self-catering apartment · <strong>Transport:</strong> Car for drives outside valley</p>
 </div>
 </section>
 
-<section id="hikes">
-<h2>The Hikes</h2>
-<p style="color:#888;font-size:.8rem;margin-bottom:1rem">Click any card to expand details · All hikes include a strudel stop</p>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Stilluptal Waterfall Valley</span><span class="card-tags"><span class="tag green">Gentle</span><span class="tag green">15km</span></span></div>
-<div class="card-summary">Long, flat walk through a valley of waterfalls. Boardwalks wind past dozens of cascades. The easiest hike — perfect for a relaxing day.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>15.3km</b></span><span class="st">📈 <b>325m gain</b></span><span class="st">⚡ <b>21m/km</b> (flattest)</span><span class="st">⏱ <b>5h</b></span><span class="st">⭐ <b>4.5★</b> (900+ reviews)</span></div>
-<div class="card-detail">Waterfalls are more dramatic in rain — this is a rare hike that's better in bad weather. Drive past the Schlegeis reservoir turnoff into the Stilluptal valley. Trail follows the river past cascades of all sizes. Wooden boardwalks keep feet dry. Return along the same path or loop via the forest road.</div>
-<div class="card-detail">Alternative rejected: Zemmbach valley walk — also flat but shorter and with fewer waterfalls.</div>
-<div class="card-hut">☕ Coffee + pommes/rösti at Stilluppe · pack vegan trail lunch from supermarket</div>
-<div class="source">Sources: AllTrails (4.5★), Komoot, Google Maps</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Penken Panorama Trail</span><span class="card-tags"><span class="tag green">Gentle</span><span class="tag green">8.7km</span></span></div>
-<div class="card-summary">Gondola to 1,800m, then a circular walk with 360° Zillertal Alps views. Almost flat. Perfect first-day hike to ease into the mountains.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>8.7km</b></span><span class="st">📈 <b>300m gain</b></span><span class="st">⚡ <b>35m/km</b> (gentle)</span><span class="st">⏱ <b>2.5-3h</b></span><span class="st">⭐ <b>4.6★</b> (1,300+ reviews)</span></div>
-<div class="card-detail">Take Penkenbahn gondola from Mayrhofen to 1,800m. Circular trail loops around the Penken plateau — views of the Zillertal main ridge, Hintertux Glacier in the distance, and the valley below. Multiple huts along the route. Descend back via gondola or walk down.</div>
-<div class="card-detail">Alternative rejected: Penken Full Loop — longer route with same views, not worth the extra distance at this gentle gradient.</div>
-<div class="card-hut">☕ Coffee + pommes/rösti at Grillhofalm · ask about vegan strudel (some huts have it)</div>
-<div class="source">Sources: mayrhofen.at, AllTrails (4.6★), Google Maps</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Filzenkogel</span><span class="card-tags"><span class="tag green">Gentle</span><span class="tag green">7km</span></span></div>
-<div class="card-summary">Short summit hike from the Ahorn gondola. Quick climb to a beautiful viewpoint over the Zillertal main ridge. Back by early afternoon.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>7km</b></span><span class="st">📈 <b>350m gain</b></span><span class="st">⚡ <b>50m/km</b></span><span class="st">⏱ <b>2-3h</b></span><span class="st">⭐ <b>4.4★</b> (320+ reviews)</span></div>
-<div class="card-detail">Take Ahornbahn to 1,978m. A steady climb up Filzenkogel — the smallest of the Zillertal peaks but with spectacular views. Good spacer day between longer hikes. Return to the Ahorn top station for strudel.</div>
-<div class="card-hut">☕ Coffee + vegetable soup at Ahornhütte · 2,000m · views of Ahornspitze</div>
-<div class="source">Sources: Komoot, Outdooractive, Google Maps</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Wolfsklamm Gorge</span><span class="card-tags"><span class="tag amber">Moderate</span><span class="tag amber">3km</span></span></div>
-<div class="card-summary">350 wooden steps through a narrow gorge with waterfalls. Cross bridges and climb staircases bolted into rock. One of the Alps' most beautiful gorges.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>~3km</b></span><span class="st">📈 <b>~200m</b></span><span class="st">⚡ <b>stairs</b></span><span class="st">⏱ <b>1.5-2h</b></span><span class="st">⭐ <b>4.6★</b> (450+ reviews)</span></div>
-<div class="card-detail">Located in Stans, 15-min drive from Mayrhofen. The gorge walk climbs 350 wooden steps through narrow rock walls with the Stanserbach waterfall rushing beside you. €6 entry. Combine with Zillertal High Road for a full day — gorge in the morning, scenic drive in the afternoon.</div>
-<div class="card-detail">Alternatives rejected: Tiefenbachklamm and Kaiserklamm — Wolfsklamm rated highest and closest to Mayrhofen.</div>
-<div class="card-hut">☕ Coffee in Stans · village cafés may have vegan cake · pack lunch</div>
-<div class="source">Sources: TripAdvisor (4.6★), Google Maps, wanderkompass.de</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Ahorn High Walk</span><span class="card-tags"><span class="tag amber">Moderate</span><span class="tag amber">8km</span></span></div>
-<div class="card-summary">Ahornbahn gondola to nearly 2,000m, then walk high alpine terrain to Edelhütte at 2,238m. Strudel with Ahornspitze views — without the summit climb.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>8km</b></span><span class="st">📈 <b>400m gain</b></span><span class="st">⚡ <b>50m/km</b></span><span class="st">⏱ <b>3-4h</b></span><span class="st">⭐ <b>4.5★</b> (700+ reviews)</span></div>
-<div class="card-detail">Start at Ahornbahn top (1,978m). Walk through alpine meadows to Edelhütte (2,238m), a mountain hut with a terrace facing Ahornspitze peak. You get the same view as summit climbers without the exposed ridge and 81m/km steepness. Loop back to the gondola. One of the highest strudel stops on the trip.</div>
-<div class="card-detail">Alternative rejected: Ahornspitze summit (81m/km, exposed ridge with via ferrata sections). Same mountain, same hut, none of the risk.</div>
-<div class="card-hut">☕ Coffee + Gemüsesuppe & salad at Edelhütte · 2,238m · highest hut stop · views of Ahornspitze</div>
-<div class="source">Sources: AllTrails (4.5★), Komoot, bergbahn-mayrhofen.at</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Berliner Hütte</span><span class="card-tags"><span class="tag amber">Steady</span><span class="tag amber">18.3km</span></span></div>
-<div class="card-summary">Long day walking up a valley to a historic 1879 hut. Gradual climb through wildflower meadows — never steep, just long. Coffee and cake earned.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>18.3km</b></span><span class="st">📈 <b>854m gain</b></span><span class="st">⚡ <b>47m/km</b> (gradual)</span><span class="st">⏱ <b>6.5-7h</b></span><span class="st">⭐ <b>4.7★</b> (850+ reviews)</span></div>
-<div class="card-detail">The longest hike. Start at Breitlahner (1,200m) in the Zemmgrund valley. The path follows the Zemmbach river upward through wildflower meadows and past alpine pastures. The hut at 2,042m is one of the oldest DAV huts in Austria, built 1879. At 47m/km, it's less steep than our Salzburg Day 4 (50m/km) — the difficulty is the distance, not the gradient. Return same route.</div>
-<div class="card-detail">Alternative rejected: Friesenberghaus — steeper approach, fewer reviews, less historic hut.</div>
-<div class="card-hut">☕ Coffee + rösti (ask no cheese) at Berliner Hütte · 2,042m · historic 1879 DAV hut</div>
-<div class="source">Sources: AllTrails (4.7★), DAV Berliner Hütte website, Google Maps</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Olpererhütte</span><span class="card-tags"><span class="tag red">Challenging</span><span class="tag red">13.8km</span></span></div>
-<div class="card-summary">The #1 hike in Zillertal (4.8★, 1,674+ reviews). Turquoise reservoir, suspension bridge, hut at 2,389m. Our one big day — and the reason we chose Mayrhofen.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>13.8km</b></span><span class="st">📈 <b>876m gain</b></span><span class="st">⚡ <b>63m/km</b> (steady)</span><span class="st">⏱ <b>5.5h</b></span><span class="st">⭐ <b>4.8★</b> (1,674+ reviews)</span></div>
-<div class="card-detail">Drive the Schlegeis toll road (€18, 8km of switchbacks) to the reservoir at 1,800m. The trail climbs steadily along the lake, then zigzags up to the hut at 2,389m. The highlight: a suspension bridge spanning a glacial stream with turquoise Schlegeis reservoir far below. The most photographed viewpoint in the Zillertal Valley. Loop back via the other side of the reservoir.</div>
-<div class="card-detail">Alternative rejected: Olpererhütte short route (94m/km — the steepest option in our entire inventory). The full loop is both gentler AND more scenic — you miss the bridge on the short route.</div>
-<div class="card-detail">Weather: needs clear or partly cloudy. If it storms, swap with Saturday's glacier day. Arrive before 8am — the Schlegeis parking fills fast.</div>
-<div class="card-hut">☕ Coffee + fries at Olpererhütte · 2,389m · on the famous bridge terrace · PACK LUNCH (limited options at altitude)</div>
-<div class="source">Sources: AllTrails (4.8★), Google Maps, Komoot, TripAdvisor forum threads</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Krimml Waterfalls</span><span class="card-tags"><span class="tag purple">Day Trip</span></span></div>
-<div class="card-summary">Europe's highest waterfall — 385m in three tiers. Scenic drive over a mountain pass, then walk the boardwalk up alongside the falls.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>4km walk</b></span><span class="st">📈 <b>~350m</b></span><span class="st">⏱ <b>2h</b></span><span class="st">⭐ <b>4.7★</b> (12,000+ reviews)</span></div>
-<div class="card-detail">1-1.5 hour drive from Mayrhofen via Gerlos Pass (€12 toll). The falls drop 385m in three tiers — the highest in Europe. Well-maintained boardwalk climbs alongside the cascades. The spray is legendary ("good for the lungs"). Multiple viewing platforms at each tier. Falls are most powerful after rain — another hike that works in bad weather.</div>
-<div class="card-detail">Alternative rejected: Stuibenfall (closer, near Ötz — smaller, fewer reviews). Krimml is the world-class option.</div>
-<div class="card-hut">☕ Coffee + fries at Krimml café · pack vegan lunch · entry €9</div>
-<div class="source">Sources: Google Maps (4.7★, 12K+), krimmler-wasserfaelle.at</div>
-</div>
-</div>
-
-<div class="card" onclick="this.classList.toggle('expanded')">
-<div class="card-header"><span class="card-title">Hintertux Glacier</span><span class="card-tags"><span class="tag purple">Day Trip</span></span></div>
-<div class="card-summary">Three gondolas to 3,250m — year-round snow. Walk on ice, enjoy the panorama, strudel at the top. Works in ANY weather. Our backup plan.</div>
-<div class="card-toggle"></div>
-<div class="card-expand">
-<div class="card-stats"><span class="st">📏 <b>3 gondolas up</b></span><span class="st">📈 <b>3,250m summit</b></span><span class="st">⏱ <b>half-day</b></span><span class="st">⭐ <b>4.6★</b> (4,500+ reviews)</span></div>
-<div class="card-detail">25-min drive to Hintertux base. Three cable cars take you from 1,500m to 3,250m — the only year-round accessible glacier in Austria. At the top: panoramic terrace over the Alps, snow even in September, and the Tuxer Fernerhaus restaurant. The gondolas are enclosed — it works in ANY weather. This is our universal rain backup. Can be done in a half-day.</div>
-<div class="card-detail">Alternative rejected: Kitzsteinhorn glacier near Kaprun — further drive, smaller accessible area.</div>
-<div class="card-hut">☕ Coffee + salad + fries at Tuxer Fernerhaus · 3,250m · most vegan options at any hut on this trip</div>
-<div class="source">Sources: Google Maps (4.6★), hintertuxergletscher.at</div>
-</div>
-</div>
-</section>
-
-<section id="plan">
-<h2>Our Day-by-Day Plan</h2>
-<div class="timeline">
-<div class="tm-day"><div class="dname">Sunday, August 31 — Arrival</div><div class="dact">Penken Panorama — gentle welcome to the mountains</div><div class="ddet">Gondola up · 8.7km circular walk · 360° views · easy</div><div class="dfood">☕ Coffee + fries at Grillhofalm · 🍽️ Goldkind (vegan)</div></div>
-<div class="tm-day"><div class="dname">Monday, September 1</div><div class="dact">Filzenkogel — short summit, quick reward</div><div class="ddet">7km · Ahorn gondola up · back by early afternoon</div><div class="dfood">☕ Coffee at Ahornhütte · 🍽️ Mo's Esscafe (vegan options)</div></div>
-<div class="tm-day"><div class="dname">Tuesday, September 2</div><div class="dact">Stilluptal Waterfall Valley</div><div class="ddet">15km through waterfalls · boardwalks · flattest hike</div><div class="dfood">☕ Coffee at Stilluppe · 🍽️ Self-cater (vegan)</div></div>
-<div class="tm-day"><div class="dname">Wednesday, September 3</div><div class="dact">Wolfsklamm Gorge + Zillertal High Road</div><div class="ddet">Morning: 350 steps through gorge · Afternoon: alpine drive</div><div class="dfood">☕ Coffee in Stans · 🍽️ Goldkind (vegan)</div></div>
-<div class="tm-day"><div class="dname">Thursday, September 4</div><div class="dact">Ahorn High Walk — alpine meadows, strudel with a view</div><div class="ddet">Gondola to 1,978m · walk to Edelhütte at 2,238m</div><div class="dfood">☕ Coffee at Edelhütte · 🍽️ Pane E Vino (vegan pasta)</div></div>
-<div class="tm-day"><div class="dname">Friday, September 5</div><div class="dact">Berliner Hütte — the long valley walk</div><div class="ddet">18km through wildflowers to a historic 1879 hut</div><div class="dfood">☕ Coffee at Berliner Hütte · 🍽️ Goldkind (vegan)</div></div>
-<div class="tm-day"><div class="dname">Saturday, September 6</div><div class="dact">Hintertux Glacier — snow in summer</div><div class="ddet">3 gondolas to 3,250m · glacier walk · ALL WEATHER</div><div class="dfood">☕ Coffee at Tuxer Fernerhaus · 🍽️ Self-cater (vegan)</div></div>
-<div class="tm-day"><div class="dname">Sunday, September 7</div><div class="dact">Krimml Waterfalls — Europe's highest</div><div class="ddet">Scenic drive over Gerlos Pass · walk up the falls</div><div class="dfood">☕ Coffee at Krimml café · 🍽️ China-Restaurant Singapore (vegan options)</div></div>
-<div class="tm-day"><div class="dname">Monday, September 8 — Departure</div><div class="dact">Morning coffee in town, head home</div><div class="dfood">☕ Coffee at Café Tirol · pack vegan snacks for the road</div></div>
-<!-- Other plans linked -->
-<div style="margin-top:.5rem">
-<a href="mayrhofen-zillertal-2026-report.html" style="font-size:.7rem;color:var(--green);font-family:system-ui,sans-serif;font-weight:600">📊 5 alternative plans with weather backups →</a>
-</div>
-</div>
-</section>
-
-<section id="evidence">
-<h2>Evidence — Why These Choices?</h2>
-
-<h3>Why Mayrhofen Over Other Alpine Towns?</h3>
-<div class="highlights">
-<div class="highlight"><div class="icon">🚡</div><h4>Two summer gondolas</h4><p>Penkenbahn + Ahornbahn. Most towns have one — double the high-access without climbing.</p></div>
-<div class="highlight"><div class="icon">💧</div><h4>Three gorges nearby</h4><p>Wolfsklamm, Stilluptal, Krimml all ≤30min. Zell am See has only one gorge.</p></div>
-<div class="highlight"><div class="icon">⭐</div><h4>#1 rated Zillertal hike</h4><p>Olpererhütte (4.8★, 1,674 reviews) — only accessible from this valley.</p></div>
-<div class="highlight"><div class="icon">🛒</div><h4>Sunday supermarket</h4><p>MPREIS open 7:30-19:00 Sundays — Zell am See and Schladming close Sundays.</p></div>
-</div>
-<p class="source">Sources: TripAdvisor forums (2016-2026), mayrhofen.at, zillertal.at, Google Maps hours verified Jun 2026</p>
-
-<h3>Hike Selection — Ratings, Reviews, Alternatives</h3>
-<table class="evidence-table">
-<tr><th>Hike</th><th>★</th><th>Reviews</th><th>Alternative considered & why rejected</th></tr>
-<tr><td>Olpererhütte Full</td><td>4.8</td><td>1,674+</td><td>Short route: 94m/km steepest option. Full loop: 63m/km, gentler + more scenic.</td></tr>
-<tr><td>Berliner Hütte</td><td>4.7</td><td>850+</td><td>Friesenberghaus: steeper, fewer reviews. Berliner at 47m/km within comfort band.</td></tr>
-<tr><td>Penken Panorama</td><td>4.6</td><td>1,300+</td><td>Full Penken loop: longer, same views — not worth extra distance.</td></tr>
-<tr><td>Krimml Waterfalls</td><td>4.7</td><td>12,000+</td><td>Stuibenfall: closer but smaller. Krimml is Europe's highest.</td></tr>
-<tr><td>Wolfsklamm</td><td>4.6</td><td>450+</td><td>Tiefenbachklamm, Kaiserklamm: Wolfsklamm rated highest, closest.</td></tr>
-<tr><td>Stilluptal</td><td>4.5</td><td>900+</td><td>Zemmbach: also flat but shorter, fewer waterfalls.</td></tr>
-<tr><td>Ahorn High Walk</td><td>4.5</td><td>700+</td><td>Ahornspitze: 81m/km, exposed ridge. Same area, same strudel, less risk.</td></tr>
-<tr><td>Hintertux Glacier</td><td>4.6</td><td>4,500+</td><td>Kitzsteinhorn: further. Hintertux is only year-round glacier in Austria.</td></tr>
+<!-- ====== ITINERARY ====== -->
+<section class="section" id="itinerary">
+<h2>📅 Itinerary</h2>
+<div class="warn-box"><strong>⚠️ ULTRAKS TRAIL FESTIVAL Sep 4–5</strong> — town center is race HQ (Hauptstraße 409). Penken mountain has races all day Sep 5. See <a href="#events" style="color:inherit">Events section</a> for full schedule.</div>
+<div class="card">
+<table>
+<tr><th>Date</th><th>Day</th><th>Activity</th><th>Notes</th></tr>
+<tr><td>Aug 31</td><td>Mon</td><td>Arrive, evening walk</td><td>Explore Mayrhofen town</td></tr>
+<tr><td>Sep 1</td><td>Tue</td><td>Stilluptal valley walk</td><td>Easy — waterfalls, reservoir</td></tr>
+<tr><td>Sep 2</td><td>Wed</td><td>Penkenbahn up, ridge hiking</td><td>⚠️ <strong>Last Penken day before Ultraks setup</strong>. Paragliding option</td></tr>
+<tr><td>Sep 3</td><td>Thu</td><td>Olpererhütte via Schlegeis</td><td>Big hike — early start. Last Penken-free option before races</td></tr>
+<tr><td>Sep 4</td><td>Fri</td><td>⚡ Shabbat eve — finish by ~20:00</td><td>⚠️ Ultraks Day 1: Sport Expo 14:00, Z101 start 17:00. Suggest Ahorn area or Zell am Ziller</td></tr>
+<tr><td>Sep 5</td><td>Sat</td><td>✡ Shabbat — walking only</td><td>⚠️ Ultraks Day 2: Races 07:00–19:00. 🔴 Penken trails unavailable. 🟢 Zemmbach Gorge, Stilluptal walk-in, Ziller River Path</td></tr>
+<tr><td>Sep 6</td><td>Sun</td><td>Hintertux Glacier</td><td>Summer skiing or ice cave. Penken clear post-race</td></tr>
+<tr><td>Sep 7</td><td>Mon</td><td>Ahornbahn, farewell dinner</td><td>Alpine finale</td></tr>
+<tr><td>Sep 8</td><td>Tue</td><td>Departure</td><td>—</td></tr>
 </table>
-
-<h3>Explicit Rejections</h3>
-<table class="evidence-table">
-<tr style="background:#fdf0ef"><th>Rejected</th><th>Reason</th></tr>
-<tr><td>Ahornspitze summit</td><td>81m/km · exposed ridge with via ferrata. Ahorn High Walk gives same mountain, no exposure.</td></tr>
-<tr><td>Olpererhütte short route</td><td>94m/km — single steepest option. Full loop is gentler AND more scenic.</td></tr>
-<tr><td>Zillertal Activcard</td><td>€412.50/3 adults = break-even at 5+ lift days. We need 3-4. Individual: €252-336. Save €76-160.</td></tr>
-<tr><td>Paragliding</td><td>Personal preference — excluded.</td></tr>
-</table>
-
-<h3>Decision Framework</h3>
-<p>Five criteria weighted. Weights calibrated from Salzburg 2025 trip (12 active days, exact distances and gains recorded).</p>
-<table class="evidence-table">
-<tr><th>Criterion</th><th>Weight</th><th>Source</th></tr>
-<tr><td>Steepness (gain/km) — ≤50m/km ideal, ≤65m/km max</td><td>40%</td><td>Salzburg 2025: Days 2,4,9 = 33-50m/km felt comfortable</td></tr>
-<tr><td>Community rating & reviews (≥4.5★ preferred)</td><td>25%</td><td>Google Maps, TripAdvisor, AllTrails, Komoot cross-referenced</td></tr>
-<tr><td>Strudel/coffee at a hut on route</td><td>15%</td><td>Mountain hut menus verified via Google Maps photos</td></tr>
-<tr><td>Uniqueness — different experience type each day</td><td>10%</td><td>Gorge ≠ waterfall ≠ ridge ≠ glacier — no duplication</td></tr>
-<tr><td>Weather resilience</td><td>10%</td><td>Hintertux universal fallback · waterfall trails work in rain</td></tr>
-</table>
-
-<h3>Sources</h3>
-<p class="source"><strong>Official:</strong> mayrhofen.at · zillertal.at · hintertuxergletscher.at · bergbahn-mayrhofen.at · krimmler-wasserfaelle.at<br>
-<strong>Reviews:</strong> Google Maps · TripAdvisor · AllTrails · Komoot · Outdooractive<br>
-<strong>Community:</strong> Reddit r/hiking · r/Austria · TripAdvisor forums<br>
-<strong>Calibration:</strong> Salzburg 2025 trip — 12 active days, distances + gains recorded per day</p>
+</div>
 </section>
 
-<section id="practical">
-<h2>Practical Details</h2>
+<!-- ====== EVENTS ====== -->
+<section class="section" id="events">
+<h2>⚠️ Events — Ultraks Zillertal (Sep 4–5)</h2>
+<div class="danger-box"><strong>MAJOR EVENT DURING STAY.</strong> Trail running festival. Race HQ at <strong>Hauptstraße 409, Mayrhofen</strong>. Full schedule below. <a href="https://mayrhofen.ultraks.com/en/race/" target="_blank">Official site ↗</a></div>
 
-<h3>Getting There</h3>
-<div class="highlights">
-<div class="highlight"><div class="icon">✈️</div><h4>Fly to Innsbruck, Munich, or Salzburg</h4><p>1-2.5 hours drive to Mayrhofen</p></div>
-<div class="highlight"><div class="icon">🚗</div><h4>Rent a car at the airport</h4><p>Needed for mountain roads & day trips</p></div>
-<div class="highlight"><div class="icon">💰</div><h4>Budget: ~€1,200-1,550/person</h4><p>Accommodation, car, lifts, food — 9 days</p></div>
-<div class="highlight"><div class="icon">🏠</div><h4>Adlerblick apartment</h4><p>3 bedrooms · full kitchen · town center</p></div>
+<div class="card">
+<h4>Friday Sep 4 (⚡ Shabbat eve — return by ~20:00)</h4>
+<table>
+<tr><th>Time</th><th>What</th><th>Where</th></tr>
+<tr><td>14:00–20:00</td><td>Bib distribution + Sport Expo + DJ</td><td>Ultraks Zone</td></tr>
+<tr><td>17:00</td><td><strong>Z101 start</strong> (101+ km, 7,600m D+)</td><td>Ultraks Zone</td></tr>
+<tr><td>17:15</td><td>Mini-Ultraks (kids run)</td><td>Ultraks Zone</td></tr>
+<tr><td>18:30</td><td>Runners' Briefing TUX070</td><td>Europahaus</td></tr>
+<tr><td>19:15</td><td>Runners' Briefing remaining courses</td><td>Europahaus</td></tr>
+</table>
 </div>
-<p class="source">Budget breakdown: accommodation €520-680 · car €300-400 · lift tickets €80-120 · tolls €40 · food €200-300 · entries €15</p>
 
+<div class="card">
+<h4>Saturday Sep 5 (✡ Shabbat — walking only)</h4>
+<table>
+<tr><th>Time</th><th>What</th><th>Where</th></tr>
+<tr><td>04:30</td><td>Bus shuttle TUX070</td><td>Europahaus</td></tr>
+<tr><td>05:30</td><td><strong>TUX070 start</strong> (70km, 4,400m)</td><td>Hintertux Glacier</td></tr>
+<tr><td>07:00–07:10</td><td><strong>RK50 start</strong> (50km, 3,200m)</td><td>Ultraks Zone</td></tr>
+<tr><td>08:30–08:40</td><td><strong>MUZ30 start</strong> (30.3km, 2,000m)</td><td>Ultraks Zone</td></tr>
+<tr><td>09:30</td><td>FanZone opens</td><td>Penkenbahn Mountain Station</td></tr>
+<tr><td>10:00–19:00</td><td>Sport Expo</td><td>Ultraks Zone</td></tr>
+<tr><td>17:00</td><td>Prize ceremony</td><td>Ultraks Zone</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h4>Course Impact on Trails</h4>
+<table>
+<tr><th>Race</th><th>Distance</th><th>Gain</th><th>Route Area</th></tr>
+<tr><td>Z101</td><td>101+ km</td><td>7,600m</td><td>High alpine, Schönbichler Horn</td></tr>
+<tr><td>TUX070</td><td>70 km</td><td>4,400m</td><td>Tux Alps</td></tr>
+<tr><td><strong>RK50</strong></td><td><strong>50 km</strong></td><td><strong>3,200m</strong></td><td><strong>Penken plateau → Rastkogel</strong></td></tr>
+<tr><td><strong>MUZ30</strong></td><td><strong>30.3 km</strong></td><td><strong>2,000m</strong></td><td><strong>Penkenjoch</strong></td></tr>
+<tr><td>MUZ14</td><td>14.5 km</td><td>900m</td><td>Village → Brandberg</td></tr>
+</table>
+</div>
+
+<div class="warn-box">
+<strong>Shabbat (Sep 5) Impact:</strong><br>
+🟢 <strong>Zemmbach Gorge</strong> — unaffected<br>
+🟢 <strong>Ziller River Path</strong> — unaffected<br>
+🟢 <strong>Stilluptal walk-in</strong> — unaffected (different valley)<br>
+🟡 <strong>Town center</strong> — VERY busy. Cafés packed but atmospheric<br>
+🔴 <strong>Penken trails</strong> — RK50 and MUZ30 use Penken plateau. FanZone at Penkenbahn. <strong>Avoid Penken entirely on this day.</strong>
+</div>
+</section>
+
+<!-- ====== ACTIVITIES ====== -->
+<section class="section" id="activities">
+<h2>🏃 Activities</h2>
+<div class="card">
+<h3>Hiking</h3>
+<p>532 km trails in Mayrhofen, 1400+ km in Zillertal. Huts open June–September.</p>
+<h4>Must-do hikes:</h4>
+<ul>
+<li><strong>Olpererhütte</strong> via Schlegeis Reservoir — Instagram-famous suspension bridge, turquoise water, 4.8★ AllTrails, moderate</li>
+<li><strong>Berliner Höhenweg</strong> — multi-day classic, challenging</li>
+<li><strong>Stilluptal Valley Walk</strong> — easy, waterfalls, reservoir</li>
+<li><strong>Penken Panorama Trails</strong> — gondola up, ridge walks, 360° views</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Cable Cars (Summer 2026)</h3>
+<table>
+<tr><th>Lift</th><th>Season</th><th>Hours</th></tr>
+<tr><td>Penkenbahn</td><td>Summer season</td><td>8:30–16:30</td></tr>
+<tr><td>Ahornbahn</td><td>13.06–31.10.2026</td><td>8:30–17:00</td></tr>
+<tr><td>Eggalm Bahnen (Tux)</td><td>19.06–11.10.2026</td><td>8:30–16:30</td></tr>
+<tr><td>Hintertux Glacier</td><td>365 days/year</td><td>8:15–16:30</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Hintertux Glacier</h3>
+<p>Year-round, slopes to 3250m, 60 km pistes. Pedestrian tickets 2026: <strong>€38 adult</strong> / €24 child to Tuxer Fernerhaus (2660m).</p>
+</div>
+
+<div class="card">
+<h3>Other</h3>
+<p>Mountain biking (Penken Bike Park), paragliding (tandem from Penken), climbing/via ferrata, Nature's Ice Palace & Spannagel Caves, trail running, swimming (Erlebnisbad Mayrhofen, mountain lakes).</p>
+</div>
+</section>
+
+<!-- ====== HIKE INVENTORY ====== -->
+<section class="section" id="hike-inventory">
+<h2>⭐ Hike Inventory & Rankings</h2>
+<p style="color:var(--text-muted);margin-bottom:1rem">Ratings from AllTrails, Komoot, TripAdvisor, Google, Reddit. Low ratings flagged for seasonal/timing bias.</p>
+
+<div class="card">
+<h3><span class="stars">★★★</span> Tier 1 — Essential</h3>
+<table>
+<tr><th>#</th><th>Item</th><th>Type</th><th>Rating</th><th>Reviews</th><th>Why</th></tr>
+<tr><td>1</td><td><strong>Olpererhütte</strong></td><td>Hike</td><td>4.8★ AT</td><td>566+</td><td>#1 Zillertal hike. Bridge. Turquoise water. <span class="badge badge-yellow">Go before 8am</span></td></tr>
+<tr><td>2</td><td><strong>Krimml Waterfalls</strong></td><td>Destination</td><td>4.6★ TA</td><td>1,557</td><td>Europe's highest at 385m. €9.</td></tr>
+<tr><td>3</td><td><strong>Ahornspitze</strong> (2,973m)</td><td>Hike</td><td>4.7★ AT</td><td>70</td><td>Zillertal's summit. <span class="badge badge-red">Clear weather only</span></td></tr>
+<tr><td>4</td><td><strong>Hintertux Glacier</strong></td><td>Destination</td><td>4.6★ TA</td><td>955</td><td>3,250m glacier. Weather-proof.</td></tr>
+<tr><td>5</td><td><strong>Zillertal High Road</strong></td><td>Scenic Drive</td><td>4.7★ TA</td><td>156</td><td>"Most beautiful alpine road in Austria." 50km. €10 toll.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3><span class="stars">★★</span> Tier 2 — Excellent</h3>
+<table>
+<tr><th>#</th><th>Item</th><th>Type</th><th>Rating</th><th>Reviews</th></tr>
+<tr><td>6</td><td><strong>Wolfsklamm Gorge</strong></td><td>Hike/Gorge</td><td>4.6★ AT</td><td>399</td></tr>
+<tr><td>7</td><td><strong>Berliner Hütte</strong></td><td>Hike</td><td>4.7★ AT</td><td>148</td></tr>
+<tr><td>8</td><td><strong>Schlegeis Reservoir</strong></td><td>Scenic Drive</td><td>4.7★ TA</td><td>183</td></tr>
+<tr><td>9</td><td><strong>Penken Panorama Trail</strong></td><td>Hike</td><td>~4.7★</td><td>Est. 250+</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>✗ Tier 4 — Skippable or Context-Dependent</h3>
+<table>
+<tr><th>Item</th><th>Rating</th><th>Reviews</th><th>Verdict</th></tr>
+<tr><td>Nature's Ice Palace</td><td>3.9★ TA</td><td>364</td><td>Polarizing. Visit the glacier, skip the cave tour unless you love unique ice experiences.</td></tr>
+<tr><td>Gerlos Alpine Road</td><td>3.9★ TA</td><td>44</td><td>Use as transit to Krimml, not as a destination.</td></tr>
+<tr><td>Zemmbach Gorge</td><td>Low</td><td>Minimal</td><td>Fine for a 2-hour evening walk from town.</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== HIKING PREFERENCES ====== -->
+<section class="section" id="hiking-prefs">
+<h2>🥾 Hiking Preferences & Style</h2>
+<div class="card">
+<h3>Salzburg 2025 Reference (Proven Capability)</h3>
+<table>
+<tr><th>Day</th><th>km</th><th>Gain</th><th>m/km</th></tr>
+<tr><td>Day 2 — Alpine Pasture Epic</td><td>18.5</td><td>750m</td><td>40</td></tr>
+<tr><td>Day 4 — Gorge + Ascent</td><td>8</td><td>400m</td><td>50</td></tr>
+<tr><td>Day 9 — Grand Finale</td><td>18</td><td>600m</td><td>33</td></tr>
+<tr><td>Day 10 — 7km Loop</td><td>7</td><td>450m</td><td>64</td></tr>
+</table>
+<p style="margin-top:0.5rem"><strong>Comfortable:</strong> 33–50 m/km · <strong>Gain/km matters more than total gain</strong></p>
+</div>
+<div class="card">
+<h3>Terrain Preferences (ranked)</h3>
+<ol>
+<li>Gorges with wooden walkways</li>
+<li>Alpine pastures (Almen) — lush high meadows</li>
+<li>High ridges — above treeline, panoramic</li>
+<li>Valley strolls — easy recovery days</li>
+<li>Scenic drives — pastoral valleys, alpine roads</li>
+<li>Lake/cultural day — promenades, cafes</li>
+<li>Summit pushes — if gradual and worth it</li>
+</ol>
+<p style="margin-top:0.75rem"><strong>Constraints:</strong> No paragliding · Prefer gradual gain spread over distance · Weather-smart with fallback plans</p>
+</div>
+</section>
+
+<!-- ====== DAY TRIPS ====== -->
+<section class="section" id="day-trips">
+<h2>🚗 Day Trips</h2>
+<div class="card">
+<table>
+<tr><th>Destination</th><th>Time</th><th>Highlights</th></tr>
+<tr><td>Innsbruck</td><td>1h 10–30m train</td><td>Golden Roof, Nordkette cable car, Hofburg</td></tr>
+<tr><td>Krimml Waterfalls</td><td>~1h drive</td><td>Europe's highest (380m)</td></tr>
+<tr><td>Zillertal High Road</td><td>From Zell am Ziller</td><td>Scenic 50km alpine drive, €10 toll</td></tr>
+<tr><td>Achensee</td><td>~1h 15m drive</td><td>Largest Tyrolean lake, swimming</td></tr>
+<tr><td>Zell am Ziller</td><td>15 min</td><td>Gold mine, Arena Coaster, brewery</td></tr>
+<tr><td>Salzburg</td><td>~2h 30m</td><td>Mozart city, fortress</td></tr>
+<tr><td>Brenner Pass / Dolomites</td><td>~45 min</td><td>South Tyrol, Sterzing</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== WEATHER ====== -->
+<section class="section" id="weather">
+<h2>🌤️ Weather & Packing</h2>
+<div class="card">
+<h3>September Climate</h3>
+<p>Temperatures <strong>4–15°C</strong> (40–58°F) in valley. Colder at altitude. Sub-zero at glacier. Moderately chilly, humid, possible rain. Transitional season.</p>
+</div>
+<div class="card">
+<h3>Packing List</h3>
+<ul>
+<li>Layers: fleece, lightweight puffy, waterproof rain shell</li>
+<li>Waterproof hiking boots (broken in)</li>
+<li>Hiking trousers (not jeans)</li>
+<li>Hat, gloves, sunglasses, sunscreen</li>
+<li>Swimwear</li>
+<li>Daypack with rain cover</li>
+</ul>
+</div>
+</section>
+
+<!-- ====== PER-HIKE WEATHER ====== -->
+<section class="section" id="per-hike-weather">
+<h2>🌡️ Per-Hike Weather Breakdown</h2>
+<div class="card">
+<table>
+<tr><th>Location</th><th>Elevation</th><th>Est. Temp</th><th>Notes</th></tr>
+<tr><td>Mayrhofen town</td><td>633m</td><td>18–22°C</td><td><span class="badge badge-green">Warm</span></td></tr>
+<tr><td>Penken Panorama</td><td>1,783–2,081m</td><td>10–16°C</td><td>Pleasant</td></tr>
+<tr><td>Stilluptal Waterfall</td><td>~1,100–1,400m</td><td>14–19°C</td><td>Comfortable</td></tr>
+<tr><td>Schlegeis Reservoir</td><td>1,800m</td><td>10–15°C</td><td>Morning cold, wind off water</td></tr>
+<tr><td>Berliner Hütte</td><td>1,200–2,042m</td><td>8–16°C</td><td>Varied by altitude</td></tr>
+<tr><td>Olpererhütte</td><td>1,800–2,389m</td><td>5–13°C</td><td>Windy at hut, bridge exposed</td></tr>
+<tr><td>Ahornspitze summit</td><td>2,973m</td><td>2–8°C + wind</td><td><span class="badge badge-yellow">Can feel near-freezing</span></td></tr>
+<tr><td>Hintertux Glacier</td><td>2,100–3,250m</td><td>0–8°C + wind</td><td><span class="badge badge-red">Full winter kit possible</span></td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Per-Hike Weather Strategy</h3>
+<table>
+<tr><th>Hike</th><th>Best Conditions</th><th>Bad Weather Plan</th></tr>
+<tr><td>Ahornspitze</td><td>Clear, low wind, start 7–8am</td><td><span class="badge badge-red">Don't go.</span> Swap to Penken or valley.</td></tr>
+<tr><td>Olpererhütte</td><td>Clear/partly cloudy, before 8am</td><td>Doable in cloud, skip in heavy rain</td></tr>
+<tr><td>Penken Panorama</td><td>Any non-storm</td><td>Can bail to gondola</td></tr>
+<tr><td>Wolfsklamm</td><td>Dry day</td><td>Skip in rain (slippery)</td></tr>
+<tr><td>Hintertux</td><td><strong>ANY weather</strong></td><td><span class="badge badge-green">Un-cancellable</span></td></tr>
+<tr><td>Krimml Falls</td><td>Any non-storm</td><td>Falls most powerful after rain</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== AREA STATUS ====== -->
+<section class="section" id="area-status">
+<h2>📊 Area Status — Late Summer 2026</h2>
+<div class="card">
+<h3>Cable Car Operations (verified 2026)</h3>
+<table>
+<tr><th>Lift</th><th>Season</th><th>Hours</th></tr>
+<tr><td>Penkenbahn</td><td>23 May – 4 Oct 2026</td><td>08:30–17:00</td></tr>
+<tr><td>Ahornbahn</td><td>13 Jun – 27 Sep 2026</td><td>Daily, last descent 17:00</td></tr>
+<tr><td>Kombibahn Penken</td><td>13 Jun – 31 Oct 2026</td><td>Last descent 16:30</td></tr>
+<tr><td>FunsportStation</td><td>23 Jun – 13 Sep 2026</td><td>09:00–16:00 daily</td></tr>
+<tr><td>Friday evening rides (Ahorn)</td><td>3 Jul – 28 Aug 2026</td><td><span class="badge badge-red">❌ You miss these by 3 days</span></td></tr>
+</table>
+</div>
+<div class="card">
+<h3>Key Facts</h3>
+<ul>
+<li><strong>All major lifts open every day</strong> of your stay</li>
+<li><strong>All mountain huts fully operational</strong> (close after Sep 15–20)</li>
+<li>Trails in <strong>excellent condition</strong> — all summer maintenance done</li>
+<li>Crowds: moderate first 2 days, <strong>noticeably quiet after Sep 2</strong></li>
+<li>Hintertux Glacier: <strong>year-round, 365-day operation</strong></li>
+</ul>
+</div>
+</section>
+
+<!-- ====== ACCOMMODATION ====== -->
+<section class="section" id="accommodation">
+<h2>🏠 Accommodation & Supermarkets</h2>
+<div class="card">
+<h3>🏆 Recommendation: Appartementhaus Adlerblick</h3>
+<p><strong>9.4/10</strong> Booking.com (80 reviews) · 3 rooms with private bathrooms · Fully equipped kitchen · Balcony, mountain views · Close to Mayrhofen center</p>
+</div>
+<div class="card">
 <h3>Supermarkets</h3>
-<table class="evidence-table" style="max-width:400px">
-<tr><th>Store</th><th>Mon-Sat</th><th>Sunday</th></tr>
-<tr><td>MPREIS</td><td>7:30-19:00</td><td style="color:#4a7a4a">7:30-19:00 ✅</td></tr>
-<tr><td>BILLA</td><td>7:00-19:15</td><td style="color:#b87830">13:00-18:00</td></tr>
-<tr><td>SPAR Eder</td><td>7:30-19:00</td><td style="color:#b84040">CLOSED</td></tr>
+<table>
+<tr><th>Store</th><th>Mon–Sat</th><th>Sunday</th></tr>
+<tr><td>SPAR Eder</td><td>~7:30–19:00</td><td><span class="badge badge-red">CLOSED</span></td></tr>
+<tr><td><strong>MPREIS</strong></td><td>7:30–19:00</td><td><span class="badge badge-green">7:30–19:00</span></td></tr>
+<tr><td>BILLA</td><td>7:00–19:15</td><td>13:00–18:00</td></tr>
 </table>
-
-<h3>Safety & Rain Plan</h3>
-<div class="highlights">
-<div class="highlight"><div class="icon">✅</div><h4>All trails marked</h4><p>Official maintained paths</p></div>
-<div class="highlight"><div class="icon">🚡</div><h4>Gondola starts</h4><p>Skip steep valley climbs</p></div>
-<div class="highlight"><div class="icon">🌧️</div><h4>Rain backup daily</h4><p>Every day has a plan B</p></div>
-<div class="highlight"><div class="icon">📱</div><h4>Offline maps</h4><p>Works without signal</p></div>
-</div>
-
-<h3>What to Pack</h3>
-<div class="highlights">
-<div class="highlight"><div class="icon">🥾</div><h4>Hiking boots</h4><p>Sturdy, waterproof</p></div>
-<div class="highlight"><div class="icon">🧥</div><h4>Rain shell & layers</h4><p>T-shirt + fleece + windbreaker</p></div>
-<div class="highlight"><div class="icon">🧤</div><h4>Warm layer for glacier</h4><p>0°C at 3,250m</p></div>
-<div class="highlight"><div class="icon">🎒</div><h4>Daypack</h4><p>Water, snacks, sunscreen</p></div>
-</div>
-
-<h3>Vegan Reality — HappyCow-Verified (Jun 2026)</h3>
-<table class="evidence-table" style="max-width:550px">
-<tr><th>Restaurant</th><th>Type</th><th>★</th><th>Reality</th></tr>
-<tr><td><b>Goldkind</b></td><td>Veg-Options (serves meat)</td><td>4.0 (47)</td><td>Best bet — most vegan dishes. Pasta, sandwiches, curry.</td></tr>
-<tr><td>Ellies</td><td>Veg-Options (serves meat)</td><td>4.0 (5)</td><td>Vegan buddha bowl + green curry. Central.</td></tr>
-<tr><td>China-Restaurant Singapore</td><td>Veg-Options (serves meat)</td><td>4.0 (3)</td><td>Tofu, vegetable, mushroom — vegan on request.</td></tr>
-<tr><td>Mo's Esscafe & Musicroom</td><td>Veg-Options (serves meat)</td><td>3.5 (6)</td><td>Vegan burger + salads. Live music.</td></tr>
-<tr><td>The Postwirt Hotel</td><td>Veg-Options (serves meat)</td><td>3.5 (2)</td><td>Vegan schnitzel, cordon bleu, tofu falafel.</td></tr>
-<tr><td>Edelweiss</td><td>Veg-Options (serves meat)</td><td>3.0 (4)</td><td>Limited options — skip.</td></tr>
-<tr style="background:#fef6ed"><td><b>Greizer Hutte</b></td><td><b>Vegetarian</b> (mountain hut)</td><td>5.0 (3)</td><td>Only vegetarian place. Foot-access only. Closed Feb 2025.</td></tr>
-</table>
-<p style="font-size:.75rem;color:#b84040"><b>No 100% vegan restaurants exist in Mayrhofen.</b> Population 3,800 — a small Austrian alpine town.</p>
-<p style="font-size:.75rem;color:#888"><b>Strategy:</b> Self-cater from MPREIS (open Sundays, has oat milk, tofu, hummus, vegan spreads). Dinner at Goldkind/Ellies. Pack trail lunches. Huts: coffee + fries/rosti/soup. Traditional strudel (butter pastry) and Kaiserschmarrn (eggs+milk) are NOT vegan.</p>
-<p class="source">Source: HappyCow Mayrhofen listing, verified Jun 2026</p>
-
-<h3>More Resources</h3>
-<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0">
-<a href="mayrhofen-zillertal-2026-report.html" style="padding:.5rem 1rem;background:var(--green);color:#fff;border-radius:6px;font-family:system-ui,sans-serif;font-size:.75rem;font-weight:600;text-decoration:none">📊 Full Data Report</a>
-<a href="mayrhofen-zillertal-2026-map.html" style="padding:.5rem 1rem;background:#4a90d9;color:#fff;border-radius:6px;font-family:system-ui,sans-serif;font-size:.75rem;font-weight:600;text-decoration:none">🗺️ Interactive Map</a>
-<a href="mayrhofen-zillertal-2026-linear.html" style="padding:.5rem 1rem;background:#1a1a2e;color:#e0e0e0;border-radius:6px;font-family:system-ui,sans-serif;font-size:.75rem;font-weight:600;text-decoration:none">🌙 Dark Report</a>
+<div class="warn-box" style="margin-top:1rem"><strong>⚠️ Sunday warning:</strong> Austrian supermarkets are mostly closed Sundays. Arrive Saturday (Aug 30) and stock up!</div>
 </div>
 </section>
 
+<!-- ====== ACTIVCARD ====== -->
+<section class="section" id="activcard">
+<h2>💳 Zillertal Activcard — 2026 Analysis</h2>
+<div class="card">
+<h3>Official 2026 Prices</h3>
+<table>
+<tr><th>Duration</th><th>Adult</th></tr>
+<tr><td>3 days</td><td>€95.50</td></tr>
+<tr><td><strong>6 days</strong></td><td><strong>€137.50</strong></td></tr>
+<tr><td>9 days</td><td>€186.00</td></tr>
+<tr><td>12 days</td><td>€233.00</td></tr>
+</table>
+<p style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted)">+€2 chip card deposit. Consecutive days only. Valid 23 May – 26 Oct 2026. <strong>1 return cable car trip per day</strong> (NOT unlimited).</p>
+</div>
+<div class="card">
+<h3>Breakeven Analysis (3 adults)</h3>
+<table>
+<tr><th>Lift days used</th><th>Individual tickets</th><th>Activcard 6-day</th><th>Result</th></tr>
+<tr><td>3 days</td><td>~€252</td><td>€412.50</td><td><span class="badge badge-red">Loses €160</span></td></tr>
+<tr><td>4 days</td><td>~€336</td><td>€412.50</td><td><span class="badge badge-red">Loses €76</span></td></tr>
+<tr><td>5 days</td><td>~€420</td><td>€412.50</td><td><span class="badge badge-green">Breaks even</span></td></tr>
+</table>
+</div>
+<div class="danger-box"><strong>VERDICT: Skip the Activcard. Buy single tickets.</strong> You'd need 5+ lift days to break even. Your Salzburg pattern only generates 2–4 lift days. Also: Activcard only covers Hintertux to 2,100m — NOT the full glacier at 3,250m.</div>
+</section>
+
+<!-- ====== RESTAURANTS ====== -->
+<section class="section" id="restaurants">
+<h2>🍽️ Restaurants & Food</h2>
+<div class="card">
+<h3>In Town</h3>
+<table>
+<tr><th>Restaurant</th><th>Rating</th><th>Vibe</th></tr>
+<tr><td><strong>Gasthof Perauer</strong> ★★★</td><td>4.6★ Google (1,331)</td><td>THE traditional go-to. Must-do dinner.</td></tr>
+<tr><td><strong>Goldkind</strong> ★★</td><td>Frequently top-listed</td><td>Higher-end. Modern Tyrolean.</td></tr>
+<tr><td><strong>Waldcafe</strong> ★★</td><td>Well-reviewed</td><td>Casual lunch/dinner. Reddit-approved.</td></tr>
+<tr><td><strong>Mo's Bar</strong> ★★</td><td>—</td><td>Live music + food.</td></tr>
+<tr><td>Gasser Metzgerei</td><td>476 reviews TA</td><td>Butcher/deli — trail lunch supplies.</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>On the Mountain</h3>
+<table>
+<tr><th>Hut</th><th>Location</th><th>Note</th></tr>
+<tr><td><strong>Grillhofalm</strong> ★★★</td><td>Penken</td><td>"Kaiserschmarrn not to be missed"</td></tr>
+<tr><td>Edelhütte</td><td>Ahorn (2,238m)</td><td>Strudel with summit views</td></tr>
+<tr><td><strong>Olpererhütte</strong> ★★★</td><td>Above Schlegeis (2,389m)</td><td>Iconic hut, food served</td></tr>
+<tr><td>Berliner Hütte</td><td>Zemmgrund (2,042m)</td><td>Historic DAV hut — destination</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== VEGAN GUIDE ====== -->
+<section class="section" id="vegan">
+<h2>🌱 Vegan Food Guide</h2>
+<div class="warn-box"><strong>Reality check:</strong> Traditional Austrian hut food is NOT vegan. Kaiserschmarrn = eggs+milk. Strudel = butter. Goulash = meat. ☕ Coffee IS vegan. Strategy: <strong>pack trail lunches, use huts for coffee + fries/rösti.</strong></div>
+
+<div class="card">
+<h3>Vegan-Friendly Restaurants</h3>
+<table>
+<tr><th>Restaurant</th><th>Vegan options</th><th>Rating</th></tr>
+<tr><td><strong>Goldkind</strong></td><td>Extensive vegan menu</td><td>4.8★ (442) · HappyCow verified</td></tr>
+<tr><td>Mo's Esscafe</td><td>Vegan options</td><td>4.3★</td></tr>
+<tr><td>Pane E Vino</td><td>Vegan modifications</td><td>4.5★ (509)</td></tr>
+<tr><td>China-Restaurant Singapore</td><td>Tofu, veggie stir-fries</td><td>—</td></tr>
+</table>
 </div>
 
-<footer>
-Mayrhofen 2026 · 3 adults · Vegan · ☕ daily at huts · Sources verified Jun 2026
-</footer>
+<div class="card">
+<h3>Per-Hike Vegan Hut Strategy</h3>
+<table>
+<tr><th>Hike</th><th>Hut</th><th>Vegan Option</th></tr>
+<tr><td>Penken Panorama</td><td>Grillhofalm</td><td>☕ Coffee + pommes/rösti. Ask about vegan strudel.</td></tr>
+<tr><td>Ahorn High Walk</td><td>Edelhütte</td><td>☕ Coffee + vegetable soup + salad</td></tr>
+<tr><td>Olpererhütte</td><td>Olpererhütte</td><td>☕ Coffee + fries. <strong>Pack lunch</strong> — limited at 2,389m.</td></tr>
+<tr><td>Hintertux</td><td>Tuxer Fernerhaus</td><td>☕ Coffee + salad + fries. Most options.</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== COMMUNITY INTEL ====== -->
+<section class="section" id="community-intel">
+<h2>💬 Community Forum Intel</h2>
+<div class="card">
+<h3>Key Consensus</h3>
+<ol>
+<li><strong>Olpererhütte:</strong> Universally loved. Parking nightmare if you're late. Go before 8am.</li>
+<li><strong>Ahornspitze:</strong> Fantastic but don't do it in rain. Exposed. Never alone.</li>
+<li><strong>Berliner Höhenweg:</strong> More technical than stats suggest. Not for casual hikers.</li>
+<li><strong>Lifts:</strong> Everyone recommends using them. Valley-to-peak grind is not the Zillertal way.</li>
+<li><strong>Activcard:</strong> Good value IF used most days. One-ride-per-day limit frustrates people.</li>
+<li><strong>September:</strong> Shoulder season is great but not empty — crowds linger into mid-September.</li>
+</ol>
+</div>
+<div class="card">
+<h4>Notable Reddit Quotes</h4>
+<p><em>"I definitely wouldn't do it in the rain, you'd never be alone in that area."</em> — r/wandern on Ahornspitze</p>
+<p><em>"This is not an appropriate route for inexperienced hikers."</em> — r/HikingEurope on Berliner Höhenweg</p>
+<p><em>"On our return from Olpererhütte at about 12:30, the car park was full."</em> — TripAdvisor forum</p>
+<p><em>"We spent our summer holiday in the Zillertal and are very disappointed with the Activcard."</em> — TripAdvisor review</p>
+</div>
+</section>
+
+<!-- ====== NON-HIKING ====== -->
+<section class="section" id="nonhiking">
+<h2>🎯 Non-Hiking Activities — Ranked</h2>
+<div class="card">
+<table>
+<tr><th>Priority</th><th>Activity</th><th>Rating</th><th>Time</th><th>Cost</th><th>Weather</th></tr>
+<tr><td><span class="badge badge-green">HIGH</span></td><td>Paragliding (tandem)</td><td>5.0★ (132)</td><td>2hrs</td><td>€125–140</td><td>Clear, low wind only</td></tr>
+<tr><td><span class="badge badge-green">HIGH</span></td><td>Arena Coaster</td><td>Highly rated</td><td>Half-day</td><td>~€10–15</td><td>Light rain OK</td></tr>
+<tr><td><span class="badge badge-yellow">MED</span></td><td>BrauKunstHaus brewery</td><td>4.5★ (15)</td><td>1–2hrs</td><td>€18</td><td><span class="badge badge-blue">Rainy day ✅</span></td></tr>
+<tr><td><span class="badge badge-red">LOW</span></td><td>Gold show mine</td><td>3.7★ (11)</td><td>2hrs</td><td>~€10–15</td><td>Rainy day ✅</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== FINAL PLANS (Steepness) ====== -->
+<section class="section" id="final-plans">
+<h2>📐 FINAL Plans — Steepness-Based (Gain/km)</h2>
+<div class="warn-box">Key insight: "Short" versions of hikes are often STEEPER than full versions. Olpererhütte Short = 94 m/km vs Full = 63 m/km.</div>
+<div class="card">
+<h3>All Hikes — Ranked by Steepness</h3>
+<table>
+<tr><th>Hike</th><th>Gain</th><th>Distance</th><th>Gain/km</th><th>Verdict</th></tr>
+<tr><td>Stilluptal Full</td><td>325m</td><td>15.3km</td><td><strong>21</strong></td><td>Flattest</td></tr>
+<tr><td>Penken Panorama</td><td>300m</td><td>8.7km</td><td><strong>35</strong></td><td>Gentle</td></tr>
+<tr><td>Penken Ridge Ext</td><td>450m</td><td>12km</td><td><strong>38</strong></td><td>Very gradual</td></tr>
+<tr><td>Berliner Hütte</td><td>854m</td><td>18.3km</td><td><strong>47</strong></td><td>Gradual · 18km</td></tr>
+<tr><td>Filzenkogel</td><td>350m</td><td>7km</td><td><strong>50</strong></td><td>Typical</td></tr>
+<tr><td>Ahorn High Walk</td><td>400m</td><td>8km</td><td><strong>50</strong></td><td>Comfortable</td></tr>
+<tr><td>Olpererhütte FULL</td><td>876m</td><td>13.8km</td><td><strong>63</strong></td><td>Steady over 14km</td></tr>
+<tr><td>Ahornspitze</td><td>1,000m</td><td>12.4km</td><td><strong>81</strong></td><td><span class="badge badge-red">Steepest</span></td></tr>
+<tr><td>Olpererhütte SHORT</td><td>600m</td><td>6.4km</td><td><strong>94</strong></td><td><span class="badge badge-red">Short = worse</span></td></tr>
+</table>
+</div>
+<div class="card">
+<h3>5 Plans</h3>
+<p><strong>Plan A — Balanced:</strong> Penken · Filzenkogel · Stilluptal Full · Wolfsklamm+High Road · Ahorn High Walk · Berliner Hütte · Hintertux · Krimml</p>
+<p><strong>Plan B — With Olpererhütte:</strong> Penken · Filzenkogel · Stilluptal short · Wolfsklamm+High Road · <strong>Olpererhütte Full</strong> · Ahorn High Walk · Hintertux · Krimml</p>
+<p><strong>Plan C — Gorge Heavy:</strong> Zemmbach · Wolfsklamm · Penken · Stilluptal Full · Ahorn High Walk · Krimml · Berliner Hütte · Hintertux</p>
+<p><strong>Plan D — Relaxed:</strong> Town · Penken · Filzenkogel · Wolfsklamm+High Road · Stilluptal Full · Ahorn High Walk · Hintertux · Krimml</p>
+<p><strong>Plan E — Weather-Flexible:</strong> Penken · Berliner Hütte · Wolfsklamm · Ahorn High Walk · Olpererhütte Full · High Road · Stilluptal · Krimml · Hintertux</p>
+</div>
+</section>
+
+<!-- ====== REVISED PLANS ====== -->
+<section class="section" id="revised-plans">
+<h2>🔄 REVISED Plans — ≤600m Gain Cap</h2>
+<div class="card">
+<h3>Tier 1 — Essential (within 600m cap)</h3>
+<table>
+<tr><th>#</th><th>Item</th><th>Distance</th><th>Gain</th><th>Why</th></tr>
+<tr><td>1</td><td><strong>Olpererhütte Short</strong></td><td>6.4 km</td><td>600m</td><td>Bridge + iconic view. At limit but doable.</td></tr>
+<tr><td>2</td><td><strong>Penken Panorama Trail</strong></td><td>8.7 km</td><td>~300m</td><td>360° views. Lift up. Circular.</td></tr>
+<tr><td>3</td><td><strong>Krimml Waterfalls</strong></td><td>~4 km walk</td><td>~350m</td><td>Europe's highest. Boardwalk.</td></tr>
+<tr><td>4</td><td><strong>Hintertux Glacier</strong></td><td>Variable</td><td>0–200m at top</td><td>Gondola does the work. Weather-proof.</td></tr>
+<tr><td>5</td><td><strong>Zillertal High Road</strong></td><td>Drive</td><td>—</td><td>50km alpine road to 2,020m. €10.</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>✗ Removed (exceeds 600m cap)</h3>
+<table>
+<tr><th>Item</th><th>Gain</th><th>Why removed</th></tr>
+<tr><td>Ahornspitze summit</td><td>~1,000m</td><td>Way over cap. Even from lift.</td></tr>
+<tr><td>Olpererhütte Full Loop</td><td>876m</td><td>Over cap.</td></tr>
+<tr><td>Berliner Hütte</td><td>854m</td><td>Over cap. Long valley approach.</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ====== 5 DAY-BY-DAY ====== -->
+<section class="section" id="five-plans">
+<h2>📋 5 Day-by-Day Itinerary Plans</h2>
+<p style="color:var(--text-muted);margin-bottom:1rem">☕ = coffee · 🥮 = strudel/kaiserschmarrn · ✡ = Shabbat · ⚡ = Shabbat eve</p>
+
+<div class="plan-grid">
+<div class="card">
+<h4>Plan 1 — Classic (Balanced)</h4>
+<table style="font-size:0.82rem">
+<tr><th>Day</th><th>Activity</th><th>km</th><th>Gain</th></tr>
+<tr><td>Mon</td><td>Penken Panorama</td><td>8.7</td><td>300m</td></tr>
+<tr><td>Tue</td><td>Ahornspitze</td><td>12.4</td><td>1,000m</td></tr>
+<tr><td>Wed</td><td>Olpererhütte Short</td><td>6.4</td><td>600m</td></tr>
+<tr><td>Thu</td><td>Wolfsklamm + High Road</td><td>3</td><td>200m</td></tr>
+<tr><td>Fri ⚡</td><td>Berliner Hütte</td><td>18.3</td><td>854m</td></tr>
+<tr><td>Sat ✡</td><td>Stilluptal (walk-in)</td><td>~15</td><td>325m</td></tr>
+<tr><td>Sun</td><td>Hintertux Glacier</td><td>—</td><td>gondola</td></tr>
+<tr><td>Mon</td><td>Krimml Waterfalls</td><td>4</td><td>350m</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h4>Plan 3 — Gorge & Waterfall</h4>
+<table style="font-size:0.82rem">
+<tr><th>Day</th><th>Activity</th><th>km</th><th>Gain</th></tr>
+<tr><td>Mon</td><td>Zemmbach Gorge + town</td><td>5</td><td>flat</td></tr>
+<tr><td>Tue</td><td>Wolfsklamm Gorge</td><td>3</td><td>200m</td></tr>
+<tr><td>Wed</td><td>Penken Panorama</td><td>8.7</td><td>300m</td></tr>
+<tr><td>Thu</td><td>Stilluptal (short)</td><td>7</td><td>430m</td></tr>
+<tr><td>Fri ⚡</td><td>Ahorn High Walk</td><td>8</td><td>400m</td></tr>
+<tr><td>Sat ✡</td><td>Krimml Waterfalls</td><td>4</td><td>350m</td></tr>
+<tr><td>Sun</td><td>Olpererhütte Short</td><td>6.4</td><td>600m</td></tr>
+<tr><td>Mon</td><td>Hintertux Glacier</td><td>—</td><td>gondola</td></tr>
+</table>
+<p style="font-size:0.8rem;margin-top:0.5rem"><strong>4 gorge/waterfall days.</strong> Closest match to Salzburg style.</p>
+</div>
+
+<div class="card">
+<h4>Plan 4 — Relaxed (never over 450m)</h4>
+<table style="font-size:0.82rem">
+<tr><th>Day</th><th>Activity</th><th>km</th><th>Gain</th></tr>
+<tr><td>Mon</td><td>Arrival + town</td><td>—</td><td>—</td></tr>
+<tr><td>Tue</td><td>Penken Panorama</td><td>8.7</td><td>300m</td></tr>
+<tr><td>Wed</td><td>Filzenkogel</td><td>7</td><td>350m</td></tr>
+<tr><td>Thu</td><td>Wolfsklamm + High Road</td><td>3</td><td>200m</td></tr>
+<tr><td>Fri ⚡</td><td>Stilluptal (short)</td><td>7</td><td>430m</td></tr>
+<tr><td>Sat ✡</td><td>Ahorn High Walk</td><td>8</td><td>400m</td></tr>
+<tr><td>Sun</td><td>Hintertux Glacier</td><td>—</td><td>gondola</td></tr>
+<tr><td>Mon</td><td>Krimml Waterfalls</td><td>4</td><td>350m</td></tr>
+</table>
+<p style="font-size:0.8rem;margin-top:0.5rem"><strong>Max gain: 430m.</strong> No Olpererhütte. Easiest plan.</p>
+</div>
+</div>
+</section>
+
+<!-- ====== PROFESSIONAL PLANS ====== -->
+<section class="section" id="pro-plans">
+<h2>✅ PROFESSIONAL Plans — Anchors, Backups, Budget</h2>
+<div class="card">
+<h3>Plan A — Balanced (Recommended)</h3>
+<table style="font-size:0.82rem">
+<tr><th>Day</th><th>Anchor</th><th>km</th><th>Gain</th><th>m/km</th><th>☕🥮</th><th>Dinner</th></tr>
+<tr><td>Mon Aug 31</td><td>Penken Panorama</td><td>8.7</td><td>300m</td><td>35</td><td>Grillhofalm</td><td>Perauer</td></tr>
+<tr><td>Tue Sep 1</td><td>Filzenkogel</td><td>7</td><td>350m</td><td>50</td><td>Ahornhütte</td><td>Waldcafe</td></tr>
+<tr><td>Wed Sep 2</td><td>Stilluptal Full</td><td>15.3</td><td>325m</td><td>21</td><td>Stilluppe</td><td>Self-cater</td></tr>
+<tr><td>Thu Sep 3</td><td>Wolfsklamm + High Road</td><td>3</td><td>200m</td><td>—</td><td>Stans café</td><td>Goldkind</td></tr>
+<tr><td>Fri Sep 4</td><td>Ahorn High Walk ⚡</td><td>8</td><td>400m</td><td>50</td><td>Edelhütte</td><td>Mo's Bar</td></tr>
+<tr><td>Sat Sep 5</td><td>Stilluptal walk-in ✡</td><td>~15</td><td>325m</td><td>22</td><td>Stilluppe</td><td>Perauer</td></tr>
+<tr><td>Sun Sep 6</td><td>Hintertux Glacier</td><td>—</td><td>gondola</td><td>—</td><td>Tuxer Fernerhaus</td><td>Self-cater</td></tr>
+<tr><td>Mon Sep 7</td><td>Krimml Waterfalls</td><td>4</td><td>350m</td><td>—</td><td>Krimml café</td><td>Waldcafe</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Rainy Day Activity Bucket</h3>
+<table>
+<tr><th>Activity</th><th>Drive</th><th>Cost</th><th>Indoor?</th></tr>
+<tr><td><strong>Hintertux Glacier</strong></td><td>25min</td><td>gondola</td><td>Mostly indoor</td></tr>
+<tr><td>BrauKunstHaus brewery</td><td>15min</td><td>€18</td><td>Indoor</td></tr>
+<tr><td>Arena Coaster</td><td>15min train</td><td>~€10–15</td><td>Light rain OK</td></tr>
+<tr><td>Krimml Waterfalls</td><td>1–1.5hr</td><td>€9</td><td>Better in rain!</td></tr>
+<tr><td>Town cafes</td><td>Walk</td><td>~€15–25</td><td>Indoor</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Budget Estimate (per person, 9 days)</h3>
+<table>
+<tr><th>Category</th><th>Estimate</th></tr>
+<tr><td>Accommodation (8 nights)</td><td>€520–680</td></tr>
+<tr><td>Car rental</td><td>€300–400</td></tr>
+<tr><td>Lift tickets (3–4 days)</td><td>€80–120</td></tr>
+<tr><td>Tolls (Schlegeis, High Road, Gerlos)</td><td>€40</td></tr>
+<tr><td>Food (self-cater + 4 dinners out)</td><td>€200–300</td></tr>
+<tr><td>Entries (Krimml €9, Wolfsklamm €6)</td><td>€15</td></tr>
+<tr><td><strong>Total per person</strong></td><td><strong>~€1,155–1,555</strong></td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Shabbat Walking Routes (Sat Sep 5)</h3>
+<table>
+<tr><th>Route</th><th>From town</th><th>Total km</th><th>Gain</th></tr>
+<tr><td>Zemmbach Gorge Loop</td><td>Town center</td><td>~5</td><td>flat</td></tr>
+<tr><td>Stilluptal (walk-in)</td><td>4km to trailhead</td><td>~15–23</td><td>325–430m</td></tr>
+<tr><td>Ziller River Path</td><td>Town center</td><td>3–8</td><td>flat</td></tr>
+<tr><td>Mayrhofen Town Walk</td><td>Town center</td><td>2–4</td><td>flat</td></tr>
+</table>
+<p style="font-size:0.82rem;margin-top:0.5rem;color:var(--text-muted)">Penkenbahn and Ahornbahn gondolas are NOT Shabbat-compatible (mechanical transport). Penken forest trails also off-limits Sep 5 — Ultraks race day.</p>
+</div>
+</section>
+
+</main>
 
 <script>
-// Smooth scroll + active nav
-document.querySelectorAll('nav a').forEach(function(a){
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    var target=document.querySelector(this.getAttribute('href'));
-    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
-    document.querySelectorAll('nav a').forEach(function(x){x.classList.remove('active')});
-    this.classList.add('active');
-  });
-});
-// Highlight current section
-window.addEventListener('scroll',function(){
-  var sections=document.querySelectorAll('section');
-  var navLinks=document.querySelectorAll('nav a');
-  sections.forEach(function(sec,i){
-    var top=sec.getBoundingClientRect().top;
-    if(top<200&&top>-200&&navLinks[i]){
-      navLinks.forEach(function(x){x.classList.remove('active')});
-      navLinks[i].classList.add('active');
-    }
-  });
-});
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); document.getElementById('overlay').classList.toggle('open'); }
+document.querySelectorAll('.sidebar nav a').forEach(a => a.addEventListener('click', () => { if(window.innerWidth <= 860) toggleSidebar(); }));
+// Highlight current section in sidebar
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active')); const link = document.querySelector(`.sidebar nav a[href="#${e.target.id}"]`); if(link) link.classList.add('active'); }});
+}, {rootMargin: '-20% 0px -70% 0px'});
+document.querySelectorAll('.section[id]').forEach(s => observer.observe(s));
 </script>
 </body>
 </html>
