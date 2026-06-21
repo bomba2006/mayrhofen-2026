@@ -49,12 +49,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .gmaps-btn-sm{display:inline-flex;align-items:center;gap:.3rem;padding:.35rem .75rem;background:#0d1117;border:1px solid #30363d;border-radius:5px;color:#58a6ff;text-decoration:none;font-size:.7rem;font-weight:600;margin:.3rem .3rem .3rem 0}
 .gmaps-btn-sm:hover{border-color:#58a6ff}
 /* Mobile toggle */
-.toggle-btn{display:none;position:absolute;top:.75rem;left:.75rem;z-index:1001;background:#161b22;border:1px solid #30363d;color:#f0f6fc;padding:.5rem .7rem;border-radius:6px;cursor:pointer;font-size:.8rem}
+.toggle-btn{display:none;position:absolute;top:.75rem;left:.75rem;z-index:1001;background:#161b22;border:1px solid #30363d;color:#f0f6fc;padding:.55rem .8rem;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600}
 @media(max-width:740px){
   .panel{position:absolute;left:0;top:0;height:100%;z-index:100;transform:translateX(-100%);transition:transform .25s;width:300px;min-width:300px}
   .panel.show{transform:translateX(0)}
   .toggle-btn{display:block}
-  .drawer{left:0}
+  .drawer{left:0;max-height:55vh}
+  .drawer.open{border-radius:12px 12px 0 0}
 }
 </style>
 </head>

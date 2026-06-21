@@ -30,8 +30,11 @@ h1{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:.3rem}
 .section-body{padding:1.5rem;font-size:.88rem}
 .section-body p{margin-bottom:.75rem}
 .section-body table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.82rem}
-.section-body th{background:#161b22;padding:.5rem .7rem;text-align:left;font-size:.72rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #21262d}
-.section-body td{padding:.45rem .7rem;border-bottom:1px solid #21262d1a}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0}
+.table-wrap table{margin:0}
+.section-body th{background:#161b22;padding:.5rem .7rem;text-align:left;font-size:.72rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #21262d;white-space:nowrap}
+.section-body td{padding:.45rem .7rem;border-bottom:1px solid #21262d1a;white-space:nowrap}
+.section-body td.wrap{white-space:normal}
 .section-body tr:hover td{background:#161b2233}
 .rejected{background:#f8514908;border-left:3px solid #f8514944;padding:.75rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.82rem}
 .rejected strong{color:#f85149}
@@ -49,7 +52,21 @@ summary:hover{color:#f0f6fc}
 .badge-g{background:#2ea04322;color:#2ea043}
 .badge-y{background:#d2991d22;color:#d2991d}
 .badge-r{background:#f8514922;color:#f85149}
-@media(max-width:640px){body{padding:1rem}.stats-bar{gap:.75rem}.photo{height:160px}}
+@media(max-width:640px){
+  body{padding:.5rem}
+  h1{font-size:1.4rem}
+  .subtitle{font-size:.78rem}
+  nav{gap:.4rem;margin-bottom:1.5rem}
+  nav a{padding:.5rem .6rem;font-size:.75rem}
+  .section{margin-bottom:1.5rem}
+  .section-header{padding:.9rem 1rem}
+  .section-header h2{font-size:1rem}
+  .section-body{padding:1rem;font-size:.82rem;overflow-x:auto}
+  .stats-bar{gap:.6rem;padding:.6rem 1rem;font-size:.75rem}
+  .photo{height:140px}
+  .gmaps-btn{font-size:.75rem;padding:.45rem .8rem}
+  .verdict{font-size:.7rem;padding:.2rem .55rem}
+}
 </style>
 </head>
 <body>
