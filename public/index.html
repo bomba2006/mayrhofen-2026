@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mayrhofen 2026</title>
+<title>Gerlos 2026 — Zillertal Arena</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
@@ -11,6 +11,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-
 .hero h1{font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
 .hero .tag{font-size:1.1rem;color:#8b949e;margin-top:.4rem}
 .hero .dates{font-size:.85rem;color:#58a6ff;margin-top:.5rem;font-weight:600}
+.hero .base{font-size:.78rem;color:#8b949e;margin-top:.3rem}
 .views{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:780px;width:100%}
 .view-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:2rem 1.5rem;text-decoration:none;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
 .view-card:hover{border-color:#58a6ff;transform:translateY(-2px)}
@@ -24,38 +25,41 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-
 .view-card.map-card{border-color:#d2991d33}
 .view-card.map-card:hover{border-color:#d2991d}
 .view-card.map-card .icon{color:#d2991d}
-.view-card.companion{border-color:#6e768133}
-.view-card.companion .icon{color:#6e7681}
+.view-card.companion{border-color:#a371f733}
+.view-card.companion:hover{border-color:#a371f7}
+.view-card.companion .icon{color:#a371f7}
 .footer{margin-top:3rem;font-size:.72rem;color:#484f58;text-align:center}
+.footer a{color:#58a6ff}
 @media(max-width:640px){.views{grid-template-columns:1fr}.hero h1{font-size:1.8rem}}
 </style>
 </head>
 <body>
 <div class="hero">
-  <h1>🏔️ Mayrhofen 2026</h1>
-  <p class="tag">Zillertal Valley, Tyrol, Austria</p>
+  <h1>🏔️ Gerlos 2026</h1>
+  <p class="tag">Zillertal Arena, Tyrol, Austria</p>
   <p class="dates">August 31 – September 8 · 3 adults · self-catering</p>
+  <p class="base">Base: Appart Bergleben Deluxe · Free lifts: Isskogelbahn + Dorfbahn</p>
 </div>
 <div class="views">
   <a href="report.html" class="view-card report">
     <span class="icon">📋</span>
     <h2>Evidence Dossier</h2>
-    <p>Every choice backed by data. Verdicts, comparisons, rejected alternatives, weather analysis, budget. For skeptics who demand proof.</p>
+    <p>Every choice backed by data. Hike verdicts, comparisons, rejected alternatives, weather matrix, budget. For skeptics who demand proof.</p>
     <span class="audience">Navigator View</span>
   </a>
   <a href="map.html" class="view-card map-card">
     <span class="icon">🗺️</span>
     <h2>Trail Map</h2>
-    <p>Interactive map with all routes, elevation profiles, difficulty filtering, navigate-to-trailhead buttons.</p>
+    <p>Interactive map with all routes, elevation profiles, trailhead navigation, POIs. Find your hike.</p>
     <span class="audience">Hiker View</span>
   </a>
-  <a href="accommodation.html" class="view-card" style="border-color:#a371f733">
-    <span class="icon">🏠</span>
-    <h2>Accommodation</h2>
-    <p>15 properties across 6 sources. Comparison cards, ratings, prices, direct links. Find your base.</p>
-    <span class="audience">Planning</span>
+  <a href="companion.html" class="view-card companion">
+    <span class="icon">📱</span>
+    <h2>Day Companion</h2>
+    <p>One day per screen. Big photos, simple language. "What are we doing tomorrow?" For the people coming on the trip.</p>
+    <span class="audience">Companion View</span>
   </a>
 </div>
-<p class="footer">Research sourced from AllTrails, TripAdvisor, Google, Reddit, official Mayrhofner Bergbahnen · <a href="https://github.com/bomba2006/mayrhofen-2026" style="color:#58a6ff">github.com/bomba2006/mayrhofen-2026</a></p>
+<p class="footer">Research from outdooractive · bergfex · AllTrails · Komoot · Reddit · TripAdvisor · <a href="https://github.com/bomba2006/mayrhofen-2026">github.com/bomba2006/mayrhofen-2026</a></p>
 </body>
 </html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerlos 2026 — Day Companion</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:#0d1117;color:#e6edf3;padding:1rem}
+.container{max-width:600px;margin:0 auto}
+nav{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+nav a{color:#8b949e;text-decoration:none;font-size:.78rem;padding:.3rem .65rem;border-radius:6px;border:1px solid #21262d;transition:all .15s}
+nav a:hover{color:#f0f6fc;border-color:#58a6ff}
+nav a.home{color:#58a6ff;font-weight:600}
+h1{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.3rem}
+.subtitle{color:#8b949e;font-size:.85rem;margin-bottom:2rem}
+.day-card{background:#161b22;border:1px solid #21262d;border-radius:12px;margin-bottom:1.5rem;overflow:hidden}
+.day-header{padding:1.25rem 1.5rem;border-bottom:1px solid #21262d;display:flex;align-items:center;gap:1rem}
+.day-num{background:#58a6ff22;color:#58a6ff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;flex-shrink:0}
+.day-header .day-title{font-size:1.1rem;font-weight:700;color:#f0f6fc}
+.day-header .day-date{font-size:.75rem;color:#8b949e}
+.day-body{padding:1.5rem}
+.energy{display:inline-block;padding:.3rem .8rem;border-radius:16px;font-size:.8rem;font-weight:700;margin-bottom:1rem}
+.energy.easy{background:#2ea04322;color:#2ea043}
+.energy.moderate{background:#d2991d22;color:#d2991d}
+.energy.hard{background:#f8514922;color:#f85149}
+.energy.rest{background:#58a6ff22;color:#58a6ff}
+.info-row{display:flex;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap;font-size:.82rem}
+.info-item{display:flex;flex-direction:column;gap:.15rem}
+.info-item .val{font-weight:700;color:#f0f6fc}
+.info-item .lbl{font-size:.68rem;color:#8b949e;text-transform:uppercase}
+.tip{background:#d2991d11;border-left:3px solid #d2991d44;padding:.6rem .8rem;margin:.8rem 0;border-radius:0 6px 6px 0;font-size:.8rem}
+.tip strong{color:#d2991d}
+.nav-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.45rem .9rem;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#58a6ff;text-decoration:none;font-size:.75rem;font-weight:600;margin:.3rem .3rem .3rem 0}
+.nav-btn:hover{border-color:#58a6ff}.nav-btn.shabbat{color:#a371f7;border-color:#a371f733}
+.footer{margin-top:2rem;font-size:.7rem;color:#484f58;text-align:center}
+@media(max-width:640px){h1{font-size:1.3rem}.day-body{padding:1rem}.info-row{gap:.8rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <a href="index.html" class="home">← Hub</a>
+  <a href="report.html">📋 Report</a>
+  <a href="map.html">🗺️ Map</a>
+</nav>
+<h1>📱 Day Companion</h1>
+<p class="subtitle">What are we doing tomorrow? One day per screen. Simple language. For the people coming on the trip.</p>
+
+<!-- Day 1 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">1</div><div><div class="day-title">Arrival + Settle In</div><div class="day-date">Monday, August 31</div></div></div>
+<div class="day-body">
+<span class="energy rest">Rest Day</span>
+<p>We arrive at <strong>Appart Bergleben Deluxe</strong> in Gerlos. Unpack, explore. Walk into Gerlos village (2km). Find the best strudel in town. Stock up at SPAR supermarket (closed Sunday — shop today!).</p>
+<div class="info-row">
+<div class="info-item"><span class="val">🥮</span><span class="lbl">Find THE strudel</span></div>
+<div class="info-item"><span class="val">🛒</span><span class="lbl">SPAR shop</span></div>
+<div class="info-item"><span class="val">🧖</span><span class="lbl">Private sauna</span></div>
+</div>
+<div class="tip"><strong>Weekday arrival:</strong> SPAR is open today. Stock up for the week. Closed Sunday!</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2475,12.0280">🧭 Our apartment</a>
+</div></div>
+
+<!-- Day 2 -->
+<div class="day-card" id="day2">
+<div class="day-header"><div class="day-num">2</div><div><div class="day-title">First Hike — Isskogel</div><div class="day-date">Tuesday, September 1</div></div></div>
+<div class="day-body">
+<span class="energy easy">Easy–Moderate</span>
+<p>We take the <strong>Isskogelbahn gondola</strong> (FREE!) up to 1,900m. The hard climbing is done by the lift. Three options today:</p>
+<p>🥇 <strong>Best choice:</strong> Summit + plateau loop. 5–7km, 2.5–3.5 hours. Views of the whole Zillertal.</p>
+<p>🥈 If tired from travel: Just the summit (2,264m). 2 hours round trip.</p>
+<p>🥉 If feeling super strong: Continue all the way to Kreuzjoch (2,558m). 6–7 hours.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">FREE</span><span class="lbl">Gondola</span></div>
+<div class="info-item"><span class="val">5–7 km</span><span class="lbl">Recommended</span></div>
+<div class="info-item"><span class="val">2.5–3.5h</span><span class="lbl">Hiking time</span></div>
+</div>
+<div class="tip"><strong>We decide at the summit.</strong> If we feel great → continue. If tired → loop back. No wrong choice — lift is free, we can return.</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300">🧭 Isskogelbahn</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Latschenalm at top · 🍽️ Dahuam.202 vegan dinner</p>
+</div></div>
+
+<!-- Day 3 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">3</div><div><div class="day-title">Penken Panorama</div><div class="day-date">Wednesday, September 2</div></div></div>
+<div class="day-body">
+<span class="energy easy">Easy</span>
+<p>We drive to Mayrhofen (25 min) and take the <strong>Penkenbahn gondola</strong> up. A gentle circular trail with 360° mountain views. This is the last day before a big trail running festival takes over the mountain — we MUST do this today.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">8.7 km</span><span class="lbl">Distance</span></div>
+<div class="info-item"><span class="val">2–3h</span><span class="lbl">Hiking time</span></div>
+<div class="info-item"><span class="val">~€28</span><span class="lbl">Lift ticket</span></div>
+</div>
+<div class="tip"><strong>⚠️ Last chance!</strong> Penken closes tomorrow for Ultraks race setup. This is our only window.</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640">🧭 Penkenbahn</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Grillhofalm · 🍽️ Goldkind vegan restaurant (4.8★) in Mayrhofen</p>
+</div></div>
+
+<!-- Day 4 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">4</div><div><div class="day-title">The Big One — Olpererhütte</div><div class="day-date">Thursday, September 3</div></div></div>
+<div class="day-body">
+<span class="energy hard">Hard — The Signature Hike</span>
+<p>This is <strong>the #1 rated hike in the Zillertal</strong>. An iconic suspension bridge over turquoise water at 2,389m. We leave early: <strong>6:30am from the apartment.</strong> The parking fills up by 10am.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">13.8 km</span><span class="lbl">Distance</span></div>
+<div class="info-item"><span class="val">5–6h</span><span class="lbl">Hiking time</span></div>
+<div class="info-item"><span class="val">50 min</span><span class="lbl">Drive</span></div>
+</div>
+<div class="tip"><strong>⏰ Early start essential.</strong> Set alarm. Coffee in the car. We want to be at the trailhead by 7:30am. "My favorite hike in Austria" — AllTrails 4.8★.</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.0050,11.7050">🧭 Schlegeis parking</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕🥮 Olpererhütte at 2,389m · 🍽️ Self-cater + sauna recovery</p>
+</div></div>
+
+<!-- Day 5 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">5</div><div><div class="day-title">⚡ Krimml Waterfalls</div><div class="day-date">Friday, September 4</div></div></div>
+<div class="day-body">
+<span class="energy easy">Easy · Shabbat Eve</span>
+<p>Europe's highest waterfall — only <strong>15 minutes</strong> from our apartment! A beautiful boardwalk path up 385m of cascading water. We'll be home by early afternoon — hours before sunset.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">~4 km</span><span class="lbl">Boardwalk</span></div>
+<div class="info-item"><span class="val">2–3h</span><span class="lbl">Total time</span></div>
+<div class="info-item"><span class="val">15 min</span><span class="lbl">Drive</span></div>
+</div>
+<div class="tip"><strong>⚡ Back by ~13:30.</strong> Plenty of time to prep Shabbat meals for tomorrow, relax, sauna.</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2190,12.1710">🧭 Krimml Waterfalls</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕🥮 Krimml café · 🌧️ Better in rain! · 🍽️ Pre-Shabbat meal at apartment</p>
+</div></div>
+
+<!-- Day 6 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">6</div><div><div class="day-title">✡ Shabbat Rest</div><div class="day-date">Saturday, September 5</div></div></div>
+<div class="day-body">
+<span class="energy rest">Rest Day</span>
+<p>A peaceful day. We walk to Gerlos village (2km), sit by the stream, explore the quiet streets. No car, no gondola — just walking and resting.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">5–10 km</span><span class="lbl">Easy walking</span></div>
+<div class="info-item"><span class="val">flat</span><span class="lbl">Valley road</span></div>
+</div>
+<div class="tip"><strong>✡ Walking only today.</strong> Village cafés for coffee. Pre-prepared meals at the apartment. Sauna in the evening.</div>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Gerlos village café · 🍽️ Pre-prepared Shabbat meal</p>
+</div></div>
+
+<!-- Day 7 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">7</div><div><div class="day-title">Reservoir Recovery</div><div class="day-date">Sunday, September 6</div></div></div>
+<div class="day-body">
+<span class="energy easy">Easy–Moderate</span>
+<p>Two options, both 5–10 minutes from home:</p>
+<p>🥇 <strong>Durlaßboden Extended:</strong> Flat loop around two alpine reservoirs. 21km but almost no climbing. Boat rental, swimming, café. Pure recovery.</p>
+<p>🥈 <strong>Hohe Tauern Panorama:</strong> Longer but gradual. Epic views of 30+ peaks. If we want one more wow day.</p>
+<div class="info-row">
+<div class="info-item"><span class="val">19–21 km</span><span class="lbl">Distance</span></div>
+<div class="info-item"><span class="val">Very flat</span><span class="lbl">Type</span></div>
+<div class="info-item"><span class="val">5–10 min</span><span class="lbl">Drive</span></div>
+</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2420,12.0820">🧭 Durlaßboden</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Seestüberl or Gasthof Finkau · 🍽️ Umbrella Zyllertal or Dahuam.202</p>
+</div></div>
+
+<!-- Day 8 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">8</div><div><div class="day-title">Wimmertal + Farewell</div><div class="day-date">Monday, September 7</div></div></div>
+<div class="day-body">
+<span class="energy easy">Easy</span>
+<p>A gentle morning walk through the most unspoiled valley in Gerlos — wild, quiet, no crowds. Then we pack up and drive to Mayrhofen for a farewell dinner at <strong>Goldkind</strong>, the best vegan restaurant in the valley (4.8★, 442 reviews).</p>
+<div class="info-row">
+<div class="info-item"><span class="val">11.1 km</span><span class="lbl">Distance</span></div>
+<div class="info-item"><span class="val">~3h</span><span class="lbl">Hiking time</span></div>
+<div class="info-item"><span class="val">5 min</span><span class="lbl">Drive</span></div>
+</div>
+<div class="tip"><strong>Farewell dinner:</strong> Goldkind in Mayrhofen is worth the 25-minute drive. Vegan burgers, pasta, curry. The perfect last night.</div>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2400,12.0450">🧭 Wimmertal</a>
+<a class="nav-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1670,11.8620">🍽️ Goldkind</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Wimmertalalm · 🍽️ Goldkind 4.8★ farewell feast</p>
+</div></div>
+
+<!-- Day 9 -->
+<div class="day-card">
+<div class="day-header"><div class="day-num">9</div><div><div class="day-title">Departure</div><div class="day-date">Tuesday, September 8</div></div></div>
+<div class="day-body">
+<span class="energy rest">Travel Day</span>
+<p>Pack up. Check out. Final coffee in Gerlos or Zell am Ziller. Drive home via the scenic Gerlos Alpine Road.</p>
+</div></div>
+
+<div class="footer">Gerlos 2026 · Aug 31–Sep 8 · Appart Bergleben Deluxe · <a href="https://github.com/bomba2006/mayrhofen-2026" style="color:#58a6ff">github</a></div>
+</div>
+</body>
+</html>
