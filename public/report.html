@@ -7,52 +7,70 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.65;padding:2rem 1rem}
-.container{max-width:860px;margin:0 auto}
-nav{display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap}
-nav a{color:#8b949e;text-decoration:none;font-size:.82rem;padding:.35rem .7rem;border-radius:6px;border:1px solid #21262d;transition:all .15s}
+.container{max-width:900px;margin:0 auto}
+nav{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+nav a{color:#8b949e;text-decoration:none;font-size:.78rem;padding:.3rem .65rem;border-radius:6px;border:1px solid #21262d;transition:all .15s}
 nav a:hover{color:#f0f6fc;border-color:#58a6ff}
 nav a.home{color:#58a6ff;font-weight:600}
-h1{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:.3rem}
-.subtitle{color:#8b949e;font-size:.9rem;margin-bottom:2.5rem}
-.section{margin-bottom:3rem;border:1px solid #21262d;border-radius:10px;overflow:hidden}
-.section-header{background:#161b22;padding:1.25rem 1.5rem;border-bottom:1px solid #21262d}
-.section-header h2{font-size:1.2rem;color:#f0f6fc}
-.section-body{padding:1.5rem;font-size:.88rem}
-.section-body p{margin-bottom:.75rem}
-.verdict{display:inline-block;padding:.25rem .7rem;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:.6rem}
+h1{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:.2rem}
+.subtitle{color:#8b949e;font-size:.85rem;margin-bottom:2rem}
+.section{margin-bottom:2.5rem;border:1px solid #21262d;border-radius:10px;overflow:hidden}
+.section-header{background:#161b22;padding:1.1rem 1.5rem;border-bottom:1px solid #21262d}
+.section-header h2{font-size:1.15rem;color:#f0f6fc}
+.section-body{padding:1.5rem;font-size:.87rem}
+.section-body p{margin-bottom:.7rem}
+.verdict{display:inline-block;padding:.2rem .6rem;border-radius:16px;font-size:.72rem;font-weight:700;margin-bottom:.5rem}
 .verdict.do{background:#2ea04322;color:#2ea043;border:1px solid #2ea04344}
 .verdict.skip{background:#f8514922;color:#f85149;border:1px solid #f8514944}
 .verdict.warn{background:#d2991d22;color:#d2991d;border:1px solid #d2991d44}
 .verdict.info{background:#58a6ff22;color:#58a6ff;border:1px solid #58a6ff44}
 .verdict.star{background:#a371f722;color:#a371f7;border:1px solid #a371f744}
-.stats-bar{display:flex;gap:1.5rem;padding:.75rem 1.5rem;background:#0d1117;border-bottom:1px solid #21262d;flex-wrap:wrap;font-size:.82rem}
-.stat{display:flex;flex-direction:column;gap:.1rem}
-.stat .val{font-weight:700;color:#f0f6fc}
-.stat .lbl{font-size:.68rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em}
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0}
-.section-body table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.82rem}
-.section-body th{background:#161b22;padding:.5rem .7rem;text-align:left;font-size:.72rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #21262d;white-space:nowrap}
-.section-body td{padding:.45rem .7rem;border-bottom:1px solid #21262d1a;white-space:nowrap}
+.badge{display:inline-block;padding:.1rem .4rem;border-radius:10px;font-size:.68rem;font-weight:700}
+.badge-g{background:#2ea04322;color:#2ea043}.badge-y{background:#d2991d22;color:#d2991d}
+.badge-r{background:#f8514922;color:#f85149}.badge-b{background:#58a6ff22;color:#58a6ff}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0}
+.section-body table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.8rem 0}
+.section-body th{background:#161b22;padding:.45rem .6rem;text-align:left;font-size:.7rem;color:#8b949e;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #21262d;white-space:nowrap}
+.section-body td{padding:.4rem .6rem;border-bottom:1px solid #21262d1a;white-space:nowrap}
 .section-body td.wrap{white-space:normal}
 .section-body tr:hover td{background:#161b2233}
-.rejected{background:#f8514908;border-left:3px solid #f8514944;padding:.75rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.82rem}
+.rejected{background:#f8514908;border-left:3px solid #f8514944;padding:.7rem 1rem;margin:.8rem 0;border-radius:0 6px 6px 0;font-size:.8rem}
 .rejected strong{color:#f85149}
-.seasonal{background:#d2991d11;border-left:3px solid #d2991d44;padding:.75rem 1rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.82rem}
+.seasonal{background:#d2991d11;border-left:3px solid #d2991d44;padding:.7rem 1rem;margin:.8rem 0;border-radius:0 6px 6px 0;font-size:.8rem}
 .seasonal strong{color:#d2991d}
-.gmaps-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#58a6ff;text-decoration:none;font-size:.78rem;font-weight:600;margin:.5rem .5rem .5rem 0;transition:all .15s}
+.gmaps-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .85rem;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#58a6ff;text-decoration:none;font-size:.75rem;font-weight:600;margin:.4rem .4rem .4rem 0;transition:all .15s}
 .gmaps-btn:hover{border-color:#58a6ff;background:#58a6ff11}
-details{margin-top:1rem}
-summary{cursor:pointer;color:#8b949e;font-size:.78rem;font-weight:600;padding:.5rem 0}
+details{margin-top:.8rem}
+summary{cursor:pointer;color:#8b949e;font-size:.76rem;font-weight:600;padding:.4rem 0}
 summary:hover{color:#f0f6fc}
 .stars{color:#d2991d}
-.source{font-size:.72rem;color:#484f58;margin-top:.5rem}
-.source a{color:#58a6ff}
-.badge{display:inline-block;padding:.1rem .45rem;border-radius:10px;font-size:.7rem;font-weight:700}
-.badge-g{background:#2ea04322;color:#2ea043}
-.badge-y{background:#d2991d22;color:#d2991d}
-.badge-r{background:#f8514922;color:#f85149}
-.badge-b{background:#58a6ff22;color:#58a6ff}
-@media(max-width:640px){body{padding:.5rem}h1{font-size:1.4rem}.subtitle{font-size:.78rem}nav{gap:.4rem;margin-bottom:1.5rem}nav a{padding:.5rem .6rem;font-size:.75rem}.section{margin-bottom:1.5rem}.section-header{padding:.9rem 1rem}.section-header h2{font-size:1rem}.section-body{padding:1rem;font-size:.82rem;overflow-x:auto}.stats-bar{gap:.6rem;padding:.6rem 1rem;font-size:.75rem}.gmaps-btn{font-size:.75rem;padding:.45rem .8rem}.verdict{font-size:.7rem;padding:.2rem .55rem}}
+.source{font-size:.7rem;color:#484f58;margin-top:.4rem}.source a{color:#58a6ff}
+/* Timeline */
+.timeline{display:flex;gap:.3rem;overflow-x:auto;padding:1rem 0;scrollbar-width:thin}
+.tl-day{flex:0 0 100px;background:#161b22;border:1px solid #21262d;border-radius:8px;padding:.6rem;text-align:center;cursor:pointer;transition:all .15s;text-decoration:none;color:inherit}
+.tl-day:hover{border-color:#58a6ff;transform:translateY(-2px)}
+.tl-day .dow{font-size:.6rem;color:#8b949e;text-transform:uppercase}
+.tl-day .date{font-size:.75rem;font-weight:700;color:#f0f6fc;margin:.2rem 0}
+.tl-day .hike{font-size:.62rem;color:#58a6ff;margin-top:.2rem;line-height:1.2}
+.tl-day .eng{font-size:.6rem;font-weight:700}
+.tl-day .eng.easy{color:#2ea043}.tl-day .eng.moderate{color:#d2991d}.tl-day .eng.hard{color:#f85149}.tl-day .eng.rest{color:#8b949e}
+.tl-day.rest{border-color:#21262d;opacity:.7}
+.tl-day.shabbat{border-color:#a371f733}
+.tl-day.shabbat:hover{border-color:#a371f7}
+/* Day detail card */
+.day-section{border:1px solid #21262d;border-radius:10px;margin-bottom:2rem;overflow:hidden}
+.day-header{background:#161b22;padding:1rem 1.5rem;border-bottom:1px solid #21262d;display:flex;align-items:center;gap:1rem}
+.day-num{background:#58a6ff22;color:#58a6ff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;flex-shrink:0}
+.day-info{flex:1}.day-info .dn{font-size:1rem;font-weight:700;color:#f0f6fc}
+.day-info .dd{font-size:.72rem;color:#8b949e}
+.day-body{padding:1.25rem 1.5rem;font-size:.85rem}
+.hike-stats{display:flex;gap:1.2rem;flex-wrap:wrap;margin:.8rem 0;font-size:.8rem}
+.hike-stats .hs{display:flex;flex-direction:column;gap:.1rem}
+.hike-stats .hs .v{font-weight:700;color:#f0f6fc}.hike-stats .hs .l{font-size:.65rem;color:#8b949e;text-transform:uppercase}
+.weather-box{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:.8rem 1rem;margin:.8rem 0;font-size:.8rem}
+.weather-box .wt{font-weight:700;color:#d2991d;margin-bottom:.3rem}
+.weather-box .wd{color:#8b949e}
+@media(max-width:640px){body{padding:.5rem}h1{font-size:1.4rem}.subtitle{font-size:.76rem}.day-body{padding:1rem}.hike-stats{gap:.6rem;font-size:.75rem}.timeline{gap:.2rem}.tl-day{flex:0 0 80px;padding:.4rem}}
 </style>
 </head>
 <body>
@@ -61,238 +79,251 @@ summary:hover{color:#f0f6fc}
   <a href="index.html" class="home">← Hub</a>
   <a href="map.html">🗺️ Map</a>
   <a href="companion.html">📱 Companion</a>
-  <a href="#itinerary">Itinerary</a>
-  <a href="#tier0">Tier 0</a>
-  <a href="#tier1">Tier 1</a>
-  <a href="#rejected">Rejected</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#day1">Day 1</a>
+  <a href="#allhikes">All Hikes</a>
   <a href="#budget">Budget</a>
 </nav>
 
 <h1>📋 Evidence Dossier</h1>
 <p class="subtitle">Gerlos 2026 · Aug 31–Sep 8 · 3 adults · Appart Bergleben Deluxe · 2 free lifts · 14 hikes evaluated · 8 rejected</p>
 
-<!-- ITINERARY -->
-<div class="section" id="itinerary">
-<div class="section-header"><h2>🗓️ 8-Day Itinerary</h2></div>
+<!-- TIMELINE -->
+<div class="section" id="timeline">
+<div class="section-header"><h2>🗓️ 8-Day Timeline</h2></div>
 <div class="section-body">
-<p><span class="verdict info">DESIGN</span> 1 hard day. 3 Mayrhofen crossings (€39 toll). 5 Gerlos-local days. Free: Isskogelbahn + Dorfbahn.</p>
-<div class="table-wrap"><table>
-<tr><th>Day</th><th>Date</th><th>Hike</th><th>km</th><th>m/km</th><th>Energy</th><th>Toll</th></tr>
-<tr><td>Mon</td><td>Aug 31</td><td>Arrival + SPAR + village</td><td>—</td><td>—</td><td><span class="badge badge-b">Rest</span></td><td>—</td></tr>
-<tr><td>Tue</td><td>Sep 1</td><td>Isskogel → Kreuzjoch ⭐ (3 options)</td><td>5–19</td><td>varies</td><td><span class="badge badge-y">Flex</span></td><td>—</td></tr>
-<tr><td>Wed</td><td>Sep 2</td><td>Penken Panorama</td><td>8.7</td><td>35</td><td><span class="badge badge-g">Light</span></td><td>€13</td></tr>
-<tr><td>Thu</td><td>Sep 3</td><td>Olpererhütte Full</td><td>13.8</td><td>63</td><td><span class="badge badge-r">HARD</span></td><td>€13+18</td></tr>
-<tr><td>Fri</td><td>Sep 4</td><td>⚡ Krimml Waterfalls</td><td>4</td><td>boardwalk</td><td><span class="badge badge-g">Light</span></td><td>—</td></tr>
-<tr><td>Sat</td><td>Sep 5</td><td>✡ Shabbat walk</td><td>5–10</td><td>flat</td><td><span class="badge badge-b">Rest</span></td><td>—</td></tr>
-<tr><td>Sun</td><td>Sep 6</td><td>Durlaßboden Ext / HT Panorama</td><td>19–21</td><td>16–34</td><td><span class="badge badge-g">Light-Mod</span></td><td>—</td></tr>
-<tr><td>Mon</td><td>Sep 7</td><td>Wimmertal + Goldkind farewell</td><td>11.1</td><td>18</td><td><span class="badge badge-g">Light</span></td><td>€13*</td></tr>
-<tr><td>Tue</td><td>Sep 8</td><td>Departure</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-</table></div>
-<div class="seasonal"><strong>⚠️ Ultraks Trail Festival Sep 4–5:</strong> Penken mountain closed to hiking Sep 5. Penken Panorama MUST be done by Sep 2. Gerlos area completely unaffected.</div>
-<div class="seasonal"><strong>✡ Shabbat Sep 5:</strong> Walking only. Gerlos village walk (2km from apartment). Weaker than Mayrhofen's 5+ Shabbat routes. Trade-off accepted for apartment quality, Krimml proximity, and 2 free lifts.</div>
+<div class="timeline">
+<a href="#day1" class="tl-day rest"><div class="dow">Mon</div><div class="date">31</div><div class="hike">Arrival</div><div class="eng rest">Rest</div></a>
+<a href="#day2" class="tl-day"><div class="dow">Tue</div><div class="date">1</div><div class="hike">Isskogel</div><div class="eng moderate">Mod</div></a>
+<a href="#day3" class="tl-day"><div class="dow">Wed</div><div class="date">2</div><div class="hike">Penken</div><div class="eng easy">Easy</div></a>
+<a href="#day4" class="tl-day"><div class="dow">Thu</div><div class="date">3</div><div class="hike">Olperer</div><div class="eng hard">Hard</div></a>
+<a href="#day5" class="tl-day"><div class="dow">Fri</div><div class="date">4</div><div class="hike">Krimml</div><div class="eng easy">Easy</div></a>
+<a href="#day6" class="tl-day shabbat"><div class="dow">Sat</div><div class="date">5</div><div class="hike">Shabbat</div><div class="eng rest">Rest</div></a>
+<a href="#day7" class="tl-day"><div class="dow">Sun</div><div class="date">6</div><div class="hike">Reservoir</div><div class="eng easy">Easy</div></a>
+<a href="#day8" class="tl-day"><div class="dow">Mon</div><div class="date">7</div><div class="hike">Wimmertal</div><div class="eng easy">Easy</div></a>
+<a href="#day8" class="tl-day rest"><div class="dow">Tue</div><div class="date">8</div><div class="hike">Depart</div><div class="eng rest">Rest</div></a>
+</div>
+<div class="seasonal"><strong>⚠️ Ultraks Trail Festival Sep 4–5:</strong> Penken mountain closed to hiking Sep 5. Gerlos completely unaffected. ✡ Shabbat Sep 5: walking only.</div>
 </div></div>
 
-<!-- TIER 0 HIKES -->
-<div class="section" id="tier0">
-<div class="section-header"><h2>🏆 Tier 0 — Can't Miss (4 hikes)</h2></div>
+<!-- DAY 1 -->
+<div class="day-section" id="day1">
+<div class="day-header"><div class="day-num">1</div><div class="day-info"><div class="dn">Arrival + Settle In</div><div class="dd">Monday, August 31 · <span class="badge badge-b">Rest</span></div></div></div>
+<div class="day-body">
+<p>Arrive at <strong>Appart Bergleben Deluxe</strong> (1,250m). Walk into Gerlos village (2km). <strong>SPAR shop</strong> (open Mon — stock up for week, closed Sunday!). Explore village, find best strudel 🥮. Private sauna in the evening.</p>
+<div class="weather-box"><div class="wt">🌤️ Weather</div><div class="wd">Gerlos village 1,250m: 14–19°C. Late August warmth. Light layer.</div></div>
+<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2475,12.0280">🧭 Apartment</a>
+<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300">🛒 SPAR</a>
+</div></div>
 
-<div class="section-body">
+<!-- DAY 2 -->
+<div class="day-section" id="day2">
+<div class="day-header"><div class="day-num">2</div><div class="day-info"><div class="dn">Isskogel → Kreuzjoch ⭐</div><div class="dd">Tuesday, Sep 1 · <span class="badge badge-y">Flexible</span> · Isskogelbahn FREE</div></div></div>
+<div class="day-body">
 <span class="verdict star">⭐ FLAGSHIP</span>
-<h3>Isskogel → Kreuzjoch (2,264m → 2,558m)</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">5–19 km</span><span class="lbl">Distance (3 options)</span></div>
-<div class="stat"><span class="val">39 m/km</span><span class="lbl">Gain/km (full)</span></div>
-<div class="stat"><span class="val">FREE</span><span class="lbl">Isskogelbahn lift</span></div>
-<div class="stat"><span class="val">2.5–7 h</span><span class="lbl">Time</span></div>
+<p><strong>Free lift to 1,900m.</strong> Three scaling options from the top station. Natural bailout at Isskogel summit (~1hr in).</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">5–19 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">39 m/km</span><span class="l">Gain/km (full)</span></div>
+<div class="hs"><span class="v">763m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">2.5–7h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v">—</span><span class="l">Reviews</span></div>
+<div class="hs"><span class="v">FREE</span><span class="l">Lift cost</span></div>
 </div>
-<p><strong>Why:</strong> Free lift. 39 m/km = perfect Salzburg Day 2 match. 360° views Ötztal→Hohe Tauern. Natural bailout at Isskogel summit.</p>
 <table>
-<tr><th>Option</th><th>Route</th><th>km</th><th>Time</th></tr>
-<tr><td><span class="badge badge-g">A</span></td><td>Isskogel summit only</td><td>~5–6</td><td>2–2.5h</td></tr>
-<tr><td><span class="badge badge-y">B ⭐</span></td><td>Summit + plateau loop — RECOMMENDED</td><td>~5–7</td><td>2.5–3.5h</td></tr>
-<tr><td><span class="badge badge-r">C</span></td><td>Full Kreuzjoch ridge (2,558m)</td><td>17–19</td><td>6–7h</td></tr>
+<tr><th>Option</th><th>Route</th><th>km</th><th>Time</th><th>m/km</th></tr>
+<tr><td><span class="badge badge-g">A</span></td><td>Isskogel summit only (2,264m)</td><td>~5–6</td><td>2–2.5h</td><td>~65</td></tr>
+<tr><td><span class="badge badge-y">B ⭐</span></td><td>Summit + plateau loop — RECOMMENDED</td><td>~5–7</td><td>2.5–3.5h</td><td>~55</td></tr>
+<tr><td><span class="badge badge-r">C</span></td><td>Full Kreuzjoch ridge (2,558m)</td><td>17–19</td><td>6–7h</td><td>39</td></tr>
 </table>
+<div class="weather-box">
+<div class="wt">🌤️ Weather — Isskogel top (1,900m): 10–15°C · Kreuzjoch (2,558m): 5–10°C + wind</div>
+<div class="wd">Best: clear or partly cloudy. Works in overcast. Avoid in storm. Windy at Kreuzjoch — wind shell essential. <strong>Bailout:</strong> at Isskogel summit, assess conditions → return if weather building.</div>
+</div>
 <a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300">🧭 Isskogelbahn</a>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2150,12.0000">🧭 Kreuzjoch summit</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Latschenalm (1,900m) · 🍽️ Dahuam.202 vegan dinner · ⏰ Start 9:00am · 🌧️ Backup: Wimmertal or Krummbachtal</p>
 <div class="source">Sources: outdooractive · bergfex #5480 · chaletsplus · komoot</div>
-</div>
+</div></div>
 
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict do">🥇 #1 RATED</span>
-<h3>Olpererhütte Full (Schlegeis Reservoir)</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">13.8 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">63 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">876m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">5–6 h</span><span class="lbl">Time</span></div>
-<div class="stat"><span class="val">4.8★</span><span class="lbl">AllTrails (566+)</span></div>
+<!-- DAY 3 -->
+<div class="day-section" id="day3">
+<div class="day-header"><div class="day-num">3</div><div class="day-info"><div class="dn">Penken Panorama</div><div class="dd">Wednesday, Sep 2 · <span class="badge badge-g">Light</span> · ⚠️ Last day before Ultraks</div></div></div>
+<div class="day-body">
+<span class="verdict do">🥈 ESSENTIAL</span>
+<p><strong>ONLY paid lift day in entire plan.</strong> Classic Zillertal intro. Drive 25 min + €13 toll. <strong>Must do today</strong> — Penken closes tomorrow for Ultraks.</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">8.7 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">35 m/km</span><span class="l">Gain/km</span></div>
+<div class="hs"><span class="v">300m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">2–3h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v">~4.7★</span><span class="l">Area avg</span></div>
+<div class="hs"><span class="v">~€28</span><span class="l">Lift</span></div>
 </div>
-<p><strong>Why:</strong> Universally rated #1 Zillertal hike. Iconic suspension bridge over turquoise water. "My favorite hike in Austria" — AllTrails 4.8★. Blog-endorsed by charlieswanderings.</p>
-<p><strong>⚠️ LEAVE BY 6:30am.</strong> Parking fills 10–11am. Bridge queue builds all morning. Drive: 50 min + Schlegeis toll ~€18.</p>
-<p><strong>Weather:</strong> Needs clear/partly-cloudy. Swap with Day 7 if bad forecast.</p>
+<div class="weather-box">
+<div class="wt">🌤️ Weather — Penken top (1,783–2,081m): 10–16°C</div>
+<div class="wd">Best: any non-storm day. Viable in overcast. Bail to gondola if weather turns. 🌧️ Backup: Rosenalmbahn Zell (15 min) + Zell explore.</div>
+</div>
+<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640">🧭 Penkenbahn</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Grillhofalm · 🍽️ Goldkind 4.8★ (442) Mayrhofen · ⏰ Start 9:00am · 🚗 25 min + €13 toll</p>
+<div class="source">TripAdvisor forums · Penken area ~4.7★ · Mayrhofner Bergbahnen</div>
+</div></div>
+
+<!-- DAY 4 -->
+<div class="day-section" id="day4">
+<div class="day-header"><div class="day-num">4</div><div class="day-info"><div class="dn">Olpererhütte Full</div><div class="dd">Thursday, Sep 3 · <span class="badge badge-r">HARD</span> · #1 rated Zillertal hike</div></div></div>
+<div class="day-body">
+<span class="verdict do">🥇 #1 RATED</span>
+<p><strong>Leave 6:30am.</strong> Drive 50 min + Schlegeis toll ~€18. Parking fills by 10–11am. Iconic suspension bridge over turquoise water at 2,389m. "My favorite hike in Austria" — AllTrails 4.8★.</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">13.8 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">63 m/km</span><span class="l">Gain/km</span></div>
+<div class="hs"><span class="v">876m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">5–6h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v"><span class="stars">4.8★</span></span><span class="l">AllTrails (566+)</span></div>
+<div class="hs"><span class="v"><span class="stars">4.6★</span></span><span class="l">TA (1,674)</span></div>
+</div>
+<div class="weather-box">
+<div class="wt">🌤️ Weather — Schlegeis (1,800m): 10–15°C · Olpererhütte (2,389m): 5–13°C + wind</div>
+<div class="wd">Best: clear or partly cloudy. Doable in cloud but loses the iconic view. Skip in heavy rain. Windy at hut — wind shell mandatory. Morning cold at reservoir — layer up. 🌧️ Swap with Day 7 if bad forecast.</div>
+</div>
 <a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.0050,11.7050">🧭 Schlegeis parking</a>
 <a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=46.9880,11.6850">🧭 Olpererhütte</a>
-<div class="source">Sources: AllTrails 4.8★ (566+) · TripAdvisor 4.6★ (1,674) · charlieswanderings · outdooractive</div>
-</div>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕🥮 Olpererhütte 2,389m · 🍽️ Self-cater + sauna · ⏰ LEAVE 6:30am · 🚗 50 min + €18 toll</p>
+<div class="source">AllTrails 4.8★ (566+) · TripAdvisor 4.6★ (1,674) · charlieswanderings · outdooractive</div>
+</div></div>
 
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict do">🥈 ESSENTIAL</span>
-<h3>Penken Panorama Trail</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">8.7 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">35 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">300m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">2–3 h</span><span class="lbl">Time</span></div>
-<div class="stat"><span class="val">~€28</span><span class="lbl">Penkenbahn</span></div>
-</div>
-<p><strong>Why:</strong> Classic Zillertal intro in sweet spot. TripAdvisor: "Take the cable car up and do the rundweg." ONLY paid lift day in entire plan.</p>
-<p><strong>⚠️ MUST do before Sep 4.</strong> Penken closes for Ultraks after Sep 3. Drive: 25 min + €13 toll.</p>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640">🧭 Penkenbahn Mayrhofen</a>
-<div class="source">TripAdvisor forums · Penken area avg ~4.7★</div>
-</div>
-
-<div class="section-body" style="border-top:1px solid #21262d">
+<!-- DAY 5 -->
+<div class="day-section" id="day5">
+<div class="day-header"><div class="day-num">5</div><div class="day-info"><div class="dn">⚡ Krimml Waterfalls</div><div class="dd">Friday, Sep 4 · <span class="badge badge-g">Light</span> · Shabbat Eve · Home by 13:30</div></div></div>
+<div class="day-body">
 <span class="verdict do">🥉 GERLOS ADVANTAGE</span>
-<h3>Krimml Waterfalls</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">~4 km</span><span class="lbl">Boardwalk path</span></div>
-<div class="stat"><span class="val">350m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">2–3 h</span><span class="lbl">Time</span></div>
-<div class="stat"><span class="val">4.6★</span><span class="lbl">TA (1,557)</span></div>
-<div class="stat"><span class="val">15 min</span><span class="lbl">Drive from Gerlos</span></div>
+<p>Europe's highest waterfall (385m). <strong>15 min from Gerlos</strong> (vs 1.5hr from Mayrhofen). Boardwalk path. ⚡ Finish by 13:00, home by 13:30 — 5hr+ margin before 20:00 sundown.</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">~4 km</span><span class="l">Boardwalk</span></div>
+<div class="hs"><span class="v">350m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">2–3h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v"><span class="stars">4.6★</span></span><span class="l">TA (1,557)</span></div>
+<div class="hs"><span class="v"><span class="stars">4.6★</span></span><span class="l">AT (560)</span></div>
 </div>
-<p><strong>Why:</strong> Europe's highest waterfall (385m). <strong>15 min from Gerlos vs 1.5hr from Mayrhofen.</strong> MORE spectacular in rain. Un-cancellable. Perfect Shabbat eve activity — finish by 13:00, home by 13:30, 5hr margin before sundown.</p>
+<div class="weather-box">
+<div class="wt">🌧️ Weather — Krimml (~1,000–1,400m): 13–18°C</div>
+<div class="wd"><strong>Un-cancellable.</strong> MORE spectacular in rain. Boardwalk well-maintained year-round. Works in any non-storm weather. 🌧️ Rain = falls at max power.</div>
+</div>
 <a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2190,12.1710">🧭 Krimml Waterfalls</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕🥮 Krimml café · 🍽️ Pre-Shabbat meal · ⏰ Start 10:00am · 🚗 15 min · ⚡ Back by 13:30</p>
 <div class="source">TripAdvisor 4.6★ (1,557) · AllTrails 4.6★ (560)</div>
-</div>
-</div>
+</div></div>
 
-<!-- TIER 1 -->
-<div class="section" id="tier1">
-<div class="section-header"><h2>⭐ Tier 1 — Essential Recovery (4 hikes)</h2></div>
+<!-- DAY 6 -->
+<div class="day-section" id="day6">
+<div class="day-header"><div class="day-num">6</div><div class="day-info"><div class="dn">✡ Shabbat — Gerlos Valley Walking</div><div class="dd">Saturday, Sep 5 · <span class="badge badge-b">Rest</span> · Walking only</div></div></div>
+<div class="day-body">
+<span class="verdict info">SHABBAT</span>
+<p>Walking only — no car, no gondola, no bus. Walk to Gerlos village (2km), explore, sit by Gerlosbach. Continue up valley road toward Durlaßboden direction. Pre-prepared meals at apartment. Sauna.</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">5–10 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">flat</span><span class="l">Valley road</span></div>
+<div class="hs"><span class="v">Rest</span><span class="l">Energy</span></div>
+</div>
+<div class="weather-box"><div class="wt">🌤️ Gerlos valley 1,250m: 14–18°C</div></div>
+<div class="seasonal"><strong>⚠️ Ultraks Day 2:</strong> Penken races all day. Town center Mayrhofen busy. <strong>Completely unaffected in Gerlos.</strong></div>
+<div class="seasonal"><strong>Honest assessment:</strong> Weaker than Mayrhofen Shabbat (had 5+ walking routes). Gerlos has village + valley road. Trade-off accepted for apartment quality, Krimml proximity, and 2 free lifts.</div>
+<p style="font-size:.75rem;color:#8b949e">☕ Gerlos village café · 🍽️ Pre-prepared Shabbat meal · ✡ No transport</p>
+</div></div>
 
-<div class="section-body">
-<span class="verdict do">RECOVERY</span>
-<h3>Durlaßboden Extended (both reservoirs)</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">21.4 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">16 m/km</span><span class="lbl">Gain/km — flattest!</span></div>
-<div class="stat"><span class="val">346m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">4:20 h</span><span class="lbl">Time</span></div>
-<div class="stat"><span class="val">5.0★</span><span class="lbl">OA rating</span></div>
-</div>
-<p>Ultimate recovery day. 21km but only 346m gain. Both reservoirs + Leitenkammerklamm gorge. Seestüberl/Gasthof Finkau for ☕🥮. 10 min drive, zero toll.</p>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2420,12.0820">🧭 Durlaßboden dam</a>
-<div class="source">outdooractive 5.0★</div>
-</div>
+<!-- DAY 7 -->
+<div class="day-section" id="day7">
+<div class="day-header"><div class="day-num">7</div><div class="day-info"><div class="dn">Durlaßboden Extended OR Hohe Tauern Panorama</div><div class="dd">Sunday, Sep 6 · <span class="badge badge-g">Light–Mod</span> · Choose your recovery</div></div></div>
+<div class="day-body">
+<span class="verdict do">RECOVERY DAY</span>
+<p>Two options, both local (5–10 min drive, zero toll). Post-Shabbat, post-Olpererhütte. Choose based on energy.</p>
 
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict do">WILD NATURE</span>
-<h3>Wimmertal Valley</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">11.1 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">18 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">203m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">3:15 h</span><span class="lbl">Time</span></div>
-<div class="stat"><span class="val">4.2★</span><span class="lbl">OA rating</span></div>
+<h4 style="font-size:.9rem;color:#f0f6fc;margin:1rem 0 .5rem">Option A — Durlaßboden Extended ⭐ RECOMMENDED</h4>
+<div class="hike-stats">
+<div class="hs"><span class="v">21.4 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">16 m/km</span><span class="l">FLATTEST</span></div>
+<div class="hs"><span class="v">346m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">4:20h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v"><span class="stars">5.0★</span></span><span class="l">OA</span></div>
 </div>
-<p>"Most unspoiled of the 5 Gerlos valleys." Wild, quiet, no crowds. Wimmertalalm at end. 5 min drive, zero toll. Day 8 farewell hike.</p>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2400,12.0450">🧭 Wimmertal start</a>
-<div class="source">outdooractive 4.2★</div>
-</div>
+<p>Both reservoirs + Leitenkammerklamm gorge. Boat rental, swimming, Seestüberl ☕🥮.</p>
 
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict do">EPIC PANORAMA</span>
-<h3>Hohe Tauern Panorama ET02</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">19.5 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">34 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">668m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">7:00 h</span><span class="lbl">Time</span></div>
+<h4 style="font-size:.9rem;color:#f0f6fc;margin:1rem 0 .5rem">Option B — Hohe Tauern Panorama ET02</h4>
+<div class="hike-stats">
+<div class="hs"><span class="v">19.5 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">34 m/km</span><span class="l">Gain/km</span></div>
+<div class="hs"><span class="v">668m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">7:00h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v">—</span><span class="l">Reviews</span></div>
 </div>
-<p>"Following the element of water with breathtaking mountain lakes and gorges." Views of 30+ three-thousanders. Salzburg Day 9 equivalent (33 m/km). Day 7 Option B.</p>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2420,12.0820">🧭 Trailhead</a>
-<div class="source">outdooractive · Wildkogel Arena</div>
-</div>
+<p>30+ three-thousander views. Epic but gradual. Salzburg Day 9 equivalent. Gasthof Finkau ☕🥮.</p>
 
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict do">VERSATILE</span>
-<h3>Durlaßboden Reservoir Circular</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">10.6–12.5 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">12–23 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">152–241m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">4.5★</span><span class="lbl">AllTrails (104+)</span></div>
-</div>
-<p>Family-friendly loop. Boat rental, swimming, playground. Seestüberl for ☕🥮. Combine with Wildgerlostal extension.</p>
+<div class="weather-box"><div class="wt">🌤️ Durlaßboden (1,400m): 12–17°C</div><div class="wd">Both options work in light rain. Higher sections of HT Panorama: cooler at 1,800m+.</div></div>
 <a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2420,12.0820">🧭 Durlaßboden</a>
-<div class="source">AllTrails 4.5★ (104+) · bergfex 4.3★ · outdooractive 4.2★</div>
-</div>
-</div>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Seestüberl / Gasthof Finkau · 🍽️ Umbrella Zyllertal or Dahuam.202 · 🚗 5–10 min</p>
+<div class="source">outdooractive 5.0★ (Durlaßboden Ext) · Wildkogel Arena (HT Panorama)</div>
+</div></div>
 
-<!-- TIER 2 -->
-<div class="section">
-<div class="section-header"><h2>🔄 Tier 2 — Alternatives & Hidden Gems</h2></div>
+<!-- DAY 8 -->
+<div class="day-section" id="day8">
+<div class="day-header"><div class="day-num">8</div><div class="day-info"><div class="dn">Wimmertal + Goldkind Farewell</div><div class="dd">Monday, Sep 7 · <span class="badge badge-g">Light</span> · Farewell day</div></div></div>
+<div class="day-body">
+<span class="verdict do">FAREWELL</span>
+<p>"Most unspoiled of the 5 Gerlos valleys." Wild, quiet, no crowds. Morning hike → afternoon pack → farewell dinner at Goldkind (4.8★, Mayrhofen, 25 min drive).</p>
+<div class="hike-stats">
+<div class="hs"><span class="v">11.1 km</span><span class="l">Distance</span></div>
+<div class="hs"><span class="v">18 m/km</span><span class="l">Gain/km</span></div>
+<div class="hs"><span class="v">203m</span><span class="l">Total gain</span></div>
+<div class="hs"><span class="v">3:15h</span><span class="l">Time</span></div>
+<div class="hs"><span class="v"><span class="stars">4.2★</span></span><span class="l">OA</span></div>
+</div>
+<div class="weather-box"><div class="wt">🌤️ Wimmertal (1,250–1,500m): 13–18°C</div><div class="wd">Works in any weather short of storm. Light rain fine.</div></div>
+<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.2400,12.0450">🧭 Wimmertal</a>
+<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1670,11.8620">🍽️ Goldkind</a>
+<p style="margin-top:.5rem;font-size:.75rem;color:#8b949e">☕ Wimmertalalm · 🍽️ Goldkind 4.8★ (442) · 🚗 5 min / 25 min for dinner</p>
+<div class="source">outdooractive 4.2★</div>
+</div></div>
+
+<!-- ALL HIKES MASTER TABLE -->
+<div class="section" id="allhikes">
+<div class="section-header"><h2>📊 All 14 Viable Hikes — Complete Data</h2></div>
 <div class="section-body">
-<span class="verdict warn">HIDDEN GEM</span>
-<h3>Filzenkogel (2,227m)</h3>
-<div class="stats-bar">
-<div class="stat"><span class="val">6.3 km</span><span class="lbl">Distance</span></div>
-<div class="stat"><span class="val">59 m/km</span><span class="lbl">Gain/km</span></div>
-<div class="stat"><span class="val">372m</span><span class="lbl">Total gain</span></div>
-<div class="stat"><span class="val">4.7★</span><span class="lbl">AllTrails (234)</span></div>
-</div>
-<p>Blog-endorsed hidden gem (backpackersmentality.com). "Quieter alternative to popular routes." Summit log at 2,227m. Upper range at 59 m/km. Needs Ahornbahn lift. Backup option.</p>
-<a class="gmaps-btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640">🧭 Ahornbahn Mayrhofen</a>
-<div class="source">AllTrails 4.7★ (234) · backpackersmentality.com</div>
-</div>
-<div class="section-body" style="border-top:1px solid #21262d">
-<span class="verdict info">ALTERNATIVE</span>
-<h3>Berliner Hütte · Ahorn High Walk · Gerlosstein</h3>
 <div class="table-wrap"><table>
-<tr><th>Hike</th><th>km</th><th>m/km</th><th>Rating</th><th>Note</th></tr>
-<tr><td>Berliner Hütte</td><td>18.3</td><td>47</td><td>4.7★ (109)</td><td>⚠️ Reddit: exposed sections, snowfields</td></tr>
-<tr><td>Ahorn High Walk</td><td>8</td><td>50</td><td>—</td><td>Upper sweet spot. Backup Mayrhofen day.</td></tr>
-<tr><td>Gerlosstein (with lift)</td><td>5.6</td><td>95</td><td>4.7★ (56)</td><td>Use lift! Short version too steep.</td></tr>
+<tr><th>Tier</th><th>Hike</th><th>km</th><th>Gain</th><th>m/km</th><th>Time</th><th>Rating</th><th>Temp</th><th>Weather</th><th>Lift</th></tr>
+<tr><td><span class="badge badge-b">T0</span></td><td>Isskogel→Kreuzjoch ⭐</td><td>5–19</td><td>763</td><td>39</td><td>2.5–7h</td><td>—</td><td>5–15°C</td><td>Clear/partly cloudy</td><td>FREE</td></tr>
+<tr><td><span class="badge badge-b">T0</span></td><td>Olpererhütte Full</td><td>13.8</td><td>876</td><td>63</td><td>5–6h</td><td><span class="stars">4.8★</span> AT (566+)</td><td>5–15°C</td><td>Clear/cloud OK. Skip rain.</td><td>—</td></tr>
+<tr><td><span class="badge badge-b">T0</span></td><td>Penken Panorama</td><td>8.7</td><td>300</td><td>35</td><td>2–3h</td><td>~4.7★ area</td><td>10–16°C</td><td>Any non-storm</td><td>~€28</td></tr>
+<tr><td><span class="badge badge-b">T0</span></td><td>Krimml Waterfalls</td><td>~4</td><td>350</td><td>boardwalk</td><td>2–3h</td><td><span class="stars">4.6★</span> TA (1,557)</td><td>13–18°C</td><td>Any. BETTER in rain!</td><td>—</td></tr>
+<tr><td><span class="badge badge-g">T1</span></td><td>Durlaßboden Extended</td><td>21.4</td><td>346</td><td>16</td><td>4:20h</td><td><span class="stars">5.0★</span> OA</td><td>12–17°C</td><td>Any. Light rain fine.</td><td>—</td></tr>
+<tr><td><span class="badge badge-g">T1</span></td><td>Wimmertal Valley</td><td>11.1</td><td>203</td><td>18</td><td>3:15h</td><td><span class="stars">4.2★</span> OA</td><td>13–18°C</td><td>Any non-storm</td><td>—</td></tr>
+<tr><td><span class="badge badge-g">T1</span></td><td>HT Panorama ET02</td><td>19.5</td><td>668</td><td>34</td><td>7:00h</td><td>—</td><td>10–17°C</td><td>Clear preferred</td><td>—</td></tr>
+<tr><td><span class="badge badge-g">T1</span></td><td>Durlaßboden Circular</td><td>10.6</td><td>241</td><td>23</td><td>3:30h</td><td><span class="stars">4.5★</span> AT (104+)</td><td>12–17°C</td><td>Any. Light rain fine.</td><td>—</td></tr>
+<tr><td><span class="badge badge-y">T2</span></td><td>Filzenkogel 🔒</td><td>6.3</td><td>372</td><td>59</td><td>3–4h</td><td><span class="stars">4.7★</span> AT (234)</td><td>6–12°C</td><td>Clear preferred</td><td>Ahorn ~€28</td></tr>
+<tr><td><span class="badge badge-y">T2</span></td><td>Berliner Hütte</td><td>18.3</td><td>854</td><td>47</td><td>6–7h</td><td><span class="stars">4.7★</span> AT (109)</td><td>8–16°C</td><td>Any non-storm ⚠️ exposed</td><td>—</td></tr>
+<tr><td><span class="badge badge-y">T2</span></td><td>Ahorn High Walk</td><td>8</td><td>400</td><td>50</td><td>3–4h</td><td>—</td><td>8–14°C</td><td>Any non-storm</td><td>Ahorn ~€28</td></tr>
+<tr><td><span class="badge badge-y">T2</span></td><td>Gerlosstein (with lift)</td><td>5.6</td><td>530</td><td>95</td><td>2–3h</td><td><span class="stars">4.7★</span> AT (56)</td><td>11–16°C</td><td>Clear preferred</td><td>~€24</td></tr>
+<tr><td><span class="badge badge-b">T3</span></td><td>Hintertux Glacier</td><td>gondola</td><td>—</td><td>—</td><td>varies</td><td><span class="stars">4.6★</span> TA (955)</td><td>0–8°C</td><td>ANY weather 🌧️-proof</td><td>~€40+</td></tr>
+<tr><td><span class="badge badge-b">T3</span></td><td>Kirchspitze (2,312m)</td><td>15.1</td><td>1,070</td><td>71</td><td>7:00h</td><td>—</td><td>5–14°C</td><td>Clear. Skip cloud.</td><td>—</td></tr>
 </table></div>
-</div>
-</div>
+<p style="font-size:.75rem;color:#8b949e">🔒 = Hidden gem (blog-endorsed). T0=Can't Miss · T1=Essential · T2=Alternative · T3=Stretch/Weather-dependent</p>
+</div></div>
 
 <!-- REJECTED -->
-<div class="section" id="rejected">
+<div class="section">
 <div class="section-header"><h2>❌ Rejected — 8 Hikes with Reasons</h2></div>
 <div class="section-body">
 <div class="table-wrap"><table>
 <tr><th>Hike</th><th>m/km</th><th>Why Rejected</th></tr>
-<tr><td>Wechselspitze</td><td><span class="badge badge-r">149</span></td><td>Extreme. 1,353m in 9km. Beyond comfort.</td></tr>
+<tr><td>Wechselspitze</td><td><span class="badge badge-r">149</span></td><td>Extreme. 1,353m in 9km. Beyond comfort zone.</td></tr>
 <tr><td>Arbiskogel-Kirchspitze full</td><td><span class="badge badge-r">95</span></td><td>17km, 1,616m gain. Very steep.</td></tr>
 <tr><td>Ahornspitze</td><td><span class="badge badge-r">81</span></td><td>Reddit: "never alone." Exposed ridge. Dangerous in wet.</td></tr>
-<tr><td>Pallspitz</td><td><span class="badge badge-r">80</span></td><td>Beyond sweet spot. No unique draw.</td></tr>
-<tr><td>Zittauer Hütte (valley)</td><td>varies</td><td>AllTrails: "includes scrambling." Not preferred.</td></tr>
+<tr><td>Pallspitz</td><td><span class="badge badge-r">80</span></td><td>Beyond sweet spot. No unique draw vs Kirchspitze.</td></tr>
+<tr><td>Zittauer Hütte (full valley)</td><td>varies</td><td>AllTrails: "includes scrambling." Not preferred.</td></tr>
 <tr><td>Keeskarscharte full</td><td>~52</td><td>30.9km ultra-distance. Too long for day hike.</td></tr>
 <tr><td>Gerlos Alpine Road (dest.)</td><td>n/a</td><td>3.9★ TA. Use as transit, not destination.</td></tr>
 <tr><td>Nature's Ice Palace</td><td>n/a</td><td>3.9★ TA. Safety concerns. Glacier visit OK, cave skip.</td></tr>
 </table></div>
-</div>
-</div>
-
-<!-- WEATHER -->
-<div class="section" id="backups">
-<div class="section-header"><h2>🌧️ Weather Backup Pool</h2></div>
-<div class="section-body">
-<div class="table-wrap"><table>
-<tr><th>Rain scenario</th><th>Backup plan</th><th>Drive</th></tr>
-<tr><td>Any day</td><td>Krimml (BETTER in rain!)</td><td>15 min</td></tr>
-<tr><td>Any day</td><td>Hintertux Glacier (weather-proof, 4.6★ TA 955)</td><td>50 min</td></tr>
-<tr><td>Any day</td><td>BrauKunstHaus brewery Zell am Ziller</td><td>15 min</td></tr>
-<tr><td>Any day</td><td>Arena Coaster Zell + town explore</td><td>15 min</td></tr>
-<tr><td>Any day</td><td>Apartment sauna + SPAR cooking + village café</td><td>0 min</td></tr>
-<tr><td>Day 3 rain</td><td>Rosenalmbahn Zell instead of Penken</td><td>15 min</td></tr>
-<tr><td>Day 4 rain</td><td>Swap Olpererhütte ↔ Day 7 valley hike</td><td>—</td></tr>
-</table></div>
-<p class="seasonal"><strong>🍂 Seasonal context (early September):</strong> Post-peak crowds. Austrian/German school holidays end early Sep. Ultraks brings runners but they stay on Penken. 18–22°C valley, 8–12°C at 2,000m. Afternoon thunderstorms possible — start early. Snow unlikely below 2,500m. Sunset ~19:30. Daylight ample.</p>
-</div>
-</div>
+</div></div>
 
 <!-- BUDGET -->
 <div class="section" id="budget">
@@ -302,23 +333,20 @@ summary:hover{color:#f0f6fc}
 <tr><th>Category</th><th>Estimate</th><th>Note</th></tr>
 <tr><td>Accommodation</td><td>€240–320</td><td>Bergleben Deluxe ~€90–120/night ÷ 3</td></tr>
 <tr><td>Car rental</td><td>€100–135</td><td>÷ 3</td></tr>
-<tr><td>Lift tickets</td><td><strong>~€28</strong></td><td>Only Penkenbahn! 2 lifts FREE</td></tr>
+<tr><td>Lift tickets</td><td><strong>~€28</strong></td><td>Only Penkenbahn! 2 lifts FREE via Free Mountain Card</td></tr>
 <tr><td>Tolls</td><td>€13–19</td><td>3 Mayrhofen crossings + Schlegeis</td></tr>
 <tr><td>Food</td><td>€200–300</td><td>Self-cater + 3 dinners out</td></tr>
 <tr><td>Krimml entry</td><td>€9</td><td></td></tr>
 <tr><td><strong>Total</strong></td><td><strong>~€750–950</strong></td><td>~€400 less than Mayrhofen plan</td></tr>
 </table></div>
-<div class="seasonal"><strong>💡 Free lift impact:</strong> Isskogelbahn + Dorfbahn = unlimited rides via Free Mountain Card (partner accommodation). This eliminates €160+ in lift costs vs the Mayrhofen plan. Penkenbahn is the ONLY paid lift in the entire 8-day itinerary.</div>
-</div>
-</div>
+<div class="seasonal"><strong>💡 Free lift impact:</strong> Isskogelbahn + Dorfbahn = unlimited rides. This eliminates €160+ in lift costs. Penkenbahn is the ONLY paid lift in 8 days.</div>
+</div></div>
 
-<!-- FOOTER -->
-<div class="section">
-<div class="section-body">
+<!-- SOURCES -->
+<div class="section-body" style="border:1px solid #21262d;border-radius:10px;margin-top:2rem">
 <div class="source">
-  <strong>Research sources:</strong> outdooractive.com (10 trails) · bergfex.com (6 trails) · zillertalarena.com · AllTrails · Komoot (4.6★ avg, 6,500+ reviews) · Reddit r/hiking, r/Europetravel, r/wandern · TripAdvisor forums · backpackersmentality.com · charlieswanderings.com · Instagram trail accounts<br>
+  <strong>Research sources:</strong> outdooractive.com (10 trails) · bergfex.com (6 trails) · zillertalarena.com · AllTrails · Komoot (4.6★ avg, 6,500+ reviews) · Reddit r/hiking, r/Europetravel, r/wandern · TripAdvisor forums · backpackersmentality.com · charlieswanderings.com<br>
   <strong>Updated:</strong> 28 Jun 2026 · <a href="https://github.com/bomba2006/mayrhofen-2026">github.com/bomba2006/mayrhofen-2026</a>
-</div>
 </div>
 </div>
 
