@@ -504,8 +504,15 @@ function drawElev(canvasId, data, color) {
   ctx.fillText(max+'m', pad.l-3, pad.t+10);
   ctx.fillText(min+'m', pad.l-3, pad.t+ph);
 }
-drawElev('elev-olperer', [1800,1900,2000,2100,2200,2300,2389,2300,2200,2100,2000,1900,1800], '#58a6ff');
-drawElev('elev-penken', [1800,1830,1880,1950,2020,2080,2020,1950,1880,1830,1800], '#2ea043');
+// Olpererhütte Short Route (6.4km round trip): Schlegeis (1,795m) → Olpererhütte (2,389m) → return
+// Verified waypoints: Parking 1,795m. Hut 2,389m (official). Steady climb, no flat sections.
+// Sources: Schlegeis official 1,795m, Olpererhütte official 2,389m, blogs confirm ~600m gain over 3.2km one-way
+drawElev('elev-olperer', [1795,1850,1910,1980,2050,2120,2200,2280,2350,2389,2350,2280,2200,2120,2050,1980,1910,1850,1795], '#58a6ff');
+
+// Penken Panorama (8.5km loop): Penkenbahn top (1,783m) → Penkenjoch (2,090m) → return
+// Verified waypoints: Penken top 1,783m (official). Playground 1,950m (10adventures). Penkenjoch 2,090m (map).
+// AllTrails: 8.5km, 300m gain. Tourispo confirms intermediate point at 1,983m.
+drawElev('elev-penken', [1783,1830,1880,1930,1980,2030,2070,2090,2070,2030,1980,1950,1910,1880,1850,1830,1800,1783], '#2ea043');
 </script>
 </body>
 </html>
