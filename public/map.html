@@ -76,10 +76,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const markers = [];
 const data = [
   // Tier 0
-  {tier:'t0',name:'Isskogel → Kreuzjoch',lat:47.244,lng:12.030,desc:'5–19 km · 39 m/km · FREE lift · 2.5–7h',link:'https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300',icon:'star'},
-  {tier:'t0',name:'Olpererhütte Full',lat:47.005,lng:11.705,desc:'13.8 km · 63 m/km · 876m · #1 rated',link:'https://www.google.com/maps/dir/?api=1&destination=47.0050,11.7050',icon:'mountain'},
-  {tier:'t0',name:'Penken Panorama',lat:47.168,lng:11.864,desc:'8.7 km · 35 m/km · Penkenbahn ~€28',link:'https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640',icon:'cablecar'},
-  {tier:'t0',name:'Krimml Waterfalls',lat:47.219,lng:12.171,desc:'~4 km boardwalk · 15 min from Gerlos · 4.6★',link:'https://www.google.com/maps/dir/?api=1&destination=47.2190,12.1710',icon:'waterfall'},
+  {tier:'t0',name:'Isskogel → Kreuzjoch',lat:47.2297,lng:12.0489,desc:'5–19 km · 39 m/km · FREE lift · 2.5–7h',link:'https://www.google.com/maps/dir/?api=1&destination=47.2297,12.0489',icon:'star'},
+  {tier:'t0',name:'Olpererhütte Full',lat:47.0298,lng:11.6957,desc:'13.8 km · 63 m/km · 876m · #1 rated',link:'https://www.google.com/maps/dir/?api=1&destination=47.0298,11.6957',icon:'mountain'},
+  {tier:'t0',name:'Penken Panorama',lat:47.1633,lng:11.8607,desc:'8.7 km · 35 m/km · Penkenbahn ~€36–40 return',link:'https://www.google.com/maps/dir/?api=1&destination=47.1633,11.8607',icon:'cablecar'},
+  {tier:'t0',name:'Krimml Waterfalls',lat:47.2109,lng:12.1682,desc:'~4 km boardwalk · ~30 min from Gerlos · 4.6★',link:'https://www.google.com/maps/dir/?api=1&destination=47.2109,12.1682',icon:'waterfall'},
   // Tier 1
   {tier:'t1',name:'Durlaßboden Extended',lat:47.242,lng:12.082,desc:'21.4 km · 16 m/km · 5.0★ · flat recovery',link:'https://www.google.com/maps/dir/?api=1&destination=47.2420,12.0820',icon:'lake'},
   {tier:'t1',name:'Wimmertal Valley',lat:47.240,lng:12.045,desc:'11.1 km · 18 m/km · most unspoiled valley',link:'https://www.google.com/maps/dir/?api=1&destination=47.2400,12.0450',icon:'valley'},
@@ -91,12 +91,12 @@ const data = [
   {tier:'t2',name:'Gerlosstein',lat:47.220,lng:11.900,desc:'5.6 km · with lift · 4.7★ · Arena views',link:'https://www.google.com/maps/dir/?api=1&destination=47.2200,11.9000',icon:'peak'},
   // POIs
   {tier:'poi',name:'🏠 Bergleben Deluxe',lat:47.2475,lng:12.028,desc:'Base · Private sauna · Free Mountain Card',link:'https://www.google.com/maps/dir/?api=1&destination=47.2475,12.0280',icon:'home'},
-  {tier:'poi',name:'🚡 Isskogelbahn (FREE)',lat:47.244,lng:12.030,desc:'1,300→1,900m · Free Mountain Card',link:'https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300',icon:'lift'},
+  {tier:'poi',name:'🚡 Isskogelbahn (FREE)',lat:47.2297,lng:12.0489,desc:'1,300→1,900m · Free Mountain Card',link:'https://www.google.com/maps/dir/?api=1&destination=47.2297,12.0489',icon:'lift'},
   {tier:'poi',name:'🚡 Dorfbahn Königsleiten (FREE)',lat:47.250,lng:12.130,desc:'1,600→2,200m · Free Mountain Card',link:'https://www.google.com/maps/dir/?api=1&destination=47.2500,12.1300',icon:'lift'},
-  {tier:'poi',name:'🛒 SPAR Gerlos',lat:47.244,lng:12.030,desc:'Main supermarket · closed Sunday',link:'https://www.google.com/maps/dir/?api=1&destination=47.2440,12.0300',icon:'shop'},
-  {tier:'poi',name:'🍽️ Goldkind (vegan)',lat:47.167,lng:11.862,desc:'4.8★ · 442 reviews · Mayrhofen',link:'https://www.google.com/maps/dir/?api=1&destination=47.1670,11.8620',icon:'restaurant'},
+  {tier:'poi',name:'🛒 SPAR Kammerlander',lat:47.2253,lng:12.0349,desc:'Main supermarket · Mon–Fri 07:00–18:30 · Sun split hours',link:'https://www.google.com/maps/dir/?api=1&destination=47.2253,12.0349',icon:'shop'},
+  {tier:'poi',name:'🍽️ Goldkind (vegan)',lat:47.167,lng:11.862,desc:'4.7★ · 1,292 reviews · closed Mon–Tue',link:'https://www.google.com/maps/dir/?api=1&destination=47.1670,11.8620',icon:'restaurant'},
   {tier:'poi',name:'🍽️ Dahuam.202',lat:47.243,lng:12.025,desc:'Vegan bowl+burger · closed Thu',link:'https://www.google.com/maps/dir/?api=1&destination=47.2430,12.0250',icon:'restaurant'},
-  {tier:'poi',name:'🚡 Penkenbahn',lat:47.168,lng:11.864,desc:'~€28 · Mayrhofen gondola',link:'https://www.google.com/maps/dir/?api=1&destination=47.1680,11.8640',icon:'lift'},
+  {tier:'poi',name:'🚡 Penkenbahn',lat:47.1633,lng:11.8607,desc:'~€36–40 return · park at Ahornbahn',link:'https://www.google.com/maps/dir/?api=1&destination=47.1633,11.8607',icon:'lift'},
 ];
 
 const iconMap = {
