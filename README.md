@@ -1,35 +1,44 @@
-# Mayrhofen / Zillertal 2026 — Research Project
+# Gerlos 2026 — Zillertal Arena
 
-Hiking research for 3 adults, Aug 31 – Sep 8, 2026. Self-catering basecamp in Mayrhofen, Austrian Alps.
+8-day hiking trip. Base: Appart Bergleben Deluxe, Gerlos (1,250m). 3 adults, self-catering. Aug 31 – Sep 8, 2026.
 
-## Deploy to Vercel
+## Now on TREK
 
-1. Push this repo to GitHub
-2. Import to Vercel — auto-detects static site
-3. Or: `vercel` CLI from project root
+This trip has been migrated to [TREK](https://github.com/mauriceboe/TREK) — a self-hosted collaborative travel planner.
 
-## Files
+**Access:** `https://cyberigal-2.tailea5d3b.ts.net/` (Tailscale tailnet only)
 
-- `public/index.html` — Mobile-first dashboard with all data + ZIP download
-- `public/mayrhofen-zillertal-2026-report.html` — Full research report (warm theme)
-- `public/mayrhofen-zillertal-2026-linear.html` — Full report (Linear dark theme)
-- `public/mayrhofen-zillertal-2026-map.html` — Interactive trail map with elevation profiles
-- `public/mayrhofen-zillertal-2026-mobile.html` — Mobile-optimized dashboard
-- `public/notes-data.json` — All hike/drive/weather/accommodation data
-- `public/notes-data.js` — Same data as JS for browser use
+### What's in TREK
 
-## Data Included
+- 9-day itinerary with day titles and notes
+- 25 places mapped: 13 hikes, 9 huts/cafes, 2 restaurants, 2 supermarkets
+- Accommodation: Appart Bergleben Deluxe (private sauna!)
+- Budget: 11 items (~2,583 EUR)
+- Packing list: 21 items
 
-- 12 hikes ranked by steepness (gain/km)
-- 3 scenic drives
-- 5 day-by-day itinerary plans
-- Per-hike weather with altitude temps
-- Accommodation, supermarkets, restaurants
-- Strudel & coffee directory
-- Activcard pricing analysis
-- Cable car 2026 season dates
-- Salzburg 2025 reference data
+### Features
 
-## Tech
+TREK provides:
+- Interactive map with all locations
+- Drag-and-drop day planning
+- Budget tracking with EUR
+- Packing checklist
+- Weather forecasts (auto-fetched)
+- PWA — install on phone, works offline
+- PDF export for sharing
+- Real-time collaboration (invite family)
 
-Static HTML + CSS + vanilla JS. Leaflet for maps. JSZip for downloads. Zero build step.
+## Legacy
+
+The original static HTML research is preserved in `public/` and deployed on Vercel:
+- `index.html` — Landing page
+- `report.html` — Evidence dossier 
+- `map.html` — Interactive trail map
+- `companion.html` — Day companion
+
+## Tech Stack
+
+- **TREK:** Docker (`mauriceboe/trek:latest`), port 3000
+- **Tailscale Serve:** HTTPS via tailnet
+- **Research:** open-notebook (32 notes), gptr-mcp deep research
+- **Sources:** outdooractive, bergfex, AllTrails, Komoot, Reddit, TripAdvisor
