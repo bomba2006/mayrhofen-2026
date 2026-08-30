@@ -12,7 +12,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-
 .hero .tag{font-size:1.1rem;color:#8b949e;margin-top:.4rem}
 .hero .dates{font-size:.85rem;color:#58a6ff;margin-top:.5rem;font-weight:600}
 .hero .base{font-size:.78rem;color:#8b949e;margin-top:.3rem}
-.views{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:780px;width:100%}
+.views{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;max-width:780px;width:100%}
 .view-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:2rem 1.5rem;text-decoration:none;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
 .view-card:hover{border-color:#58a6ff;transform:translateY(-2px)}
 .view-card .icon{font-size:2rem}
@@ -28,6 +28,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-
 .view-card.companion{border-color:#a371f733}
 .view-card.companion:hover{border-color:#a371f7}
 .view-card.companion .icon{color:#a371f7}
+.view-card.health{border-color:#2dd4bf33}
+.view-card.health:hover{border-color:#2dd4bf}
+.view-card.health .icon{color:#2dd4bf}
 .footer{margin-top:3rem;font-size:.72rem;color:#484f58;text-align:center}
 .footer a{color:#58a6ff}
 @media(max-width:640px){.views{grid-template-columns:1fr}.hero h1{font-size:1.8rem}}
@@ -58,6 +61,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-
     <h2>Day Companion</h2>
     <p>One day per screen. Big photos, simple language. "What are we doing tomorrow?" For the people coming on the trip.</p>
     <span class="audience">Companion View</span>
+  </a>
+  <a href="achilles.html" class="view-card health">
+    <span class="icon">🩹</span>
+    <h2>Achilles Readiness</h2>
+    <p>Day-by-day tendon risk, the Olperer rule, non-negotiables, and rehab guidance. Built for the body actually trained.</p>
+    <span class="audience">Health View</span>
   </a>
 </div>
 <p class="footer">Research from outdooractive · bergfex · AllTrails · Komoot · Reddit · TripAdvisor · <a href="https://github.com/bomba2006/mayrhofen-2026">github.com/bomba2006/mayrhofen-2026</a></p>
